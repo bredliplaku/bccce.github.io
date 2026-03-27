@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#003B73">
-    <title>Sponsorship Agreement – 5th BCCCE 2026</title>
+    <title>Registration – 5th BCCCE 2026</title>
     <meta name="description"
-        content="Sponsorship opportunities for the 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2026), Tirana, Albania.">
+        content="Register for the 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2026), Tirana, Albania.">
 
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
         rel="stylesheet">
@@ -32,13 +32,6 @@
             --shadow-md: 0 10px 15px -3px rgba(0, 83, 159, 0.08);
             --shadow-lg: 0 20px 25px -5px rgba(0, 83, 159, 0.12);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-            /* Tier colours */
-            --tier-type2: #90A4AE;
-            --tier-type1: #29B6F6;
-            --tier-silver: #9E9E9E;
-            --tier-gold: #FFB300;
-            --tier-platinum: #1A237E;
         }
 
         * {
@@ -303,37 +296,38 @@
             font-size: 1.1rem;
             opacity: 0.85;
             max-width: 620px;
-            margin: 0 auto;
+            margin: 0 auto 0;
             font-weight: 300;
         }
 
-        /* Action button (print FAB style) */
-        .action-button {
+        /* Register Now Button */
+        .register-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--bg-white);
-            color: var(--primary-dark);
-            padding: 14px 28px;
+            background: var(--accent);
+            color: #1A1A1A;
+            padding: 14px 32px;
             border-radius: 4px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             cursor: pointer;
             margin-top: 28px;
             border: none;
             font-family: inherit;
+            letter-spacing: 0.2px;
         }
 
-        .action-button:hover {
-            background: var(--bg-main);
-            color: var(--primary);
+        .register-btn:hover {
+            background: #ffc840;
+            color: #111;
             border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
         }
 
-        .action-button:active {
+        .register-btn:active {
             transform: scale(0.96);
         }
 
@@ -358,69 +352,25 @@
             height: 4px;
             background: var(--primary);
             border-radius: 2px;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             margin-top: 12px;
         }
 
-        /* Why Sponsor Grid */
-        .why-sponsor-section {
-            margin-bottom: 72px;
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 64px;
         }
 
-        .why-sponsor-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        .why-card {
+        /* Cards */
+        .info-card {
             background: var(--bg-white);
-            padding: 28px 24px;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-md);
+            padding: 36px 40px;
             border: 1px solid var(--border);
-            border-top: 5px solid var(--primary);
-            transition: var(--transition);
         }
 
-        .why-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .why-card .card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: var(--radius-sm);
-            background: var(--primary-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .why-card h3 {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-        }
-
-        .why-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-        }
-
-        /* Table Section */
-        .table-section {
-            margin-bottom: 48px;
-        }
-
+        /* Pricing Table */
         .table-container {
             background: var(--bg-white);
             border-radius: var(--radius-lg);
@@ -430,133 +380,230 @@
             margin-top: 8px;
         }
 
-        table {
+        .pricing-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 14px;
-            text-align: center;
+            font-size: 0.97rem;
         }
 
-        th,
-        td {
-            padding: 16px;
-            border-bottom: 1px solid var(--border);
-            border-right: 1px solid var(--border);
-            transition: background-color 0.2s ease;
+        .pricing-table thead tr {
+            background: var(--primary-dark);
+            color: white;
         }
 
-        th:last-child,
-        td:last-child {
+        .pricing-table thead th {
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.92rem;
+            letter-spacing: 0.3px;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .pricing-table thead th:last-child {
             border-right: none;
         }
 
-        tbody tr:last-child td {
+        .pricing-table thead th:not(:first-child) {
+            text-align: center;
+        }
+
+        .pricing-table thead th.col-highlight {
+            background: var(--primary);
+        }
+
+        .pricing-table thead th span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.82rem;
+            margin-top: 4px;
+            opacity: 0.85;
+        }
+
+        .pricing-table tbody tr {
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+
+        .pricing-table tbody tr:last-child {
             border-bottom: none;
         }
 
-        td:first-child {
-            text-align: left;
-            font-weight: 500;
-            width: 30%;
+        .pricing-table tbody tr:hover {
+            background: var(--primary-light);
+        }
+
+        .pricing-table tbody td {
+            padding: 14px 20px;
             color: var(--text-main);
+            vertical-align: middle;
+            border-right: 1px solid var(--border);
         }
 
-        tbody tr:hover {
-            background-color: var(--primary-light);
+        .pricing-table tbody td:last-child {
+            border-right: none;
         }
 
-        /* Table Headers */
-        th {
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 22px 16px;
-            vertical-align: top;
-            color: #fff;
-        }
-
-        th span {
-            display: block;
-            font-weight: 400;
-            font-size: 0.95rem;
-            margin-top: 6px;
-            opacity: 0.9;
-        }
-
-        th .availability {
-            font-size: 0.7rem;
+        .pricing-table tbody td:not(:first-child) {
+            text-align: center;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-top: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 3px 8px;
-            border-radius: 12px;
-            display: inline-block;
+            color: var(--primary-dark);
         }
 
-        /* Tier colours */
-        .th-empty {
-            background-color: transparent !important;
-            color: var(--text-main) !important;
+        .pricing-table tbody td.price-highlight {
+            background: rgba(0, 83, 159, 0.04);
+        }
+
+        /* Price chip */
+        .price-chip {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            border-radius: 20px;
+            padding: 3px 14px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        /* Notes */
+        .note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            padding: 12px 16px;
+            border-left: 3px solid var(--primary-light);
+            background: var(--bg-main);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-bottom: 10px;
+        }
+
+        .note strong {
+            color: var(--primary-dark);
+        }
+
+        .note.note-warning {
+            border-left-color: var(--accent);
+            background: #FFFBF0;
+        }
+
+        .note.note-red {
+            border-left-color: #d32f2f;
+            background: #FFF5F5;
+        }
+
+        .note.note-red strong {
+            color: #d32f2f;
+        }
+
+        /* What's covered grid */
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .coverage-block {
+            background: var(--primary-light);
+            border-radius: var(--radius-md);
+            padding: 22px 24px;
+        }
+
+        .coverage-block h4 {
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .coverage-block ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .coverage-block ul li {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            padding: 4px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .coverage-block ul li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* Payment table */
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.93rem;
+        }
+
+        .payment-table tr {
             border-bottom: 1px solid var(--border);
         }
 
-        .th-type2 {
-            background-color: var(--tier-type2);
+        .payment-table tr:last-child {
+            border-bottom: none;
         }
 
-        .th-type1 {
-            background-color: var(--tier-type1);
-            color: #102A43 !important;
+        .payment-table td {
+            padding: 10px 14px;
+            vertical-align: top;
         }
 
-        .th-type1 .availability {
-            background: rgba(0, 0, 0, 0.1);
+        .payment-table td:first-child {
+            font-weight: 600;
+            color: var(--primary-dark);
+            width: 210px;
+            white-space: nowrap;
         }
 
-        .th-silver {
-            background-color: var(--tier-silver);
+        .payment-table td:last-child {
+            color: var(--text-main);
+            font-family: monospace;
+            letter-spacing: 0.2px;
         }
 
-        .th-gold {
-            background-color: var(--tier-gold);
-            color: #3E2723 !important;
+        /* Action button */
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            margin-top: 0;
+            border: none;
+            font-family: inherit;
         }
 
-        .th-gold .availability {
-            background: rgba(0, 0, 0, 0.1);
+        .action-button:hover {
+            background: var(--primary-dark);
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .th-platinum {
-            background-color: var(--tier-platinum);
-            box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+        .action-button:active {
+            transform: scale(0.96);
         }
 
-        .dot {
-            font-size: 20px;
-        }
-
-        .dot-type2 {
-            color: var(--tier-type2);
-        }
-
-        .dot-type1 {
-            color: var(--tier-type1);
-        }
-
-        .dot-silver {
-            color: var(--tier-silver);
-        }
-
-        .dot-gold {
-            color: var(--tier-gold);
-        }
-
-        .dot-platinum {
-            color: var(--tier-platinum);
-        }
-
-        /* Contact CTA card */
+        /* CTA card */
         .cta-card {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
             border-radius: var(--radius-lg);
@@ -579,47 +626,17 @@
             font-size: 1rem;
         }
 
-        .cta-card .cta-btn {
+        .cta-card .deadline-chip {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: var(--accent);
-            color: #1A1A1A;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .cta-card .cta-btn:hover {
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 20px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-            color: #1A1A1A;
-        }
-
-        .cta-card .cta-btn:active {
-            transform: scale(0.96);
-        }
-
-        /* cta-subtle */
-        .cta-subtle {
-            display: inline-block;
-            padding: 4px 12px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            background: transparent;
-            transition: var(--transition);
-        }
-
-        .cta-subtle:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: var(--primary-light);
-            border-radius: 20px;
+            padding: 6px 18px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         /* Footer */
@@ -699,7 +716,7 @@
 
             .top-bar,
             .navbar,
-            .page-hero .action-button,
+            .register-btn,
             .cta-card,
             .footer {
                 display: none !important;
@@ -724,23 +741,9 @@
                 display: none;
             }
 
-            .table-container {
-                box-shadow: none;
-                border: 1px solid var(--border);
-            }
-
-            .why-card {
-                box-shadow: none;
-                border: 1px solid var(--border);
-            }
-
             * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
-            }
-
-            table {
-                page-break-inside: avoid;
             }
         }
 
@@ -917,25 +920,30 @@
                 font-size: 2rem;
             }
 
-            .why-sponsor-grid {
+            .info-card {
+                padding: 24px 20px;
+            }
+
+            .coverage-grid {
                 grid-template-columns: 1fr;
             }
 
-            td:first-child {
-                width: 40%;
+            .pricing-table {
+                font-size: 0.85rem;
             }
 
-            table {
-                font-size: 12px;
+            .pricing-table thead th,
+            .pricing-table tbody td {
+                padding: 10px 12px;
             }
 
-            th,
-            td {
-                padding: 10px 8px;
+            .payment-table td:first-child {
+                width: auto;
+                white-space: normal;
             }
 
-            .top-bar {
-                display: none;
+            .cta-card {
+                padding: 36px 24px;
             }
 
             .footer-grid {
@@ -962,8 +970,8 @@
                 margin-top: 16px;
             }
 
-            .cta-card {
-                padding: 36px 24px;
+            .top-bar {
+                display: none;
             }
         }
     </style>
@@ -976,7 +984,8 @@
         <div class="container">
             <div>EPOKA University - Tirana, Albania</div>
             <div class="top-links">
-                <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a><span style="opacity:0.3">|</span>
+                <a href="http://epoka.edu.al"><i class="fa-solid fa-house"></i> Home</a><span
+                    style="opacity:0.3">|</span>
                 <a href="http://ce.epoka.edu.al" target="_blank"><i class="fa-solid fa-building"></i> Our
                     Department</a><span style="opacity:0.3">|</span>
                 <a href="http://epoka.edu.al/index.php?lang=EN&pid=8" target="_blank"><i
@@ -1029,7 +1038,7 @@
                     </div>
                 </li>
                 <li class="nav-item"><a href="../index.html#sponsors">Sponsors</a></li>
-                <li class="nav-item"><a href="../index.html#registration">Registration</a></li>
+                <li class="nav-item"><a href="" class="active-page">Registration</a></li>
             </ul>
         </div>
     </nav>
@@ -1040,14 +1049,14 @@
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="../index.html"><i class="fas fa-home"></i> Home</a>
                 <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
-                <span>Sponsorship Agreement</span>
+                <span>Registration</span>
             </nav>
-            <h1>Sponsorship <span>Agreement</span></h1>
-            <p>Partner with BCCCE 2026 and connect your brand with the premier civil engineering gathering in the
-                Balkans.</p>
-            <button class="action-button" onclick="window.print()">
-                <i class="fas fa-print"></i> Print Agreement
-            </button>
+            <h1>Conference <span>Registration</span></h1>
+            <p>Register for the 5th International Balkans Conference on Challenges of Civil Engineering.<br>
+                Deadline: <strong style="opacity:1; color:white;">30 September 2026</strong></p>
+            <a href="https://bccce.epoka.edu.al/online-submissions/" class="register-btn" target="_blank">
+                <i class="fas fa-pen-to-square"></i> Register Now
+            </a>
         </div>
     </header>
 
@@ -1055,182 +1064,204 @@
     <main class="page-content">
         <div class="container">
 
-            <!-- Why Sponsor -->
-            <section class="why-sponsor-section animate-in-delay">
-                <h2 class="section-heading">Why Sponsor? <span class="section-subheading">Why Exhibit?</span></h2>
+            <!-- Initial Registration Info -->
+            <section class="content-section animate-in-delay">
+                <h2 class="section-heading">Initial <span class="section-subheading">Registration</span></h2>
                 <div class="section-divider"></div>
-                <div class="why-sponsor-grid">
-                    <div class="why-card">
-                        <div class="card-icon"><i class="fas fa-globe"></i></div>
-                        <h3>National &amp; International Audience</h3>
-                        <p>BCCCE attracts delegates from across Albania and from more than 20 countries around the
-                            world.
-                            Here is your opportunity to see and be seen by a truly national audience, and to present
-                            your
-                            company to a motivated international audience.</p>
-                    </div>
-                    <div class="why-card">
-                        <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
-                        <h3>Educated &amp; Experienced Attendees</h3>
-                        <p>BCCCE delegates are university educated. Many have undertaken post-graduate studies and
-                            possess
-                            post-graduate degrees. Delegates are experienced professionals, working in their respective
-                            fields for many years.</p>
-                    </div>
-                    <div class="why-card">
-                        <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
-                        <h3>Designers &amp; Decision Makers</h3>
-                        <p>BCCCE delegates are engineers who design and specify for a wide range of civil works in
-                            Albania
-                            and Balkan countries. They also manage those who design, specify and purchase for a wide
-                            variety
-                            of projects, applications, and clients.</p>
-                    </div>
-                    <div class="why-card">
-                        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
-                        <h3>Targeted Promotion Opportunity</h3>
-                        <p>BCCCE is the premiere gathering of the civil engineering profession in Albania. Put your firm
-                            in
-                            front of those who make decisions. By sponsoring the 2026 BCCCE in Tirana, you align
-                            yourself
-                            with a major event, showcasing your firm to our delegates.</p>
-                    </div>
-                </div>
-            </section>
+                <p style="color: var(--text-muted); margin-bottom: 28px;">
+                    The intended participants will be registered when they have submitted their abstracts/proposals,
+                    papers, panels, workshops, or media productions. All fees are in <strong>Euro (€)</strong>.
+                </p>
 
-            <!-- Sponsorship Table -->
-            <section class="table-section">
-                <h2 class="section-heading">Conference Sponsorship <span class="section-subheading">Opportunities</span>
-                </h2>
-                <div class="section-divider"></div>
+                <!-- Fees Table -->
                 <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="th-empty"></th>
-                                <th class="th-type2">
-                                    Type 2<span>€500</span>
-                                    <div class="availability">10 Available</div>
-                                </th>
-                                <th class="th-type1">
-                                    Type 1<span>€1,000</span>
-                                    <div class="availability">10 Available</div>
-                                </th>
-                                <th class="th-silver">
-                                    Silver<span>€1,500</span>
-                                    <div class="availability">15 Available</div>
-                                </th>
-                                <th class="th-gold">
-                                    Gold<span>€3,000</span>
-                                    <div class="availability">5 Available</div>
-                                </th>
-                                <th class="th-platinum">
-                                    Platinum<span>€5,000</span>
-                                    <div class="availability">3 Available</div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Logo on conference website (homepage &amp; sponsor page) with link</td>
-                                <td><span class="dot dot-type2">●</span></td>
-                                <td><span class="dot dot-type1">●</span></td>
-                                <td><span class="dot dot-silver">●</span></td>
-                                <td><span class="dot dot-gold">●</span></td>
-                                <td><span class="dot dot-platinum">●</span></td>
-                            </tr>
-                            <tr>
-                                <td>Logo on outside back cover of preliminary conference programme</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><span class="dot dot-gold">●</span></td>
-                                <td><span class="dot dot-platinum">●</span></td>
-                            </tr>
-                            <tr>
-                                <td>Logo on outside back cover of official conference programme</td>
-                                <td></td>
-                                <td><span class="dot dot-type1">●</span></td>
-                                <td><span class="dot dot-silver">●</span></td>
-                                <td><span class="dot dot-gold">●</span></td>
-                                <td><span class="dot dot-platinum">●</span></td>
-                            </tr>
-                            <tr>
-                                <td>Logo on outside back cover of conference proceedings</td>
-                                <td></td>
-                                <td><span class="dot dot-type1">●</span></td>
-                                <td><span class="dot dot-silver">●</span></td>
-                                <td><span class="dot dot-gold">●</span></td>
-                                <td><span class="dot dot-platinum">●</span></td>
-                            </tr>
-                            <tr>
-                                <td>Logo on main conference sign</td>
-                                <td></td>
-                                <td></td>
-                                <td><span class="dot dot-silver">●</span></td>
-                                <td><span class="dot dot-gold">●</span></td>
-                                <td><span class="dot dot-platinum">●</span></td>
-                            </tr>
-                            <tr>
-                                <td>Logo on conference kit given to attendees</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><span class="dot dot-platinum">●</span></td>
-                            </tr>
-                            <tr>
-                                <td>Official sponsor of technical presentation / room</td>
-                                <td></td>
-                                <td></td>
-                                <td style="font-weight: 600;">Room</td>
-                                <td style="font-weight: 600;">Session</td>
-                                <td style="font-weight: 600;">Session</td>
-                            </tr>
-                            <tr>
-                                <td>Complete conference registration (incl. social activities)</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td style="font-weight: 700; font-size: 1.1rem;">1</td>
-                                <td style="font-weight: 700; font-size: 1.1rem;">1</td>
-                            </tr>
-                            <tr>
-                                <td>Official sponsor of networking and welcome reception</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><span class="dot dot-gold">●</span></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Official sponsor of the conference banquet</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><span class="dot dot-platinum">●</span></td>
-                            </tr>
-                            <tr>
-                                <td>Exhibit booth</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><span class="dot dot-platinum">●</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div style="overflow-x: auto;">
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Registration Fees</th>
+                                    <th>Until 30 June 2026<span>Early Bird</span></th>
+                                    <th class="col-highlight">After 30 June 2026<span>Standard</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Standard International Participant</td>
+                                    <td><span class="price-chip">250 €</span></td>
+                                    <td class="price-highlight"><span class="price-chip">300 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Standard Local Participant</td>
+                                    <td><span class="price-chip">150 €</span></td>
+                                    <td class="price-highlight"><span class="price-chip">200 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Accompanying International Person <em style="font-size:0.85em;">(without
+                                            proceedings)</em></td>
+                                    <td><span class="price-chip">200 €</span></td>
+                                    <td class="price-highlight"><span class="price-chip">250 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Accompanying Local Person <em style="font-size:0.85em;">(without
+                                            proceedings)</em></td>
+                                    <td><span class="price-chip">100 €</span></td>
+                                    <td class="price-highlight"><span class="price-chip">150 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td>International Student <sup>*</sup></td>
+                                    <td><span class="price-chip">150 €</span></td>
+                                    <td class="price-highlight"><span class="price-chip">200 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Local Student <sup>**</sup></td>
+                                    <td><span class="price-chip">100 €</span></td>
+                                    <td class="price-highlight"><span class="price-chip">150 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Additional Paper</td>
+                                    <td><span class="price-chip">100 €</span></td>
+                                    <td class="price-highlight"><span class="price-chip">100 €</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px;">
+                    <div class="note">
+                        Student (without proceedings) <sup>*</sup> shall be charged with an additional <strong>50
+                            €</strong> (certificate of participation + coffee breaks).
+                    </div>
+                    <div class="note">
+                        <sup>*</sup> Students shall provide a certificate confirming they are in a <strong>Master or PhD
+                            programme</strong> (in the academic year of 2025/2026) in order to be eligible for the
+                        reduced fee.
+                    </div>
+                    <div class="note">
+                        <sup>**</sup> Local participants are considered all the citizens of <strong>Albania and
+                            Kosovo</strong>.
+                    </div>
+                    <div class="note note-warning">
+                        <strong>NOTE:</strong> Registration fee is valid for <strong>one paper only</strong>. If you
+                        wish to submit another paper, another registration should be made.
+                    </div>
+                    <div class="note note-red">
+                        <strong>NOTE:</strong> Participants shall make the registration no later than <strong>30
+                            September 2026</strong>.
+                    </div>
                 </div>
             </section>
 
-            <!-- Contact CTA -->
+            <!-- What is covered -->
+            <section class="content-section">
+                <h2 class="section-heading">What Is <span class="section-subheading">Covered by the Fee?</span></h2>
+                <div class="section-divider"></div>
+
+                <div class="coverage-grid">
+                    <div class="coverage-block">
+                        <h4><i class="fas fa-users" style="color:var(--primary);"></i> Regular Participant &amp;
+                            Supporting Org. Members</h4>
+                        <ul>
+                            <li>Admission to all technical sessions</li>
+                            <li>BCCCE workshops and seminars</li>
+                            <li>5th BCCCE 2026 Proceedings</li>
+                            <li>Coffee-breaks during the Conference</li>
+                            <li>Lunches during the Conference</li>
+                            <li>Welcome Cocktail</li>
+                        </ul>
+                    </div>
+                    <div class="coverage-block">
+                        <h4><i class="fas fa-graduation-cap" style="color:var(--primary);"></i> Student</h4>
+                        <ul>
+                            <li>Admission to all technical sessions</li>
+                            <li>BCCCE workshops and seminars</li>
+                            <li>5th BCCCE 2026 Proceedings</li>
+                            <li>Coffee-breaks during the Conference</li>
+                            <li>Lunches during the Conference</li>
+                            <li>Welcome Cocktail</li>
+                        </ul>
+                    </div>
+                    <div class="coverage-block">
+                        <h4><i class="fas fa-user-plus" style="color:var(--primary);"></i> Accompanying Person</h4>
+                        <ul>
+                            <li>Welcome Cocktail</li>
+                            <li>Lunches during the Conferences</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payment -->
+            <section class="content-section">
+                <h2 class="section-heading"><span class="section-subheading">Payment</span></h2>
+                <div class="section-divider"></div>
+
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    The conference payment currency is <strong>Euro (€)</strong>. Please use the following account
+                    information:
+                </p>
+
+                <div class="info-card" style="margin-bottom: 24px;">
+                    <div style="overflow-x: auto;">
+                        <table class="payment-table">
+                            <tr>
+                                <td>Beneficiary's Name</td>
+                                <td>Turgut Ozal Education ShA</td>
+                            </tr>
+                            <tr>
+                                <td>Beneficiary's Address</td>
+                                <td>Rr. Sabaudin Gabrani, Tirana, Albania</td>
+                            </tr>
+                            <tr>
+                                <td>Account Number</td>
+                                <td>401009984CLPRCFEURAA</td>
+                            </tr>
+                            <tr>
+                                <td>Beneficiary's Bank</td>
+                                <td>Banka Kombetare Tregtare (BKT)</td>
+                            </tr>
+                            <tr>
+                                <td>Beneficiary's Bank Address</td>
+                                <td>Bulevardi "Zhan d'Ark", Tiranë, Albania</td>
+                            </tr>
+                            <tr>
+                                <td>Bank's Swift Code</td>
+                                <td>NCBAALTX</td>
+                            </tr>
+                            <tr>
+                                <td>Beneficiary's IBAN Number</td>
+                                <td>IBAN: AL89 2051 1014 0099 84CL PRCF EURA</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="note">
+                    Please note that the payment is related to: <strong>"Conference fee for 5-BCCCE2026"</strong>
+                </div>
+
+                <!-- PayPal -->
+                <h3 style="margin-top: 36px; margin-bottom: 8px; font-size: 1.2rem;">PayPal</h3>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    BCCCE 2026 Conference Registration and Conference Fee also accepted via PayPal. Send payment to
+                    <a href="mailto:info@epoka.edu.al">info@epoka.edu.al</a> via PayPal and include your name and
+                    "5th BCCCE 2026 Registration Fee" in the note.
+                </p>
+                <a href="https://www.paypal.com/paypalme/EpokaUniversity" target="_blank" class="action-button">
+                    <i class="fab fa-paypal"></i> Pay via PayPal
+                </a>
+            </section>
+
+            <!-- CTA -->
             <div class="cta-card">
-                <h2>Ready to Become a Sponsor?</h2>
-                <p>Contact the BCCCE 2026 organising committee to discuss sponsorship packages and secure your preferred
-                    tier today.</p>
-                <a href="mailto:bccce@epoka.edu.al" class="cta-btn">
-                    <i class="fas fa-envelope"></i> Get in Touch
+                <div class="deadline-chip">
+                    <i class="fas fa-clock"></i> Registration closes 30 September 2026
+                </div>
+                <h2>Ready to Join BCCCE 2026?</h2>
+                <p>Submit your registration and secure your place at the 5th International Balkans Conference on
+                    Challenges of Civil Engineering — 29–30 October 2026, Tirana.</p>
+                <a href="https://bccce.epoka.edu.al/online-submissions/" class="register-btn" target="_blank">
+                    <i class="fas fa-pen-to-square"></i> Register Now
                 </a>
             </div>
 
