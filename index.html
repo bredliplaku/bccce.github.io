@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#003B73">
     <title>5th BCCCE 2026 - Civil Engineering Conference</title>
     <meta name="description"
         content="5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2026), Tirana, Albania.">
@@ -46,6 +47,7 @@
             width: 100%;
             max-width: 100vw;
             overflow-x: clip;
+            background-color: var(--bg-main);
         }
 
         body {
@@ -825,11 +827,17 @@
                 /* Offsets the fixed mobile top navbar */
             }
 
+            body.nav-open {
+                overflow: hidden;
+            }
+
             .navbar {
                 position: fixed;
-                top: 0;
+                bottom: calc(100dvh - 74px);
+                /* Anchored to bottom for stability */
+                top: auto;
                 left: 0;
-                transform: translateY(0);
+                transform: none;
                 margin-left: 0;
                 width: 100%;
                 border-radius: 0;
@@ -838,12 +846,14 @@
                 -webkit-backdrop-filter: blur(24px);
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
                 padding: 16px 24px;
-                z-index: 1000;
-                transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
-                    width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
-                    margin-left 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
-                    border-radius 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
-                    padding 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+                z-index: 2000;
+                /* Smoother, calmer transition curve */
+                transition: bottom 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    margin-left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    border-radius 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    padding 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    background 0.5s ease;
             }
 
             .navbar .container {
@@ -851,7 +861,9 @@
             }
 
             .navbar.scrolled {
-                transform: translateY(calc(100dvh - 80px));
+                bottom: 20px;
+                top: auto;
+                transform: none;
                 width: calc(100% - 40px);
                 margin-left: 20px;
                 padding: 12px 24px;
@@ -866,51 +878,79 @@
 
             .nav-menu {
                 display: flex;
-                /* Kept flex but hidden via opacity/transform */
                 opacity: 0;
                 visibility: hidden;
-                transform: scaleY(0);
-                transform-origin: top;
-                transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease, visibility 0.4s ease;
+                transform: scale(0.95);
+                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                 flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: calc(100% + 15px);
-                bottom: auto;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: 100dvh;
+                position: fixed;
+                top: 0;
                 left: 0;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-                border-radius: 20px;
-                padding: 20px;
-                gap: 16px;
-                border: 1px solid rgba(0, 0, 0, 0.05);
-                max-height: 70vh;
+                background: rgba(255, 255, 255, 0.4);
+                backdrop-filter: blur(40px) saturate(200%);
+                -webkit-backdrop-filter: blur(40px) saturate(200%);
+                padding: 40px;
+                gap: 32px;
+                z-index: -1;
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
+                margin: 0;
                 overflow-y: auto;
-            }
-
-            /* Flip origin and positioning when pill drops to bottom! */
-            .navbar.scrolled .nav-menu {
-                top: auto;
-                bottom: calc(100% + 15px);
-                transform-origin: bottom;
-                box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
             }
 
             .nav-menu.active {
                 opacity: 1;
                 visibility: visible;
-                transform: scaleY(1);
+                transform: scale(1);
+            }
+
+            /* MAGIC RESET: Reset parent transformations when menu is open to allow fixed overlay to fill viewport */
+            body.nav-open .navbar {
+                bottom: calc(100dvh - 74px) !important;
+                top: auto !important;
+                transform: none !important;
+                left: 0 !important;
+                width: 100% !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                padding: 16px 24px !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+
+            body.nav-open .navbar .logo,
+            body.nav-open .navbar .menu-toggle {
+                position: relative;
+                z-index: 4000;
+                /* Ensure button stays on top of menu */
+            }
+
+            .nav-item {
+                margin: 10px 0;
+                width: 100%;
             }
 
             .nav-item>a {
-                justify-content: space-between;
-                font-size: 1.1rem;
+                justify-content: center;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--primary-dark);
                 padding: 12px 0;
-                border-bottom: 1px solid var(--border);
+                border-bottom: none;
                 width: 100%;
                 box-sizing: border-box;
+                transition: transform 0.3s ease;
+            }
+
+            .nav-item>a:active {
+                transform: scale(0.95);
             }
 
             .dropdown-content {
@@ -931,6 +971,11 @@
 
             .hero {
                 padding: 80px 0;
+            }
+
+            .hero-content img {
+                height: 45px !important;
+                margin-bottom: 16px !important;
             }
 
             .hero h1 {
@@ -1110,29 +1155,9 @@
                 <img src="./miscellaneous/CE_Logo.png" alt="Sponsor 1">
                 <span>Department of Civil Engineering</span>
             </a>
-            <a href="#" target="_blank" title="Sponsor Name 2" class="sponsor-logo">
-                <img src="https://via.placeholder.com/200x60?text=Sponsor+2" alt="Sponsor 2">
-                <span></span>
-            </a>
-            <a href="#" target="_blank" title="Sponsor Name 3" class="sponsor-logo">
-                <img src="https://via.placeholder.com/200x60?text=Sponsor+3" alt="Sponsor 3">
-                <span></span>
-            </a>
-            <a href="#" target="_blank" title="Sponsor Name 4" class="sponsor-logo">
-                <img src="https://via.placeholder.com/200x60?text=Sponsor+4" alt="Sponsor 4">
-                <span></span>
-            </a>
-            <a href="#" target="_blank" title="Sponsor Name 5" class="sponsor-logo">
-                <img src="https://via.placeholder.com/200x60?text=Sponsor+5" alt="Sponsor 5">
-                <span></span>
-            </a>
-            <a href="#" target="_blank" title="Sponsor Name 6" class="sponsor-logo">
-                <img src="https://via.placeholder.com/200x60?text=Sponsor+6" alt="Sponsor 6">
-                <span></span>
-            </a>
         </div>
         <div class="container" style="text-align: center; margin-top: 0px;">
-            <a href="#become-sponsor" class="cta-subtle">Become a sponsor</a>
+            <a href="./sponsorship_agreement/" class="cta-subtle">Become a sponsor</a>
         </div>
     </section>
 
@@ -1141,7 +1166,7 @@
         <div class="container hero-content">
             <img src="./miscellaneous/EPOKA_Logo_horizontal_alt.png" alt="EPOKA Logo"
                 style="height: 60px; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto;">
-            <div class="badge"><i class="fas fa-calendar-alt"></i> October 29–30, 2026</div>
+            <div class="badge"><i class="fas fa-calendar-alt"></i> 29–30 October 2026</div>
             <h1>5th International Balkans Conference on Challenges of Civil Engineering</h1>
             <p>Bringing together researchers, academics, and professionals to discuss recent developments and
                 sustainable practices in built environments.</p>
@@ -1244,18 +1269,6 @@
                     <img src="./miscellaneous/iziis.png" alt="Partner 1">
                     <span>Institute of Earthquake Engineering & Engineering Seismology</span>
                 </a>
-                <a href="#" class="partner" title="Partner Name 2">
-                    <img src="https://via.placeholder.com/200x80?text=Logo+Here" alt="Partner 2">
-                    <span></span>
-                </a>
-                <a href="#" class="partner" title="Partner Name 3">
-                    <img src="https://via.placeholder.com/200x80?text=Logo+Here" alt="Partner 3">
-                    <span></span>
-                </a>
-                <a href="#" class="partner" title="Partner Name 4">
-                    <img src="https://via.placeholder.com/200x80?text=Logo+Here" alt="Partner 4">
-                    <span></span>
-                </a>
             </div>
 
             <div style="text-align: center;">
@@ -1270,9 +1283,10 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-logo">
-                        EPOKA University
+                        <img src="./miscellaneous/EPOKA_Logo_horizontal_alt.png" alt="EPOKA University" height="40"
+                            style="margin-bottom: 10px;">
                     </div>
-                    <p style="margin-bottom: 0; max-width: 400px; font-size: 0.9rem;">
+                    <p style=" font-size: 0.9rem;">
                         Leading the regional academic standards in Civil Engineering through innovation, rigorous
                         research, and cross-border collaboration.
                     </p>
@@ -1307,6 +1321,7 @@
 
         menuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
             const icon = menuBtn.querySelector('i');
             if (navMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -1395,8 +1410,15 @@
 
         // Initial setup
         setupAllCarousels();
-        // Recalculate if window resizes
-        window.addEventListener('resize', setupAllCarousels);
+
+        // Recalculate if window width resizes (prevents hiccups on mobile address bar toggle)
+        let lastWidth = window.innerWidth;
+        window.addEventListener('resize', () => {
+            if (window.innerWidth !== lastWidth) {
+                lastWidth = window.innerWidth;
+                setupAllCarousels();
+            }
+        });
 
         // Navbar Scroll Effect
         const topNavbar = document.querySelector('.navbar');
