@@ -5,34 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#003B73">
+    <meta name="base-path" content="..">
     <title>Sponsorship Agreement – 5th BCCCE 2026</title>
     <meta name="description"
         content="Sponsorship opportunities for the 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2026), Tirana, Albania.">
-
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">
     <link rel="shortcut icon" href="https://epoka.edu.al/assets/images/favicon.ico" />
 
+    <!-- Shared site-wide styles -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Page-specific styles -->
     <style>
         :root {
-            --primary: #00539F;
-            --primary-dark: #003B73;
-            --primary-light: #EBF3FA;
-            --accent: #FFB81C;
-            --text-main: #1A1A1A;
-            --text-muted: #666666;
-            --bg-main: #F8FAFC;
-            --bg-white: #FFFFFF;
-            --border: #E2E8F0;
-            --radius-lg: 16px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 10px 15px -3px rgba(0, 83, 159, 0.08);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 83, 159, 0.12);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
             /* Tier colours */
             --tier-type2: #90A4AE;
             --tier-type1: #29B6F6;
@@ -41,270 +28,29 @@
             --tier-platinum: #1A237E;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Page Content */
+        .page-content {
+            padding: 60px 0 80px;
         }
 
-        html,
-        body {
-            width: 100%;
-            max-width: 100vw;
-            overflow-x: clip;
-            background-color: var(--bg-main);
-        }
-
-        body {
-            font-family: 'Google Sans Flex', 'Plus Jakarta Sans', sans-serif;
-            color: var(--text-main);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: clip;
-            overflow-wrap: break-word;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
+        /* Section headings */
+        .section-heading {
+            font-size: 1.75rem;
             color: var(--primary-dark);
-            font-weight: 700;
-            line-height: 1.2;
+            margin-bottom: 8px;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--primary-dark);
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        /* Layout */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Top Bar */
-        .top-bar {
-            background: var(--primary-dark);
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 0.85rem;
-            padding: 8px 0;
-            font-weight: 500;
-        }
-
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .top-links a {
-            color: rgba(255, 255, 255, 0.85);
-            transition: color 0.2s;
-        }
-
-        .top-links a:hover {
-            color: #fff;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-sm);
-            padding: 16px 0;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 8px 0;
-            background: rgba(255, 255, 255, 0.80);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            line-height: 1.1;
-        }
-
-        .logo-text span {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-item>a {
-            font-weight: 600;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            padding: 8px 0;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .nav-item>a:hover {
-            color: var(--primary);
-        }
-
-        .nav-item>a.active-page {
-            color: var(--primary);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-
-        /* Dropdown */
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(15px);
-            background: var(--bg-white);
-            min-width: 220px;
-            box-shadow: var(--shadow-lg);
-            border-radius: var(--radius-md);
-            padding: 12px 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            border: 1px solid var(--border);
-        }
-
-        .nav-item:hover .dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(5px);
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 10px 24px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-main);
-            transition: var(--transition);
-        }
-
-        .dropdown-content a:hover {
-            background: var(--primary-light);
-            color: var(--primary);
-            padding-left: 28px;
-        }
-
-        /* Page Hero (compact) */
-        .page-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            padding: 64px 0 48px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('https://cms.epoka.edu.al/api/CMS_Archive/assets/resize-1700734462-jpg-1') center/cover;
-            opacity: 0.12;
-        }
-
-        .page-hero .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .page-hero .breadcrumb {
-            font-size: 0.85rem;
-            opacity: 0.75;
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .page-hero .breadcrumb a {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .page-hero .breadcrumb a:hover {
-            color: #fff;
-        }
-
-        .page-hero h1 {
-            color: white;
-            font-size: 2.8rem;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-        }
-
-        .page-hero h1 span {
+        .section-subheading {
             color: var(--accent);
         }
 
-        .page-hero p {
-            font-size: 1.1rem;
-            opacity: 0.85;
-            max-width: 620px;
-            margin: 0 auto;
-            font-weight: 300;
+        .section-divider {
+            width: 56px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            margin-bottom: 40px;
+            margin-top: 12px;
         }
 
         /* Action button (print FAB style) */
@@ -335,31 +81,6 @@
 
         .action-button:active {
             transform: scale(0.96);
-        }
-
-        /* Page Content */
-        .page-content {
-            padding: 60px 0 80px;
-        }
-
-        /* Section headings */
-        .section-heading {
-            font-size: 1.75rem;
-            color: var(--primary-dark);
-            margin-bottom: 8px;
-        }
-
-        .section-subheading {
-            color: var(--accent);
-        }
-
-        .section-divider {
-            width: 56px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-            margin-bottom: 40px;
-            margin-top: 12px;
         }
 
         /* Why Sponsor Grid */
@@ -590,6 +311,9 @@
             font-weight: 700;
             font-size: 1rem;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: none;
+            font-family: inherit;
+            cursor: pointer;
         }
 
         .cta-card .cta-btn:hover {
@@ -602,126 +326,10 @@
             transform: scale(0.96);
         }
 
-        /* cta-subtle */
-        .cta-subtle {
-            display: inline-block;
-            padding: 4px 12px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            background: transparent;
-            transition: var(--transition);
-        }
-
-        .cta-subtle:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: var(--primary-light);
-            border-radius: 20px;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary-dark);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 60px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 40px;
-            margin-bottom: 40px;
-            align-items: center;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-            margin-top: 16px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-link {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-        }
-
-        .footer-bottom {
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        /* Print */
+        /* Print: page-specific */
         @media print {
-            body {
-                background: white;
-            }
-
-            .top-bar,
-            .navbar,
-            .page-hero .action-button,
-            .cta-card,
-            .footer {
+            .page-hero .action-button {
                 display: none !important;
-            }
-
-            .page-hero {
-                background: white;
-                color: var(--primary-dark);
-                padding: 20px 0;
-            }
-
-            .page-hero h1 {
-                color: var(--primary-dark);
-                font-size: 1.5rem;
-            }
-
-            .page-hero p {
-                color: var(--text-muted);
-            }
-
-            .page-hero::before {
-                display: none;
             }
 
             .table-container {
@@ -734,189 +342,13 @@
                 border: 1px solid var(--border);
             }
 
-            * {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
             table {
                 page-break-inside: avoid;
             }
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-in {
-            animation: fadeInUp 0.7s ease-out both;
-        }
-
-        .animate-in-delay {
-            animation: fadeInUp 0.7s 0.15s ease-out both;
-        }
-
-        /* Responsive */
+        /* Responsive: page-specific */
         @media (max-width: 768px) {
-            body {
-                padding-top: 74px;
-            }
-
-            body.nav-open {
-                overflow: hidden;
-            }
-
-            .navbar {
-                position: fixed;
-                bottom: calc(100dvh - 74px);
-                top: auto;
-                left: 0;
-                transform: none;
-                margin-left: 0;
-                width: 100%;
-                border-radius: 0;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(24px);
-                -webkit-backdrop-filter: blur(24px);
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-                padding: 16px 24px;
-                z-index: 2000;
-                transition: bottom 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
-                    width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
-                    margin-left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
-                    border-radius 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
-                    padding 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
-                    background 0.5s ease;
-            }
-
-            .navbar .container {
-                padding: 0;
-            }
-
-            .navbar.scrolled {
-                bottom: 20px;
-                top: auto;
-                transform: none;
-                width: calc(100% - 40px);
-                margin-left: 20px;
-                padding: 12px 24px;
-                border-radius: 40px;
-                background: rgba(255, 255, 255, 0.85);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: flex;
-                opacity: 0;
-                visibility: hidden;
-                transform: scale(0.95);
-                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100vw;
-                height: 100dvh;
-                position: fixed;
-                top: 0;
-                left: 0;
-                background: rgba(255, 255, 255, 0.4);
-                backdrop-filter: blur(40px) saturate(200%);
-                -webkit-backdrop-filter: blur(40px) saturate(200%);
-                padding: 40px;
-                gap: 32px;
-                z-index: -1;
-                border: none;
-                box-shadow: none;
-                border-radius: 0;
-                margin: 0;
-                overflow-y: auto;
-            }
-
-            .nav-menu.active {
-                opacity: 1;
-                visibility: visible;
-                transform: scale(1);
-            }
-
-            body.nav-open .navbar {
-                bottom: calc(100dvh - 74px) !important;
-                top: auto !important;
-                transform: none !important;
-                left: 0 !important;
-                width: 100% !important;
-                margin: 0 !important;
-                border-radius: 0 !important;
-                padding: 16px 24px !important;
-                background: transparent !important;
-                box-shadow: none !important;
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-            }
-
-            body.nav-open .navbar .logo,
-            body.nav-open .navbar .menu-toggle {
-                position: relative;
-                z-index: 4000;
-            }
-
-            .nav-item {
-                margin: 10px 0;
-                width: 100%;
-            }
-
-            .nav-item>a {
-                justify-content: center;
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: var(--primary-dark);
-                padding: 12px 0;
-                border-bottom: none;
-                width: 100%;
-                box-sizing: border-box;
-                transition: transform 0.3s ease;
-            }
-
-            .nav-item>a:active {
-                transform: scale(0.95);
-            }
-
-            .dropdown-content {
-                position: static;
-                box-shadow: none;
-                opacity: 1;
-                visibility: visible;
-                display: none;
-                transform: none;
-                padding: 0 0 0 16px;
-                min-width: auto;
-                border: none;
-            }
-
-            .nav-item.active .dropdown-content {
-                display: block;
-            }
-
-            .page-hero {
-                padding: 48px 0 36px;
-            }
-
-            .page-hero h1 {
-                font-size: 2rem;
-            }
-
             .why-sponsor-grid {
                 grid-template-columns: 1fr;
             }
@@ -934,34 +366,6 @@
                 padding: 10px 8px;
             }
 
-            .top-bar {
-                display: none;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 32px;
-            }
-
-            .footer {
-                padding-bottom: 100px;
-            }
-
-            .footer-logo {
-                justify-content: center;
-            }
-
-            .footer-links {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .social-links {
-                justify-content: center;
-                margin-top: 16px;
-            }
-
             .cta-card {
                 padding: 36px 24px;
             }
@@ -971,68 +375,8 @@
 
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div>EPOKA University - Tirana, Albania</div>
-            <div class="top-links">
-                <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a><span style="opacity:0.3">|</span>
-                <a href="http://ce.epoka.edu.al" target="_blank"><i class="fa-solid fa-building"></i> Our
-                    Department</a><span style="opacity:0.3">|</span>
-                <a href="http://epoka.edu.al/index.php?lang=EN&pid=8" target="_blank"><i
-                        class="fa-solid fa-envelope"></i> Contact</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container" style="display: flex; flex-wrap: wrap;">
-            <a href="../index.html" class="logo">
-                <div class="logo-text">
-                    BCCCE 2026
-                    <span>5th International Conference</span>
-                </div>
-            </a>
-
-            <div class="menu-toggle" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="../index.html#about">About <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="../index.html#message">Organizer's Message</a>
-                        <a href="../index.html#hosts">Hosts &amp; Committees</a>
-                        <a href="../index.html#venue">Conference Venue</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="../index.html#authors">Authors <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="../index.html#call">Call for Papers</a>
-                        <a href="../index.html#guidelines">Guidelines for Full Papers</a>
-                        <a href="../index.html#oral">Oral Presentation</a>
-                        <a href="../index.html#submission">Paper Submission</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="../index.html#programme">Programme <i class="fas fa-chevron-down"
-                            style="font-size:0.7rem;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="../index.html#topics">Conference Topics</a>
-                        <a href="../index.html#keynote">Keynote Speakers</a>
-                        <a href="../index.html#tech-prog">Technical Programme</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a href="../index.html#sponsors">Sponsors</a></li>
-                <li class="nav-item"><a href="../index.html#registration">Registration</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Shared Header (top-bar + navbar, no sponsors carousel on subpages) -->
+    <div id="site-header" data-sponsors="true"></div>
 
     <!-- Page Hero -->
     <header class="page-hero animate-in">
@@ -1045,9 +389,9 @@
             <h1>Sponsorship <span>Agreement</span></h1>
             <p>Partner with BCCCE 2026 and connect your brand with the premier civil engineering gathering in the
                 Balkans.</p>
-            <button class="action-button" onclick="window.print()">
-                <i class="fas fa-print"></i> Print Agreement
-            </button>
+            <a href="mailto:bccce@epoka.edu.al" class="action-button">
+                <i class="fas fa-envelope"></i> Get in Touch
+            </a>
         </div>
     </header>
 
@@ -1229,89 +573,19 @@
                 <h2>Ready to Become a Sponsor?</h2>
                 <p>Contact the BCCCE 2026 organising committee to discuss sponsorship packages and secure your preferred
                     tier today.</p>
-                <a href="mailto:bccce@epoka.edu.al" class="cta-btn">
-                    <i class="fas fa-envelope"></i> Get in Touch
-                </a>
+                <button class="cta-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print Agreement
+                </button>
             </div>
 
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-logo">
-                        <img src="../miscellaneous/EPOKA_Logo_horizontal_alt.png" alt="EPOKA University" height="40"
-                            style="margin-bottom: 10px;">
-                    </div>
-                    <p style="font-size: 0.9rem;">
-                        Leading the regional academic standards in Civil Engineering through innovation, rigorous
-                        research, and cross-border collaboration.
-                    </p>
-                    <div class="footer-links">
-                        <a href="https://epoka.edu.al/vacancies">Join our Team</a>
-                        <a href="https://epoka.edu.al/content/ODY5/About-Us/Privacy-Policy">Privacy Policy</a>
-                        <a href="mailto:info@epoka.edu.al">info@epoka.edu.al</a>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="http://www.facebook.com/UniEpoka" target="_blank" class="social-link"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/epokauniversity" target="_blank" class="social-link"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="http://www.linkedin.com/company/epoka-university" target="_blank" class="social-link"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="http://www.youtube.com/UniEpoka" target="_blank" class="social-link"><i
-                            class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2013–<span id="currentYear"></span> EPOKA University. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Shared Footer (no partners on this page) -->
+    <div id="site-footer" data-partners="true"></div>
 
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Scroll-shrink navbar
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 40);
-        });
-
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('nav-menu');
-
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            document.body.classList.toggle('nav-open');
-            const icon = menuBtn.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
-
-        // Mobile sub-menu toggles
-        const navItems = document.querySelectorAll('.nav-item');
-        navItems.forEach(item => {
-            item.addEventListener('click', e => {
-                if (window.innerWidth <= 768 && item.querySelector('.dropdown-content')) {
-                    navItems.forEach(s => {
-                        if (s !== item) s.classList.remove('active');
-                    });
-                    item.classList.toggle('active');
-                    e.stopPropagation();
-                }
-            });
-        });
-    </script>
-
+    <!-- Shared site-wide JS -->
+    <script src="../scripts.js"></script>
 </body>
 
 </html>
