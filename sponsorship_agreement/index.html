@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCCCE 2026 Sponsorship Agreement</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Google Sans Flex font-face definition for modern browsers */
+        @font-face {
+            font-family: 'Google Sans Flex';
+            src: url('https://fonts.gstatic.com/s/googlesansflex/v8/2nZqCqyLvWgLq2-H_w082wsW2UPM92bC77E.woff2') format('woff2');
+            font-weight: 100 900;
+            font-style: normal;
+        }
+
+        :root {
+            /* Material Design Harmonised Tier Colours */
+            --tier-type2: #90A4AE;
+            /* Muted Blue-Grey */
+            --tier-type1: #4FC3F7;
+            /* Light Blue */
+            --tier-silver: #9E9E9E;
+            /* Silver / Grey */
+            --tier-gold: #FFB300;
+            /* Premium Amber / Gold */
+            --tier-platinum: #1A237E;
+            /* Deep Indigo / Navy */
+
+            --bg-color: #F8F9FA;
+            --surface-color: #FFFFFF;
+            --text-primary: #202124;
+            --text-secondary: #5F6368;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Google Sans Flex', 'Roboto', Arial, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .accent {
+            color: var(--tier-platinum);
+        }
+
+        /* Why Sponsor Grid - Material Cards */
+        .why-sponsor-section {
+            margin-bottom: 60px;
+        }
+
+        .why-sponsor-section h2 {
+            font-size: 28px;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+        }
+
+        .why-sponsor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .why-card {
+            background: var(--surface-color);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 6px solid var(--tier-platinum);
+        }
+
+        .why-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--tier-platinum);
+        }
+
+        .why-card p {
+            margin: 0;
+            font-size: 14.5px;
+            color: var(--text-secondary);
+        }
+
+        /* Table Section - Material Design */
+        .table-container {
+            background: var(--surface-color);
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            /* For rounded corners on child elements */
+            margin-top: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            transition: background-color 0.2s ease;
+        }
+
+        th:last-child,
+        td:last-child {
+            border-right: none;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        td:first-child {
+            text-align: left;
+            font-weight: 500;
+            width: 30%;
+            color: var(--text-primary);
+        }
+
+        /* Table Headers */
+        th {
+            font-weight: 600;
+            font-size: 18px;
+            padding: 24px 16px;
+            vertical-align: top;
+            color: #fff;
+        }
+
+        th span {
+            display: block;
+            font-weight: 400;
+            font-size: 15px;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        th .availability {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        /* Tier Colours Integration */
+        .th-type2 {
+            background-color: var(--tier-type2);
+            color: #fff;
+        }
+
+        .th-type1 {
+            background-color: var(--tier-type1);
+            color: #102A43;
+        }
+
+        /* Dark text for contrast */
+        .th-type1 .availability {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .th-silver {
+            background-color: var(--tier-silver);
+            color: #fff;
+        }
+
+        .th-gold {
+            background-color: var(--tier-gold);
+            color: #3E2723;
+        }
+
+        /* Dark text for contrast */
+        .th-gold .availability {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .th-platinum {
+            background-color: var(--tier-platinum);
+            color: #fff;
+            box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .dot {
+            font-size: 20px;
+        }
+
+        .dot-type2 {
+            color: var(--tier-type2);
+        }
+
+        .dot-type1 {
+            color: var(--tier-type1);
+        }
+
+        .dot-silver {
+            color: var(--tier-silver);
+        }
+
+        .dot-gold {
+            color: var(--tier-gold);
+        }
+
+        .dot-platinum {
+            color: var(--tier-platinum);
+        }
+
+        /* Row Grouping & Hover Effects */
+        tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        /* Print Button - Material FAB */
+        .print-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--tier-platinum);
+            color: white;
+            border: none;
+            border-radius: 28px;
+            padding: 16px 24px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(26, 35, 126, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(26, 35, 126, 0.5);
+            background-color: #283593;
+        }
+
+        .print-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Print Optimisation */
+        @media print {
+            body {
+                padding: 0;
+                background-color: white;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            /* Hide button when printing */
+            .table-container {
+                box-shadow: none;
+                border-radius: 0;
+                border: 1px solid var(--border-color);
+            }
+
+            .why-card {
+                box-shadow: none;
+                border: 1px solid var(--border-color);
+                border-top: 4px solid var(--tier-platinum);
+                page-break-inside: avoid;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="why-sponsor-section">
+            <h2>WHY SPONSOR? <span class="accent">WHY EXHIBIT?</span></h2>
+            <div class="why-sponsor-grid">
+                <div class="why-card">
+                    <h3>National & International Audience</h3>
+                    <p>BCCCE attracts delegates from across Albania and from more than 20 countries around the world.
+                        Here is your opportunity to see and be seen by a truly national audience, and to present your
+                        company to a motivated international audience.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Educated & Experienced Attendees</h3>
+                    <p>BCCCE delegates are university educated. Many have undertaken post-graduate studies and possess
+                        post-graduate degrees. Delegates are experienced professionals, working in their respective
+                        fields for many years.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Designers & Decision Makers</h3>
+                    <p>BCCCE delegates are engineers who design and specify for a wide range of civil works in Albania
+                        and Balkan countries. They also manage those who design, specify and purchase for a wide variety
+                        of projects, applications, and clients.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Targeted Promotion Opportunity</h3>
+                    <p>BCCCE is the premiere gathering of the civil engineering profession in Albania. Put your firm in
+                        front of those who make decisions. By sponsoring the 2026 BCCCE in Tirana, you align yourself
+                        with a major event, showcasing your firm to our delegates.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>CONFERENCE SPONSORSHIP <span class="accent">OPPORTUNITIES</span></h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="background-color: transparent; border: none; color: inherit;"></th>
+                        <th class="th-type2">
+                            Type 2<span>€500</span>
+                            <div class="availability">10 Available</div>
+                        </th>
+                        <th class="th-type1">
+                            Type 1<span>€1000</span>
+                            <div class="availability">10 Available</div>
+                        </th>
+                        <th class="th-silver">
+                            Silver<span>€1500</span>
+                            <div class="availability">15 Available</div>
+                        </th>
+                        <th class="th-gold">
+                            Gold<span>€3000</span>
+                            <div class="availability">5 Available</div>
+                        </th>
+                        <th class="th-platinum">
+                            Platinum<span>€5000</span>
+                            <div class="availability">3 Available</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Logo on conference website (homepage & sponsor page) with link</td>
+                        <td><span class="dot dot-type2">●</span></td>
+                        <td><span class="dot dot-type1">●</span></td>
+                        <td><span class="dot dot-silver">●</span></td>
+                        <td><span class="dot dot-gold">●</span></td>
+                        <td><span class="dot dot-platinum">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Logo on outside back cover of preliminary conference programme</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><span class="dot dot-gold">●</span></td>
+                        <td><span class="dot dot-platinum">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Logo on outside back cover of official conference programme</td>
+                        <td></td>
+                        <td><span class="dot dot-type1">●</span></td>
+                        <td><span class="dot dot-silver">●</span></td>
+                        <td><span class="dot dot-gold">●</span></td>
+                        <td><span class="dot dot-platinum">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Logo on outside back cover of conference proceedings</td>
+                        <td></td>
+                        <td><span class="dot dot-type1">●</span></td>
+                        <td><span class="dot dot-silver">●</span></td>
+                        <td><span class="dot dot-gold">●</span></td>
+                        <td><span class="dot dot-platinum">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Logo on main conference sign</td>
+                        <td></td>
+                        <td></td>
+                        <td><span class="dot dot-silver">●</span></td>
+                        <td><span class="dot dot-gold">●</span></td>
+                        <td><span class="dot dot-platinum">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Logo on conference kit given to attendees</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><span class="dot dot-platinum">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Official sponsor of technical presentation / room</td>
+                        <td></td>
+                        <td></td>
+                        <td style="font-weight: 500;">Room</td>
+                        <td style="font-weight: 500;">Session</td>
+                        <td style="font-weight: 500;">Session</td>
+                    </tr>
+                    <tr>
+                        <td>Complete conference registration (incl. social activities)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td style="font-weight: 600;">1</td>
+                        <td style="font-weight: 600;">1</td>
+                    </tr>
+                    <tr>
+                        <td>Official sponsor of networking and welcome reception</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><span class="dot dot-gold">●</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Official sponsor of the conference banquet</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><span class="dot dot-platinum">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Exhibit booth</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><span class="dot dot-platinum">●</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+            </svg>
+            Print Agreement
+        </button>
+
+    </div>
+
+</body>
+
+</html>
