@@ -1,121 +1,429 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BCCCE 2026 Sponsorship Agreement</title>
+    <meta name="theme-color" content="#003B73">
+    <title>Sponsorship Agreement – 5th BCCCE 2026</title>
+    <meta name="description"
+        content="Sponsorship opportunities for the 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2026), Tirana, Albania.">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">
+    <link rel="shortcut icon" href="https://epoka.edu.al/assets/images/favicon.ico" />
+
     <style>
-        /* Google Sans Flex font-face definition for modern browsers */
-        @font-face {
-            font-family: 'Google Sans Flex';
-            src: url('https://fonts.gstatic.com/s/googlesansflex/v8/2nZqCqyLvWgLq2-H_w082wsW2UPM92bC77E.woff2') format('woff2');
-            font-weight: 100 900;
-            font-style: normal;
+        :root {
+            --primary: #00539F;
+            --primary-dark: #003B73;
+            --primary-light: #EBF3FA;
+            --accent: #FFB81C;
+            --text-main: #1A1A1A;
+            --text-muted: #666666;
+            --bg-main: #F8FAFC;
+            --bg-white: #FFFFFF;
+            --border: #E2E8F0;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0, 83, 159, 0.08);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 83, 159, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Tier colours */
+            --tier-type2: #90A4AE;
+            --tier-type1: #29B6F6;
+            --tier-silver: #9E9E9E;
+            --tier-gold: #FFB300;
+            --tier-platinum: #1A237E;
         }
 
-        :root {
-            /* Material Design Harmonised Tier Colours */
-            --tier-type2: #90A4AE;
-            /* Muted Blue-Grey */
-            --tier-type1: #4FC3F7;
-            /* Light Blue */
-            --tier-silver: #9E9E9E;
-            /* Silver / Grey */
-            --tier-gold: #FFB300;
-            /* Premium Amber / Gold */
-            --tier-platinum: #1A237E;
-            /* Deep Indigo / Navy */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            --bg-color: #F8F9FA;
-            --surface-color: #FFFFFF;
-            --text-primary: #202124;
-            --text-secondary: #5F6368;
-            --border-color: #E0E0E0;
+        html,
+        body {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: clip;
+            background-color: var(--bg-main);
         }
 
         body {
-            font-family: 'Google Sans Flex', 'Roboto', Arial, sans-serif;
-            color: var(--text-primary);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 40px 20px;
+            font-family: 'Google Sans Flex', 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
+            overflow-x: clip;
+            overflow-wrap: break-word;
         }
 
         h1,
         h2,
-        h3 {
-            color: var(--text-primary);
+        h3,
+        h4 {
+            color: var(--primary-dark);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.85rem;
+            padding: 8px 0;
+            font-weight: 500;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .top-links a {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.2s;
+        }
+
+        .top-links a:hover {
+            color: #fff;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 8px 0;
+            background: rgba(255, 255, 255, 0.80);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item>a {
             font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .accent {
-            color: var(--tier-platinum);
+        .nav-item>a:hover {
+            color: var(--primary);
         }
 
-        /* Why Sponsor Grid - Material Cards */
-        .why-sponsor-section {
-            margin-bottom: 60px;
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
         }
 
-        .why-sponsor-section h2 {
-            font-size: 28px;
+        /* Dropdown */
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: var(--bg-white);
+            min-width: 220px;
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-md);
+            padding: 12px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .nav-item:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .dropdown-content a:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding-left: 28px;
+        }
+
+        /* Page Hero (compact) */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            padding: 64px 0 48px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://cms.epoka.edu.al/api/CMS_Archive/assets/resize-1700734462-jpg-1') center/cover;
+            opacity: 0.12;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero .breadcrumb {
+            font-size: 0.85rem;
+            opacity: 0.75;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .page-hero .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .page-hero .breadcrumb a:hover {
+            color: #fff;
+        }
+
+        .page-hero h1 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 16px;
             letter-spacing: -0.5px;
-            margin-bottom: 24px;
+        }
+
+        .page-hero h1 span {
+            color: var(--accent);
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 620px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Action button (print FAB style) */
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-white);
+            color: var(--primary-dark);
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            margin-top: 28px;
+            border: none;
+            font-family: inherit;
+        }
+
+        .action-button:hover {
+            background: var(--bg-main);
+            color: var(--primary);
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .action-button:active {
+            transform: scale(0.96);
+        }
+
+        /* Page Content */
+        .page-content {
+            padding: 60px 0 80px;
+        }
+
+        /* Section headings */
+        .section-heading {
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .section-subheading {
+            color: var(--accent);
+        }
+
+        .section-divider {
+            width: 56px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            margin-bottom: 40px;
+            margin-top: 12px;
+        }
+
+        /* Why Sponsor Grid */
+        .why-sponsor-section {
+            margin-bottom: 72px;
         }
 
         .why-sponsor-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
         }
 
         .why-card {
-            background: var(--surface-color);
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-top: 6px solid var(--tier-platinum);
+            background: var(--bg-white);
+            padding: 28px 24px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--primary);
+            transition: var(--transition);
         }
 
         .why-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .why-card .card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--primary);
+            font-size: 1.2rem;
         }
 
         .why-card h3 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 16px;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--tier-platinum);
+            color: var(--primary-dark);
+            margin-bottom: 10px;
         }
 
         .why-card p {
             margin: 0;
-            font-size: 14.5px;
-            color: var(--text-secondary);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.65;
         }
 
-        /* Table Section - Material Design */
+        /* Table Section */
+        .table-section {
+            margin-bottom: 48px;
+        }
+
         .table-container {
-            background: var(--surface-color);
-            border-radius: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
             overflow: hidden;
-            /* For rounded corners on child elements */
-            margin-top: 24px;
+            border: 1px solid var(--border);
+            margin-top: 8px;
         }
 
         table {
@@ -128,8 +436,8 @@
         th,
         td {
             padding: 16px;
-            border-bottom: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
             transition: background-color 0.2s ease;
         }
 
@@ -146,14 +454,18 @@
             text-align: left;
             font-weight: 500;
             width: 30%;
-            color: var(--text-primary);
+            color: var(--text-main);
+        }
+
+        tbody tr:hover {
+            background-color: var(--primary-light);
         }
 
         /* Table Headers */
         th {
-            font-weight: 600;
-            font-size: 18px;
-            padding: 24px 16px;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 22px 16px;
             vertical-align: top;
             color: #fff;
         }
@@ -161,57 +473,58 @@
         th span {
             display: block;
             font-weight: 400;
-            font-size: 15px;
-            margin-top: 8px;
+            font-size: 0.95rem;
+            margin-top: 6px;
             opacity: 0.9;
         }
 
         th .availability {
-            font-size: 11px;
-            font-weight: 500;
+            font-size: 0.7rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            margin-top: 12px;
+            margin-top: 10px;
             background: rgba(255, 255, 255, 0.2);
-            padding: 4px 8px;
+            padding: 3px 8px;
             border-radius: 12px;
             display: inline-block;
         }
 
-        /* Tier Colours Integration */
+        /* Tier colours */
+        .th-empty {
+            background-color: transparent !important;
+            color: var(--text-main) !important;
+            border-bottom: 1px solid var(--border);
+        }
+
         .th-type2 {
             background-color: var(--tier-type2);
-            color: #fff;
         }
 
         .th-type1 {
             background-color: var(--tier-type1);
-            color: #102A43;
+            color: #102A43 !important;
         }
 
-        /* Dark text for contrast */
         .th-type1 .availability {
             background: rgba(0, 0, 0, 0.1);
         }
 
         .th-silver {
             background-color: var(--tier-silver);
-            color: #fff;
         }
 
         .th-gold {
             background-color: var(--tier-gold);
-            color: #3E2723;
+            color: #3E2723 !important;
         }
 
-        /* Dark text for contrast */
         .th-gold .availability {
             background: rgba(0, 0, 0, 0.1);
         }
 
         .th-platinum {
             background-color: var(--tier-platinum);
-            color: #fff;
             box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
         }
 
@@ -239,72 +552,182 @@
             color: var(--tier-platinum);
         }
 
-        /* Row Grouping & Hover Effects */
-        tbody tr:hover {
-            background-color: rgba(0, 0, 0, 0.02);
+        /* Contact CTA card */
+        .cta-card {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            border-radius: var(--radius-lg);
+            padding: 48px 40px;
+            text-align: center;
+            color: white;
+            margin-top: 16px;
         }
 
-        /* Print Button - Material FAB */
-        .print-btn {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--tier-platinum);
+        .cta-card h2 {
             color: white;
-            border: none;
-            border-radius: 28px;
-            padding: 16px 24px;
-            font-family: inherit;
-            font-size: 15px;
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+        }
+
+        .cta-card p {
+            opacity: 0.85;
+            max-width: 520px;
+            margin: 0 auto 28px;
+            font-size: 1rem;
+        }
+
+        .cta-card .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: #1A1A1A;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .cta-card .cta-btn:hover {
+            border-radius: 20px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            color: #1A1A1A;
+        }
+
+        .cta-card .cta-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* cta-subtle */
+        .cta-subtle {
+            display: inline-block;
+            padding: 4px 12px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.85rem;
             font-weight: 500;
-            box-shadow: 0 4px 12px rgba(26, 35, 126, 0.4);
-            cursor: pointer;
+            color: var(--text-muted);
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        .cta-subtle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+            border-radius: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            z-index: 1000;
+            gap: 12px;
+            margin-bottom: 12px;
         }
 
-        .print-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(26, 35, 126, 0.5);
-            background-color: #283593;
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
         }
 
-        .print-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
         }
 
-        /* Print Optimisation */
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Print */
         @media print {
             body {
-                padding: 0;
-                background-color: white;
+                background: white;
             }
 
-            .container {
-                max-width: 100%;
+            .top-bar,
+            .navbar,
+            .page-hero .action-button,
+            .cta-card,
+            .footer {
+                display: none !important;
             }
 
-            .print-btn {
+            .page-hero {
+                background: white;
+                color: var(--primary-dark);
+                padding: 20px 0;
+            }
+
+            .page-hero h1 {
+                color: var(--primary-dark);
+                font-size: 1.5rem;
+            }
+
+            .page-hero p {
+                color: var(--text-muted);
+            }
+
+            .page-hero::before {
                 display: none;
             }
 
-            /* Hide button when printing */
             .table-container {
                 box-shadow: none;
-                border-radius: 0;
-                border: 1px solid var(--border-color);
+                border: 1px solid var(--border);
             }
 
             .why-card {
                 box-shadow: none;
-                border: 1px solid var(--border-color);
-                border-top: 4px solid var(--tier-platinum);
-                page-break-inside: avoid;
+                border: 1px solid var(--border);
             }
 
             * {
@@ -316,174 +739,574 @@
                 page-break-inside: avoid;
             }
         }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.7s ease-out both;
+        }
+
+        .animate-in-delay {
+            animation: fadeInUp 0.7s 0.15s ease-out both;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 74px;
+            }
+
+            body.nav-open {
+                overflow: hidden;
+            }
+
+            .navbar {
+                position: fixed;
+                bottom: calc(100dvh - 74px);
+                top: auto;
+                left: 0;
+                transform: none;
+                margin-left: 0;
+                width: 100%;
+                border-radius: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                padding: 16px 24px;
+                z-index: 2000;
+                transition: bottom 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    margin-left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    border-radius 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    padding 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    background 0.5s ease;
+            }
+
+            .navbar .container {
+                padding: 0;
+            }
+
+            .navbar.scrolled {
+                bottom: 20px;
+                top: auto;
+                transform: none;
+                width: calc(100% - 40px);
+                margin-left: 20px;
+                padding: 12px 24px;
+                border-radius: 40px;
+                background: rgba(255, 255, 255, 0.85);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: flex;
+                opacity: 0;
+                visibility: hidden;
+                transform: scale(0.95);
+                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: 100dvh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: rgba(255, 255, 255, 0.4);
+                backdrop-filter: blur(40px) saturate(200%);
+                -webkit-backdrop-filter: blur(40px) saturate(200%);
+                padding: 40px;
+                gap: 32px;
+                z-index: -1;
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
+                margin: 0;
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+
+            body.nav-open .navbar {
+                bottom: calc(100dvh - 74px) !important;
+                top: auto !important;
+                transform: none !important;
+                left: 0 !important;
+                width: 100% !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                padding: 16px 24px !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+
+            body.nav-open .navbar .logo,
+            body.nav-open .navbar .menu-toggle {
+                position: relative;
+                z-index: 4000;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .nav-item>a {
+                justify-content: center;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--primary-dark);
+                padding: 12px 0;
+                border-bottom: none;
+                width: 100%;
+                box-sizing: border-box;
+                transition: transform 0.3s ease;
+            }
+
+            .nav-item>a:active {
+                transform: scale(0.95);
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+                transform: none;
+                padding: 0 0 0 16px;
+                min-width: auto;
+                border: none;
+            }
+
+            .nav-item.active .dropdown-content {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 48px 0 36px;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .why-sponsor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            td:first-child {
+                width: 40%;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 10px 8px;
+            }
+
+            .top-bar {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 32px;
+            }
+
+            .footer {
+                padding-bottom: 100px;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .social-links {
+                justify-content: center;
+                margin-top: 16px;
+            }
+
+            .cta-card {
+                padding: 36px 24px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-
-        <div class="why-sponsor-section">
-            <h2>WHY SPONSOR? <span class="accent">WHY EXHIBIT?</span></h2>
-            <div class="why-sponsor-grid">
-                <div class="why-card">
-                    <h3>National & International Audience</h3>
-                    <p>BCCCE attracts delegates from across Albania and from more than 20 countries around the world.
-                        Here is your opportunity to see and be seen by a truly national audience, and to present your
-                        company to a motivated international audience.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Educated & Experienced Attendees</h3>
-                    <p>BCCCE delegates are university educated. Many have undertaken post-graduate studies and possess
-                        post-graduate degrees. Delegates are experienced professionals, working in their respective
-                        fields for many years.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Designers & Decision Makers</h3>
-                    <p>BCCCE delegates are engineers who design and specify for a wide range of civil works in Albania
-                        and Balkan countries. They also manage those who design, specify and purchase for a wide variety
-                        of projects, applications, and clients.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Targeted Promotion Opportunity</h3>
-                    <p>BCCCE is the premiere gathering of the civil engineering profession in Albania. Put your firm in
-                        front of those who make decisions. By sponsoring the 2026 BCCCE in Tirana, you align yourself
-                        with a major event, showcasing your firm to our delegates.</p>
-                </div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div>EPOKA University - Tirana, Albania</div>
+            <div class="top-links">
+                <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a><span style="opacity:0.3">|</span>
+                <a href="http://ce.epoka.edu.al" target="_blank"><i class="fa-solid fa-building"></i> Our
+                    Department</a><span style="opacity:0.3">|</span>
+                <a href="http://epoka.edu.al/index.php?lang=EN&pid=8" target="_blank"><i
+                        class="fa-solid fa-envelope"></i> Contact</a>
             </div>
         </div>
-
-        <h2>CONFERENCE SPONSORSHIP <span class="accent">OPPORTUNITIES</span></h2>
-
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th style="background-color: transparent; border: none; color: inherit;"></th>
-                        <th class="th-type2">
-                            Type 2<span>€500</span>
-                            <div class="availability">10 Available</div>
-                        </th>
-                        <th class="th-type1">
-                            Type 1<span>€1000</span>
-                            <div class="availability">10 Available</div>
-                        </th>
-                        <th class="th-silver">
-                            Silver<span>€1500</span>
-                            <div class="availability">15 Available</div>
-                        </th>
-                        <th class="th-gold">
-                            Gold<span>€3000</span>
-                            <div class="availability">5 Available</div>
-                        </th>
-                        <th class="th-platinum">
-                            Platinum<span>€5000</span>
-                            <div class="availability">3 Available</div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Logo on conference website (homepage & sponsor page) with link</td>
-                        <td><span class="dot dot-type2">●</span></td>
-                        <td><span class="dot dot-type1">●</span></td>
-                        <td><span class="dot dot-silver">●</span></td>
-                        <td><span class="dot dot-gold">●</span></td>
-                        <td><span class="dot dot-platinum">●</span></td>
-                    </tr>
-                    <tr>
-                        <td>Logo on outside back cover of preliminary conference programme</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><span class="dot dot-gold">●</span></td>
-                        <td><span class="dot dot-platinum">●</span></td>
-                    </tr>
-                    <tr>
-                        <td>Logo on outside back cover of official conference programme</td>
-                        <td></td>
-                        <td><span class="dot dot-type1">●</span></td>
-                        <td><span class="dot dot-silver">●</span></td>
-                        <td><span class="dot dot-gold">●</span></td>
-                        <td><span class="dot dot-platinum">●</span></td>
-                    </tr>
-                    <tr>
-                        <td>Logo on outside back cover of conference proceedings</td>
-                        <td></td>
-                        <td><span class="dot dot-type1">●</span></td>
-                        <td><span class="dot dot-silver">●</span></td>
-                        <td><span class="dot dot-gold">●</span></td>
-                        <td><span class="dot dot-platinum">●</span></td>
-                    </tr>
-                    <tr>
-                        <td>Logo on main conference sign</td>
-                        <td></td>
-                        <td></td>
-                        <td><span class="dot dot-silver">●</span></td>
-                        <td><span class="dot dot-gold">●</span></td>
-                        <td><span class="dot dot-platinum">●</span></td>
-                    </tr>
-                    <tr>
-                        <td>Logo on conference kit given to attendees</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><span class="dot dot-platinum">●</span></td>
-                    </tr>
-                    <tr>
-                        <td>Official sponsor of technical presentation / room</td>
-                        <td></td>
-                        <td></td>
-                        <td style="font-weight: 500;">Room</td>
-                        <td style="font-weight: 500;">Session</td>
-                        <td style="font-weight: 500;">Session</td>
-                    </tr>
-                    <tr>
-                        <td>Complete conference registration (incl. social activities)</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td style="font-weight: 600;">1</td>
-                        <td style="font-weight: 600;">1</td>
-                    </tr>
-                    <tr>
-                        <td>Official sponsor of networking and welcome reception</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><span class="dot dot-gold">●</span></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Official sponsor of the conference banquet</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><span class="dot dot-platinum">●</span></td>
-                    </tr>
-                    <tr>
-                        <td>Exhibit booth</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><span class="dot dot-platinum">●</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <button class="print-btn" onclick="window.print()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
-            </svg>
-            Print Agreement
-        </button>
-
     </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container" style="display: flex; flex-wrap: wrap;">
+            <a href="../index.html" class="logo">
+                <div class="logo-text">
+                    BCCCE 2026
+                    <span>5th International Conference</span>
+                </div>
+            </a>
+
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#about">About <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../index.html#message">Organizer's Message</a>
+                        <a href="../index.html#hosts">Hosts &amp; Committees</a>
+                        <a href="../index.html#venue">Conference Venue</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#authors">Authors <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../index.html#call">Call for Papers</a>
+                        <a href="../index.html#guidelines">Guidelines for Full Papers</a>
+                        <a href="../index.html#oral">Oral Presentation</a>
+                        <a href="../index.html#submission">Paper Submission</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#programme">Programme <i class="fas fa-chevron-down"
+                            style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../index.html#topics">Conference Topics</a>
+                        <a href="../index.html#keynote">Keynote Speakers</a>
+                        <a href="../index.html#tech-prog">Technical Programme</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../index.html#sponsors">Sponsors</a></li>
+                <li class="nav-item"><a href="../index.html#registration">Registration</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero animate-in">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+                <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                <span>Sponsorship Agreement</span>
+            </nav>
+            <h1>Sponsorship <span>Agreement</span></h1>
+            <p>Partner with BCCCE 2026 and connect your brand with the premier civil engineering gathering in the
+                Balkans.</p>
+            <button class="action-button" onclick="window.print()">
+                <i class="fas fa-print"></i> Print Agreement
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- Why Sponsor -->
+            <section class="why-sponsor-section animate-in-delay">
+                <h2 class="section-heading">Why Sponsor? <span class="section-subheading">Why Exhibit?</span></h2>
+                <div class="section-divider"></div>
+                <div class="why-sponsor-grid">
+                    <div class="why-card">
+                        <div class="card-icon"><i class="fas fa-globe"></i></div>
+                        <h3>National &amp; International Audience</h3>
+                        <p>BCCCE attracts delegates from across Albania and from more than 20 countries around the
+                            world.
+                            Here is your opportunity to see and be seen by a truly national audience, and to present
+                            your
+                            company to a motivated international audience.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                        <h3>Educated &amp; Experienced Attendees</h3>
+                        <p>BCCCE delegates are university educated. Many have undertaken post-graduate studies and
+                            possess
+                            post-graduate degrees. Delegates are experienced professionals, working in their respective
+                            fields for many years.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
+                        <h3>Designers &amp; Decision Makers</h3>
+                        <p>BCCCE delegates are engineers who design and specify for a wide range of civil works in
+                            Albania
+                            and Balkan countries. They also manage those who design, specify and purchase for a wide
+                            variety
+                            of projects, applications, and clients.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>Targeted Promotion Opportunity</h3>
+                        <p>BCCCE is the premiere gathering of the civil engineering profession in Albania. Put your firm
+                            in
+                            front of those who make decisions. By sponsoring the 2026 BCCCE in Tirana, you align
+                            yourself
+                            with a major event, showcasing your firm to our delegates.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sponsorship Table -->
+            <section class="table-section">
+                <h2 class="section-heading">Conference Sponsorship <span class="section-subheading">Opportunities</span>
+                </h2>
+                <div class="section-divider"></div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="th-empty"></th>
+                                <th class="th-type2">
+                                    Type 2<span>€500</span>
+                                    <div class="availability">10 Available</div>
+                                </th>
+                                <th class="th-type1">
+                                    Type 1<span>€1,000</span>
+                                    <div class="availability">10 Available</div>
+                                </th>
+                                <th class="th-silver">
+                                    Silver<span>€1,500</span>
+                                    <div class="availability">15 Available</div>
+                                </th>
+                                <th class="th-gold">
+                                    Gold<span>€3,000</span>
+                                    <div class="availability">5 Available</div>
+                                </th>
+                                <th class="th-platinum">
+                                    Platinum<span>€5,000</span>
+                                    <div class="availability">3 Available</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Logo on conference website (homepage &amp; sponsor page) with link</td>
+                                <td><span class="dot dot-type2">●</span></td>
+                                <td><span class="dot dot-type1">●</span></td>
+                                <td><span class="dot dot-silver">●</span></td>
+                                <td><span class="dot dot-gold">●</span></td>
+                                <td><span class="dot dot-platinum">●</span></td>
+                            </tr>
+                            <tr>
+                                <td>Logo on outside back cover of preliminary conference programme</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="dot dot-gold">●</span></td>
+                                <td><span class="dot dot-platinum">●</span></td>
+                            </tr>
+                            <tr>
+                                <td>Logo on outside back cover of official conference programme</td>
+                                <td></td>
+                                <td><span class="dot dot-type1">●</span></td>
+                                <td><span class="dot dot-silver">●</span></td>
+                                <td><span class="dot dot-gold">●</span></td>
+                                <td><span class="dot dot-platinum">●</span></td>
+                            </tr>
+                            <tr>
+                                <td>Logo on outside back cover of conference proceedings</td>
+                                <td></td>
+                                <td><span class="dot dot-type1">●</span></td>
+                                <td><span class="dot dot-silver">●</span></td>
+                                <td><span class="dot dot-gold">●</span></td>
+                                <td><span class="dot dot-platinum">●</span></td>
+                            </tr>
+                            <tr>
+                                <td>Logo on main conference sign</td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="dot dot-silver">●</span></td>
+                                <td><span class="dot dot-gold">●</span></td>
+                                <td><span class="dot dot-platinum">●</span></td>
+                            </tr>
+                            <tr>
+                                <td>Logo on conference kit given to attendees</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="dot dot-platinum">●</span></td>
+                            </tr>
+                            <tr>
+                                <td>Official sponsor of technical presentation / room</td>
+                                <td></td>
+                                <td></td>
+                                <td style="font-weight: 600;">Room</td>
+                                <td style="font-weight: 600;">Session</td>
+                                <td style="font-weight: 600;">Session</td>
+                            </tr>
+                            <tr>
+                                <td>Complete conference registration (incl. social activities)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td style="font-weight: 700; font-size: 1.1rem;">1</td>
+                                <td style="font-weight: 700; font-size: 1.1rem;">1</td>
+                            </tr>
+                            <tr>
+                                <td>Official sponsor of networking and welcome reception</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="dot dot-gold">●</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Official sponsor of the conference banquet</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="dot dot-platinum">●</span></td>
+                            </tr>
+                            <tr>
+                                <td>Exhibit booth</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="dot dot-platinum">●</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Contact CTA -->
+            <div class="cta-card">
+                <h2>Ready to Become a Sponsor?</h2>
+                <p>Contact the BCCCE 2026 organising committee to discuss sponsorship packages and secure your preferred
+                    tier today.</p>
+                <a href="mailto:bccce@epoka.edu.al" class="cta-btn">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="../miscellaneous/EPOKA_Logo_horizontal_alt.png" alt="EPOKA University" height="40"
+                            style="margin-bottom: 10px;">
+                    </div>
+                    <p style="font-size: 0.9rem;">
+                        Leading the regional academic standards in Civil Engineering through innovation, rigorous
+                        research, and cross-border collaboration.
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://epoka.edu.al/vacancies">Join our Team</a>
+                        <a href="https://epoka.edu.al/content/ODY5/About-Us/Privacy-Policy">Privacy Policy</a>
+                        <a href="mailto:info@epoka.edu.al">info@epoka.edu.al</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="http://www.facebook.com/UniEpoka" target="_blank" class="social-link"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/epokauniversity" target="_blank" class="social-link"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="http://www.linkedin.com/company/epoka-university" target="_blank" class="social-link"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="http://www.youtube.com/UniEpoka" target="_blank" class="social-link"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2013–<span id="currentYear"></span> EPOKA University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Scroll-shrink navbar
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+            const icon = menuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Mobile sub-menu toggles
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', e => {
+                if (window.innerWidth <= 768 && item.querySelector('.dropdown-content')) {
+                    navItems.forEach(s => {
+                        if (s !== item) s.classList.remove('active');
+                    });
+                    item.classList.toggle('active');
+                    e.stopPropagation();
+                }
+            });
+        });
+    </script>
 
 </body>
 
