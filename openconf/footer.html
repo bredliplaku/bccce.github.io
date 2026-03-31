@@ -39,7 +39,9 @@
             </div>
         </div>
         <div class="bccce-footer-bottom">
-            <p>&copy; 2013&ndash;<?php echo date('Y'); ?> EPOKA University. All rights reserved.</p>
+            <p>&copy; 2013&ndash;<span id="bccce-year"></span> EPOKA University. All rights reserved.</p>
         </div>
     </div>
 </footer>
+
+<script>document.getElementById('bccce-year').textContent = new Date().getFullYear();</script>
