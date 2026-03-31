@@ -194,9 +194,9 @@
                         Leading the regional academic standards in Civil Engineering through innovation, rigorous research, and cross-border collaboration.
                     </p>
                     <div class="footer-links">
-                        <a href="https://epoka.edu.al/vacancies">Join our Team</a>
-                        <a href="https://epoka.edu.al/content/ODY5/About-Us/Privacy-Policy">Privacy Policy</a>
-                        <a href="mailto:info@epoka.edu.al">info@epoka.edu.al</a>
+                        <a href="https://conf.epoka.edu.al/" target="_blank" rel="noopener noreferrer"">Other Conferences</a>
+                        <a href="https://epoka.edu.al/content/ODY5/About-Us/Privacy-Policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                        <a href="mailto:info@epoka.edu.al" target="_blank" rel="noopener noreferrer">info@epoka.edu.al</a>
                     </div>
                 </div>
                 <div class="social-links">
