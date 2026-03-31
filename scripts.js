@@ -33,7 +33,7 @@
         favicon.rel = 'shortcut icon';
         document.head.appendChild(favicon);
     }
-    favicon.href = `${BASE}/favicon.ico`;
+    favicon.href = `${BASE}/favicon.png`;
 
     function isActive(href) {
         if (!href) return false;

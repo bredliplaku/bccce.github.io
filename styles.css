@@ -595,26 +595,47 @@ p {
         z-index: 2000;
         transition: bottom 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
             width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+            height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
             margin-left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
             border-radius 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
             padding 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
             background 0.5s ease;
+        height: 74px;
+        /* Establish starting height for smooth animation */
+
     }
 
     .navbar .container {
         padding: 0;
+        height: 100%;
     }
 
     .navbar.scrolled {
-        bottom: 20px;
+        bottom: 24px;
         top: auto;
         transform: none;
-        width: calc(100% - 40px);
-        margin-left: 20px;
-        padding: 12px 24px;
-        border-radius: 40px;
+        width: 60px;
+        height: 60px;
+        margin-left: calc(100% - 84px);
+        /* Fixed to right corner */
+        padding: 0;
+        border-radius: 50%;
+        /* Perfect circle */
         background: rgba(255, 255, 255, 0.85);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar.scrolled .container {
+        justify-content: center;
+    }
+
+    .navbar.scrolled .logo {
+        display: none !important;
+        /* Hide logo when scrolled */
+    }
+
+    .logo-text {
+        display: none;
     }
 
     .menu-toggle {
@@ -628,7 +649,8 @@ p {
         transform: scale(0.95);
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+        /* Prevent vertical recentering on expand */
         align-items: center;
         width: 100vw;
         height: 100dvh;
@@ -638,7 +660,8 @@ p {
         background: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(40px) saturate(200%);
         -webkit-backdrop-filter: blur(40px) saturate(200%);
-        padding: 40px;
+        padding: 120px 40px 40px 40px;
+        /* Start items lower down instead of hard centering */
         gap: 32px;
         z-index: -1;
         border: none;
@@ -654,26 +677,53 @@ p {
         transform: scale(1);
     }
 
-    /* Reset parent transformations when menu is open */
+    /* Keep FAB circular and bottom-center when menu is open for easy reach */
     body.nav-open .navbar {
-        bottom: calc(100dvh - 74px) !important;
+        bottom: 24px !important;
         top: auto !important;
         transform: none !important;
         left: 0 !important;
-        width: 100% !important;
-        margin: 0 !important;
-        border-radius: 0 !important;
-        padding: 16px 24px !important;
+        width: 60px !important;
+        height: 60px !important;
+        margin-left: calc(50% - 30px) !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
         background: transparent !important;
         box-shadow: none !important;
         backdrop-filter: none !important;
+        /* CRITICAL: prevents breaking fixed positioning of .nav-menu */
         -webkit-backdrop-filter: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 
-    body.nav-open .navbar .logo,
+    body.nav-open .navbar .container {
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+    }
+
+    body.nav-open .navbar .logo {
+        display: none !important;
+    }
+
     body.nav-open .navbar .menu-toggle {
         position: relative;
         z-index: 4000;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: white !important;
+        /* Make the X icon white against the primary background */
+        background: var(--primary) !important;
+        /* Make it pop against the menu */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+        border-radius: 50% !important;
     }
 
     .nav-item {
@@ -709,21 +759,31 @@ p {
         left: auto;
         /* Ensure no desktop left offsets leak */
         transform: none;
-        padding: 0;
+        padding: 10px 0;
         margin: 0;
         min-width: auto;
         border: none;
+        border-radius: 30px;
         transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
     }
 
-    .nav-item.active .dropdown-content,
-    .nav-item:hover .dropdown-content {
+    /* Only expand when JavaScript toggles the .active class */
+    .nav-item.active .dropdown-content {
         max-height: 500px;
         opacity: 1;
         visibility: visible;
         margin-top: 10px;
         transform: none !important;
         /* Block desktop hover translation */
+    }
+
+    /* Actively suppress the desktop hover effect on mobile */
+    .nav-item:not(.active):hover .dropdown-content {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        margin-top: 0;
+        transform: none !important;
     }
 
     .dropdown-content a {

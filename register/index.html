@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">
-    <link rel="shortcut icon" href="../favicon.ico" />
 
     <!-- Shared site-wide styles -->
     <link rel="stylesheet" href="../styles.css">
@@ -53,6 +52,12 @@
         /* Page Content */
         .page-content {
             padding: 60px 0 80px;
+        }
+
+        .page-content p {
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
         }
 
         /* Section headings */
@@ -290,6 +295,33 @@
             color: var(--text-main);
             font-family: monospace;
             letter-spacing: 0.2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 4px 6px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.9);
         }
 
         /* Action button */
@@ -557,7 +589,7 @@
                 <div class="section-divider"></div>
 
                 <p style="color: var(--text-muted); margin-bottom: 20px;">
-                    The conference payment currency is <strong>Euro (€)</strong>. Please use the following account
+                    The conference payment currency is <strong>EUR (€)</strong>. Please use the following account
                     information:
                 </p>
 
@@ -566,34 +598,52 @@
                         <table class="payment-table">
                             <tr>
                                 <td>Beneficiary's Name</td>
-                                <td>Turgut Ozal Education Sh.a.</td>
+                                <td>
+                                    <span>Turgut Ozal Education Sh.a.</span>
+                                    <button class="copy-btn" onclick="copyTableText(this)" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Beneficiary's Address</td>
-                                <td>Rruga Pavarësia, Autostrada Tiranë-Durrës, Km. 1, Kashar, Tirana, Albania</td>
+                                <td>
+                                    <span>Rruga Pavarësia, Autostrada Tiranë-Durrës, Km. 1, Kashar, Tirana, Albania</span>
+                                    <button class="copy-btn" onclick="copyTableText(this)" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </td>
                             </tr>
                             <tr>
-                                <td>IBAN</td>
-                                <td>AL50208110080000020099635306</td>
+                                <td>Beneficiary's IBAN (EUR)</td>
+                                <td>
+                                    <span>AL50208110080000020099635306</span>
+                                    <button class="copy-btn" onclick="copyTableText(this)" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Beneficiary's Bank</td>
-                                <td>Intesa Sanpaolo Bank Albania Sh.a.</td>
+                                <td>
+                                    <span>Intesa Sanpaolo Bank Albania Sh.a.</span>
+                                    <button class="copy-btn" onclick="copyTableText(this)" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Beneficiary's Bank Address</td>
-                                <td>Rruga Ismail Qemali, Nr. 27, Tirana, 1001, Albania</td>
+                                <td>
+                                    <span>Rruga Ismail Qemali, Nr. 27, Tirana, 1001, Albania</span>
+                                    <button class="copy-btn" onclick="copyTableText(this)" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </td>
                             </tr>
                             <tr>
-                                <td>Bank's Swift Code</td>
-                                <td>USALALTR</td>
+                                <td>Beneficiary's Bank SWIFT Code</td>
+                                <td>
+                                    <span>USALALTR</span>
+                                    <button class="copy-btn" onclick="copyTableText(this)" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </td>
                             </tr>
                         </table>
                     </div>
                 </div>
 
                 <div class="note">
-                    Please note that the payment is related to: <strong><i></i>"Name Surname, conference fee for
+                    Please note that the payment is related to: <strong>"Conference fee for
                         5-BCCCE2026"</strong>
                 </div>
 
@@ -607,6 +657,25 @@
 
     <!-- Shared site-wide JS -->
     <script src="../scripts.js"></script>
+
+    <!-- Page-specific JS -->
+    <script>
+        function copyTableText(button) {
+            const textToCopy = button.previousElementSibling.textContent.trim();
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const icon = button.querySelector('i');
+                icon.className = 'fa-solid fa-check';
+                button.style.color = '#2e7d32'; // Success green
+
+                setTimeout(() => {
+                    icon.className = 'fa-regular fa-copy';
+                    button.style.color = ''; // Revert to default
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
 </body>
 
 </html>
