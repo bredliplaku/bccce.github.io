@@ -57,6 +57,7 @@ h4 {
     color: var(--primary-dark);
     font-weight: 700;
     line-height: 1.2;
+    user-select: none;
 }
 
 a {
@@ -88,6 +89,7 @@ p {
     font-size: 0.85rem;
     padding: 8px 0;
     font-weight: 500;
+    user-select: none;
 }
 
 .top-bar .container {
@@ -121,6 +123,7 @@ p {
     box-shadow: var(--shadow-sm);
     padding: 16px 0;
     transition: all 0.3s ease;
+    user-select: none;
 }
 
 .navbar.scrolled {
@@ -144,16 +147,16 @@ p {
 }
 
 .logo-text {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
 }
 
 .logo-text span {
     display: block;
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -186,6 +189,12 @@ p {
 
 .nav-item>a.active-page {
     color: var(--primary);
+}
+
+.dropdown-content a.active-page {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
 }
 
 .menu-toggle {
@@ -233,6 +242,14 @@ p {
     padding-left: 28px;
 }
 
+.dropdown-content a i {
+    width: 20px;
+    margin-right: 8px;
+    text-align: center;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
 /* ── Page Hero (subpages) ────────────────────────────────── */
 .page-hero {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
@@ -241,6 +258,7 @@ p {
     color: white;
     position: relative;
     overflow: hidden;
+    user-select: none;
 }
 
 .page-hero::before {
@@ -296,7 +314,8 @@ p {
 /* ── Sponsors Carousel ───────────────────────────────────── */
 .sponsors-carousel {
     background: var(--bg-white);
-    padding: 30px 0;
+    padding: 32px 0;
+    margin-bottom: 60px;
     overflow: hidden;
     border-bottom: 1px solid var(--border);
     display: block;
@@ -389,7 +408,8 @@ p {
 /* ── Partners Section ────────────────────────────────────── */
 .partners-section {
     background: var(--bg-white);
-    padding: 80px 0;
+    padding: 50px 0;
+    margin-top: 50px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     text-align: center;
@@ -455,6 +475,7 @@ p {
     background: var(--primary-dark);
     color: rgba(255, 255, 255, 0.7);
     padding: 60px 0 30px;
+    user-select: none;
 }
 
 .footer-grid {
@@ -679,17 +700,53 @@ p {
     .dropdown-content {
         position: static;
         box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        display: block;
+        /* Kept block but hidden via max-height to allow animation */
+        max-height: 0;
+        overflow: hidden;
+        left: auto;
+        /* Ensure no desktop left offsets leak */
         transform: none;
-        padding: 0 0 0 16px;
+        padding: 0;
+        margin: 0;
         min-width: auto;
         border: none;
+        transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
     }
 
-    .nav-item.active .dropdown-content {
-        display: block;
+    .nav-item.active .dropdown-content,
+    .nav-item:hover .dropdown-content {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 10px;
+        transform: none !important;
+        /* Block desktop hover translation */
+    }
+
+    .dropdown-content a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+        padding: 12px 0 !important;
+        /* Force stability */
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        box-sizing: border-box;
+        transform: none !important;
+        /* Stop ANY movement */
+    }
+
+    .dropdown-content a:hover {
+        padding: 12px 0 !important;
+        /* Force stability */
+        background: transparent;
+        transform: none !important;
+        /* Double-stop movement */
     }
 
     .page-hero {
@@ -760,6 +817,14 @@ p {
     .partners-grid {
         gap: 24px;
     }
+
+    .mobile-only {
+        display: block !important;
+    }
+}
+
+.mobile-only {
+    display: none;
 }
 
 /* ── Print ───────────────────────────────────────────────── */
