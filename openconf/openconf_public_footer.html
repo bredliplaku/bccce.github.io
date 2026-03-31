@@ -1,0 +1,167 @@
+<style>
+    .bccce-footer-wrapper {
+        font-family: 'Google Sans Flex', 'Plus Jakarta Sans', sans-serif;
+        background-color: var(--bccce-bg-main);
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    /* Partner Institutions */
+    .bccce-partners-section {
+        background: #FFFFFF;
+        padding: 60px 0;
+        border-top: 1px solid #E2E8F0;
+        border-bottom: 1px solid #E2E8F0;
+        text-align: center;
+    }
+
+    .bccce-section-title {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        color: #003B73;
+        font-weight: 700;
+    }
+
+    .bccce-partners-track {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .bccce-partner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #666666;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+
+    .bccce-partner:hover {
+        opacity: 1;
+        color: #00539F;
+    }
+
+    .bccce-partner img {
+        max-height: 80px;
+        max-width: 200px;
+    }
+
+    /* Footer */
+    .bccce-footer {
+        background: #003B73;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 60px 0 30px;
+    }
+
+    .bccce-footer-grid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .bccce-footer-logo img {
+        height: 40px;
+        margin-bottom: 12px;
+    }
+
+    .bccce-footer-links {
+        display: flex;
+        gap: 24px;
+        margin-top: 16px;
+    }
+
+    .bccce-footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .bccce-footer-links a:hover { color: white; }
+
+    .bccce-social-links {
+        display: flex;
+        gap: 16px;
+    }
+
+    .bccce-social-link {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .bccce-social-link:hover { background: #00539F; }
+
+    .bccce-footer-bottom {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+        .bccce-footer-grid { grid-template-columns: 1fr; text-align: center; }
+        .bccce-footer-links, .bccce-social-links { justify-content: center; }
+    }
+</style>
+
+<div class="bccce-footer-wrapper">
+    <!-- Partner Institutions -->
+    <section class="bccce-partners-section">
+        <div class="bccce-container">
+            <h2 class="bccce-section-title">Partner Institutions</h2>
+            <div class="bccce-partners-track">
+                <a href="https://www.iziis.ukim.edu.mk/en/" class="bccce-partner" title="IZIIS">
+                    <img src="https://bccce.epoka.edu.al/miscellaneous/iziis.png" alt="IZIIS">
+                    <span>Institute of Earthquake Engineering &amp; Engineering Seismology</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bccce-footer">
+        <div class="bccce-container">
+            <div class="bccce-footer-grid">
+                <div>
+                    <div class="bccce-footer-logo">
+                        <img src="https://bccce.epoka.edu.al/miscellaneous/EPOKA_Logo_horizontal_alt.png" alt="EPOKA University">
+                    </div>
+                    <p style="font-size: 0.9rem;">
+                        Leading the regional academic standards in Civil Engineering through innovation, rigorous research, and cross-border collaboration.
+                    </p>
+                    <div class="bccce-footer-links">
+                        <a href="https://epoka.edu.al/vacancies">Join our Team</a>
+                        <a href="https://epoka.edu.al/content/ODY5/About-Us/Privacy-Policy">Privacy Policy</a>
+                        <a href="mailto:info@epoka.edu.al">info@epoka.edu.al</a>
+                    </div>
+                </div>
+                <div class="bccce-social-links">
+                    <a href="http://www.facebook.com/UniEpoka" target="_blank" class="bccce-social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/epokauniversity" target="_blank" class="bccce-social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="http://www.linkedin.com/company/epoka-university" target="_blank" class="bccce-social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="http://www.youtube.com/UniEpoka" target="_blank" class="bccce-social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="bccce-footer-bottom">
+                <p>&copy; 2013–<span id="bccce-footer-year">2026</span> EPOKA University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script>document.getElementById('bccce-footer-year').textContent = new Date().getFullYear();</script>

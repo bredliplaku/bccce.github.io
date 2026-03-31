@@ -28,7 +28,7 @@
     }
 
     // ── Detect which page we are on for nav highlighting ─────
-    const isHome = currentPath.endsWith('/index.html') && !currentPath.includes('/register/') && !currentPath.includes('/sponsorship_agreement/') || currentPath.endsWith('/5th_bccce_2026/');
+    const isHome = currentPath.endsWith('/') && !currentPath.includes('/register/') && !currentPath.includes('/sponsorship_agreement/') || currentPath.endsWith('/5th_bccce_2026/');
     const isRegister = currentPath.includes('/register/');
     const isSponsorship = currentPath.includes('/sponsorship_agreement/');
 
@@ -53,7 +53,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container" style="display: flex; flex-wrap: wrap;">
-            <a href="${BASE}/index.html" class="logo">
+            <a href="${BASE}/" class="logo">
                 <div class="logo-text">
                     BCCCE 2026
                     <span>5th International Conference</span>
@@ -90,7 +90,7 @@
                         <a href="${BASE}/index.html#tech-prog">Technical Programme</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="${BASE}/index.html#sponsors"${isHome ? '' : ''}>Sponsors</a></li>
+                <li class="nav-item"><a href="${BASE}/sponsorship_agreement/"${isHome ? '' : ''}>Sponsors</a></li>
                 <li class="nav-item"><a href="${BASE}/register/"${isRegister ? ' class="active-page"' : ''}>Registration</a></li>
             </ul>
         </div>
