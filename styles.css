@@ -72,6 +72,9 @@ a:hover {
 
 p {
     margin-bottom: 1rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 /* ── General Layout ──────────────────────────────────────── */
@@ -309,6 +312,29 @@ p {
     max-width: 620px;
     margin: 0 auto 0;
     font-weight: 300;
+    text-align: center;
+    hyphens: none;
+    -webkit-hyphens: none;
+}
+
+/* ── Section Headings ────────────────────────────────────── */
+.section-heading {
+    font-size: 1.75rem;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.section-subheading {
+    color: #D4A200; /* Balanced professional gold for contrast and vibrancy */
+}
+
+.section-divider {
+    width: 56px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+    margin: 12px auto 32px;
 }
 
 /* ── Common Buttons ──────────────────────────────────────── */
@@ -877,6 +903,23 @@ p {
         visibility: hidden;
         margin-top: 0;
         transform: none !important;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+        color: var(--primary-dark);
+        margin-bottom: 1rem;
+    }
+
+    .section-subheading {
+        color: var(--primary);
+    }
+
+    .section-divider {
+        width: 60px;
+        height: 4px;
+        background: var(--primary);
+        margin-bottom: 2rem;
     }
 
     .dropdown-content a {

@@ -70,7 +70,7 @@
     if (headerEl) {
         // Paths for active checks
         const aboutPaths = [
-            `${BASE}/welcome/`, `${BASE}/topics/`, `${BASE}/partners/`,
+            `${BASE}/topics/`, `${BASE}/partners/`,
             `${BASE}/speakers/`, `${BASE}/committee/`, `${BASE}/venue/`
         ];
         const authorsPaths = [`${BASE}/call/`, `${BASE}/register/`];
@@ -107,10 +107,10 @@
             </div>
 
             <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="${BASE}/"${isActive(`${BASE}/`) ? ' class="active-page"' : ''}>Home</a></li>
                 <li class="nav-item">
                     <a href="#"${isParentActive(aboutPaths) ? ' class="active-page"' : ''}>About <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i></a>
                     <div class="dropdown-content">
-                        <a href="${BASE}/welcome/"${isActive(`${BASE}/welcome/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-message"></i> Organiser's Message</a>
                         <a href="${BASE}/topics/"${isActive(`${BASE}/topics/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-lightbulb"></i> Topics</a>
                         <a href="${BASE}/partners/"${isActive(`${BASE}/partners/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-building"></i> Hosts</a>
                         <a href="${BASE}/speakers/"${isActive(`${BASE}/speakers/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-comment-dots"></i> Keynote Speakers</a>
