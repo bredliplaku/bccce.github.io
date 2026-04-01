@@ -128,7 +128,7 @@
                     <a href="#"${isParentActive(aboutPaths) ? ' class="active-page"' : ''}>About <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i></a>
                     <div class="dropdown-content">
                         <a href="${BASE}/topics/"${isActive(`${BASE}/topics/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-lightbulb"></i> Topics</a>
-                        <a href="${BASE}/partners/"${isActive(`${BASE}/partners/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-building"></i> Hosts</a>
+                        <a href="${BASE}/partners/"${isActive(`${BASE}/partners/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-building"></i> Hosts & Partners</a>
                         <a href="${BASE}/speakers/"${isActive(`${BASE}/speakers/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-comment-dots"></i> Keynote Speakers</a>
                         <a href="${BASE}/committee/"${isActive(`${BASE}/committee/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-address-book"></i> Committee</a>
                         <a href="${BASE}/venue/"${isActive(`${BASE}/venue/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-map"></i> Conference Venue</a>
@@ -141,7 +141,7 @@
                         <a href="${BASE}/register/"${isActive(`${BASE}/register/`) ? ' class="active-page"' : ''}><i class="fa-regular fa-id-card"></i> Register</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="${sponsorsPath}"${isActive(sponsorsPath) ? ' class="active-page"' : ''}>Sponsors</a></li>
+                <li class="nav-item"><a href="${sponsorsPath}" class="nav-sponsor-btn${isActive(sponsorsPath) ? ' active-page' : ''}">Sponsors</a></li>
                 <li class="nav-item mobile-only"><a href="mailto:bccce@epoka.edu.al"> Contact</a></li>
                 <li class="nav-item mobile-only">
                     <div class="lang-switcher mobile-lang-switcher">

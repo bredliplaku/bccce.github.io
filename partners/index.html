@@ -20,57 +20,6 @@
             padding: 60px 0 80px;
             text-align: center;
         }
-
-        .construction-icon {
-            font-size: 4rem;
-            color: var(--primary-light);
-            margin-bottom: 24px;
-        }
-
-        .construction-card {
-            background: var(--bg-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            padding: 48px 40px;
-            border: 1px solid var(--border);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .construction-card h2 {
-            font-size: 1.75rem;
-            color: var(--primary-dark);
-            margin-bottom: 16px;
-        }
-
-        .construction-card p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--primary);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .back-btn:hover {
-            background: var(--primary-dark);
-            color: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
     </style>
 </head>
 
@@ -87,7 +36,7 @@
                 <span>Hosts & Partners</span>
             </nav>
             <h1>Hosts & <span>Partners</span></h1>
-            <p>This section is currently being updated.</p>
+            <p>Join our growing network of prestigious academic and industry partners.</p>
         </div>
     </header>
 
@@ -97,12 +46,38 @@
     <!-- Page Content -->
     <main class="page-content">
         <div class="container animate-in-delay">
-            <div class="construction-card">
-                <i class="fas fa-tools construction-icon"></i>
-                <h2>Under Construction</h2>
-                <p>We're working hard to bring you this content. Please check back later for updates regarding the Hosts & Partners.</p>
-                <a href="../" class="back-btn"><i class="fas fa-arrow-left"></i> Return to Home</a>
-            </div>
+            <section class="why-partner-section">
+                <h2 class="section-heading">Why Partner <span class="section-subheading">with BCCCE?</span></h2>
+                <div class="section-divider"></div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Strategic Collaboration</h3>
+                        <p>Forge meaningful relationships with leading academic institutions and engineering firms from across the Balkans and Europe, fostering long-term research and professional partnerships.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="card-icon"><i class="fas fa-microscope"></i></div>
+                        <h3>Showcase Innovation</h3>
+                        <p>Present your institution's latest research, technologies, and methodologies to a targeted audience of specialists, designers, and academic decision-makers in civil engineering.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="card-icon"><i class="fas fa-users-viewfinder"></i></div>
+                        <h3>Connect with Talent</h3>
+                        <p>Engage directly with highly motivated post-graduate students and experienced professionals looking for collaborative opportunities and future career paths in the industry.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="card-icon"><i class="fas fa-award"></i></div>
+                        <h3>Institutional Prestige</h3>
+                        <p>Align your brand with the 5th International Conference on Challenges of Civil Engineering, demonstrating your commitment to global academic standards and sustainable engineering practices.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 56px; text-align: center;">
+                    <a href="mailto:bccce@epoka.edu.al" class="action-button">
+                        <i class="fas fa-paper-plane"></i> Propose a Partnership
+                    </a>
+                </div>
+            </section>
         </div>
     </main>
 

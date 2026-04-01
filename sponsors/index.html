@@ -38,110 +38,6 @@
             -webkit-hyphens: auto;
         }
 
-        /* Section headings */
-        .section-heading {
-            font-size: 1.75rem;
-            color: var(--primary-dark);
-            margin-bottom: 8px;
-        }
-
-        .section-subheading {
-            color: var(--accent);
-        }
-
-        .section-divider {
-            width: 56px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-            margin-bottom: 40px;
-            margin-top: 12px;
-        }
-
-        /* Action button (print FAB style) */
-        .action-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--bg-white);
-            color: var(--primary-dark);
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            cursor: pointer;
-            margin-top: 28px;
-            border: none;
-            font-family: inherit;
-        }
-
-        .action-button:hover {
-            background: var(--bg-main);
-            color: var(--primary);
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .action-button:active {
-            transform: scale(0.96);
-        }
-
-        /* Why Sponsor Grid */
-        .why-sponsor-section {
-            margin-bottom: 72px;
-        }
-
-        .why-sponsor-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        .why-card {
-            background: var(--bg-white);
-            padding: 28px 24px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border);
-            border-top: 5px solid var(--primary);
-            transition: var(--transition);
-        }
-
-        .why-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .why-card .card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: var(--radius-sm);
-            background: var(--primary-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .why-card h3 {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-        }
-
-        .why-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-        }
-
         /* Table Section */
         .table-section {
             margin-bottom: 48px;
@@ -289,7 +185,7 @@
             padding: 48px 40px;
             text-align: center;
             color: white;
-            margin-top: 16px;
+            margin-top: 64px;
         }
 
         .cta-card h2 {
@@ -411,7 +307,7 @@
             <section class="why-sponsor-section animate-in-delay">
                 <h2 class="section-heading">Why Sponsor? <span class="section-subheading">Why Exhibit?</span></h2>
                 <div class="section-divider"></div>
-                <div class="why-sponsor-grid">
+                <div class="why-grid">
                     <div class="why-card">
                         <div class="card-icon"><i class="fas fa-globe"></i></div>
                         <h3>National &amp; International Audience</h3>
