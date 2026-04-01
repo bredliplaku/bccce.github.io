@@ -87,7 +87,23 @@
             <div class="top-links">
                 <a href="http://epoka.edu.al" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-house"></i> Home</a><span style="opacity:0.3">|</span>
                 <a href="http://ce.epoka.edu.al" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-building"></i> Our Department</a><span style="opacity:0.3">|</span>
-                <a href="mailto:bccce@epoka.edu.al" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i> Contact</a>
+                <a href="mailto:bccce@epoka.edu.al" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i> Contact</a><span style="opacity:0.3">|</span>
+                
+                <div class="lang-switcher" id="lang-switcher">
+                    <a href="javascript:void(0)" class="lang-btn" id="lang-btn" title="Translate Page">
+                        <i class="fa-solid fa-language"></i> Language
+                    </a>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-search-wrapper">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" class="lang-search" id="lang-search" placeholder="Search language...">
+                        </div>
+                        <div class="lang-list" id="lang-list">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+                </div>
+                <div id="google_translate_element"></div>
             </div>
         </div>
     </div>
@@ -127,6 +143,22 @@
                 </li>
                 <li class="nav-item"><a href="${sponsorsPath}"${isActive(sponsorsPath) ? ' class="active-page"' : ''}>Sponsors</a></li>
                 <li class="nav-item mobile-only"><a href="mailto:bccce@epoka.edu.al"> Contact</a></li>
+                <li class="nav-item mobile-only">
+                    <div class="lang-switcher mobile-lang-switcher">
+                        <a href="javascript:void(0)" class="lang-btn" title="Translate Page">
+                            <i class="fa-solid fa-language"></i>
+                        </a>
+                        <div class="lang-dropdown">
+                            <div class="lang-search-wrapper">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" class="lang-search" placeholder="Search language...">
+                            </div>
+                            <div class="lang-list">
+                                <!-- Populated via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>`;
@@ -451,5 +483,122 @@
     if (syncBtn) {
         syncBtn.addEventListener('click', downloadICS);
     }
+
+    // ── Language Switcher Logic ────────────────────────────
+    function initLanguageSwitcher() {
+        const rawLanguages = [
+            { code: 'en', name: 'English', flag: '🇺🇸' },
+            { code: 'sq', name: 'Albanian', flag: '🇦🇱' },
+            { code: 'tr', name: 'Turkish', flag: '🇹🇷' },
+            { code: 'it', name: 'Italian', flag: '🇮🇹' },
+            { code: 'de', name: 'German', flag: '🇩🇪' },
+            { code: 'fr', name: 'French', flag: '🇫🇷' },
+            { code: 'es', name: 'Spanish', flag: '🇪🇸' },
+            { code: 'el', name: 'Greek', flag: '🇬🇷' },
+            { code: 'sr', name: 'Serbian', flag: '🇷🇸' },
+            { code: 'mk', name: 'Macedonian', flag: '🇲🇰' },
+            { code: 'hr', name: 'Croatian', flag: '🇭🇷' },
+            { code: 'bg', name: 'Bulgarian', flag: '🇧🇬' },
+            { code: 'ro', name: 'Romanian', flag: '🇷🇴' },
+            { code: 'bs', name: 'Bosnian', flag: '🇧🇦' },
+            { code: 'me', name: 'Montenegrin', flag: '🇲🇪' },
+            { code: 'sl', name: 'Slovenian', flag: '🇸🇮' },
+            { code: 'ar', name: 'Arabic', flag: '🇸🇦' },
+            { code: 'ru', name: 'Russian', flag: '🇷🇺' },
+            { code: 'zh-CN', name: 'Chinese', flag: '🇨🇳' },
+            { code: 'ja', name: 'Japanese', flag: '🇯🇵' },
+            { code: 'ko', name: 'Korean', flag: '🇰🇷' },
+            { code: 'pt', name: 'Portuguese', flag: '🇵🇹' }
+        ];
+
+        // Sort: Albanian first, then Alphabetical
+        const albanian = rawLanguages.find(l => l.code === 'sq');
+        const others = rawLanguages.filter(l => l.code !== 'sq').sort((a, b) => a.name.localeCompare(b.name));
+        const languages = [albanian, ...others];
+
+        const switchers = document.querySelectorAll('.lang-switcher');
+        if (switchers.length === 0) return;
+
+        switchers.forEach(switcher => {
+            const langBtn = switcher.querySelector('.lang-btn');
+            const langDropdown = switcher.querySelector('.lang-dropdown');
+            const langSearch = switcher.querySelector('.lang-search');
+            const langList = switcher.querySelector('.lang-list');
+
+            if (!langBtn || !langDropdown || !langList) return;
+
+            // Function to render list
+            function renderLanguages(filter = '') {
+                langList.innerHTML = '';
+                const filtered = languages.filter(l =>
+                    l.name.toLowerCase().includes(filter.toLowerCase())
+                );
+
+                filtered.forEach(lang => {
+                    const item = document.createElement('div');
+                    item.className = 'lang-item';
+                    const currentLang = document.cookie.split('; ').find(row => row.startsWith('googtrans='))?.split('=')[1] || '/en/en';
+                    if (currentLang.endsWith('/' + lang.code) || (lang.code === 'en' && currentLang === '/en/en')) {
+                        item.classList.add('active');
+                    }
+
+                    item.innerHTML = `<span>${lang.flag} ${lang.name}</span>`;
+                    item.onclick = () => {
+                        const cookieDomain = window.location.hostname;
+                        document.cookie = `googtrans=/en/${lang.code}; path=/; domain=${cookieDomain}`;
+                        document.cookie = `googtrans=/en/${lang.code}; path=/;`; // Fallback
+                        location.reload();
+                    };
+                    langList.appendChild(item);
+                });
+            }
+
+            // Initial render
+            renderLanguages();
+
+            // Toggle dropdown
+            langBtn.onclick = (e) => {
+                e.stopPropagation();
+                // Close all other switchers first
+                switchers.forEach(s => {
+                    if (s !== switcher) s.querySelector('.lang-dropdown').classList.remove('active');
+                });
+
+                langDropdown.classList.toggle('active');
+                if (langDropdown.classList.contains('active')) {
+                    langSearch.focus();
+                }
+            };
+
+            // Search filtering
+            langSearch.oninput = (e) => {
+                renderLanguages(e.target.value);
+            };
+
+            langDropdown.onclick = (e) => e.stopPropagation();
+        });
+
+        // Close on click outside
+        document.addEventListener('click', () => {
+            switchers.forEach(s => s.querySelector('.lang-dropdown').classList.remove('active'));
+        });
+    }
+
+    // Run after potential header injection
+    setTimeout(initLanguageSwitcher, 100);
+
+    // ── Google Translate Initialization ─────────────────────
+    window.googleTranslateElementInit = function () {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+    };
+
+    const gtScript = document.createElement('script');
+    gtScript.type = 'text/javascript';
+    gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(gtScript);
 
 })();
