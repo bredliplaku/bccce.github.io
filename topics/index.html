@@ -7,8 +7,10 @@
     <meta name="theme-color" content="#003B73">
     <meta name="base-path" content="..">
     <title>Conference Topics – 5th BCCCE 2026</title>
-    <meta name="description" content="Conference Topics for the 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2026).">
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Conference Topics for the 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2026).">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">
 
     <!-- Shared site-wide styles -->
@@ -17,59 +19,89 @@
     <!-- Page-specific styles -->
     <style>
         .page-content {
-            padding: 60px 0 80px;
+            padding: 80px 0;
+        }
+
+        .intro-text {
             text-align: center;
-        }
-
-        .construction-icon {
-            font-size: 4rem;
-            color: var(--primary-light);
-            margin-bottom: 24px;
-        }
-
-        .construction-card {
-            background: var(--bg-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            padding: 48px 40px;
-            border: 1px solid var(--border);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .construction-card h2 {
-            font-size: 1.75rem;
-            color: var(--primary-dark);
-            margin-bottom: 16px;
-        }
-
-        .construction-card p {
             font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 32px;
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--primary);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            cursor: pointer;
-            text-decoration: none;
+            max-width: 800px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
         }
 
-        .back-btn:hover {
-            background: var(--primary-dark);
-            color: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 24px;
+        }
+
+        .topic-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 24px 28px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--topic-color);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .topic-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: scale(1.01);
+            border-color: var(--border);
+            border-left-color: var(--topic-color);
+            z-index: 2;
+        }
+
+        .topic-icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--topic-bg);
+            color: var(--topic-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .topic-title {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .topics-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .intro-text {
+                font-size: 1.05rem;
+                margin-bottom: 36px;
+                text-align: left;
+            }
+
+            .page-content {
+                padding: 60px 0;
+            }
+
+            .topic-card {
+                padding: 20px 24px;
+            }
         }
     </style>
 </head>
@@ -87,7 +119,11 @@
                 <span>Conference Topics</span>
             </nav>
             <h1>Conference <span>Topics</span></h1>
-            <p>This section is currently being updated.</p>
+            <p style="margin-bottom: 24px;">Explore the main tracks and submission areas for BCCCE 2026.</p>
+            <a href="https://bccce.epoka.edu.al/online-submissions/" class="hero-btn" target="_blank"
+                rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i> <span>Submit Your Paper</span>
+            </a>
         </div>
     </header>
 
@@ -97,11 +133,76 @@
     <!-- Page Content -->
     <main class="page-content">
         <div class="container animate-in-delay">
-            <div class="construction-card">
-                <i class="fas fa-tools construction-icon"></i>
-                <h2>Under Construction</h2>
-                <p>We're working hard to bring you this content. Please check back later for updates regarding the Conference Topics.</p>
-                <a href="../" class="back-btn"><i class="fas fa-arrow-left"></i> Return to Home</a>
+            <p class="intro-text">
+                You are invited to submit an abstract and/or poster proposal to one of the conference tracks listed
+                below:
+            </p>
+
+            <div class="topics-grid">
+                <!-- Topic 1 -->
+                <div class="topic-card" style="--topic-color: #A05B5B; --topic-bg: rgba(160, 91, 91, 0.08);">
+                    <div class="topic-icon">
+                        <i class="fas fa-building-shield"></i>
+                    </div>
+                    <h3 class="topic-title">Advanced Seismic Resilience and Performance-Based Design</h3>
+                </div>
+
+                <!-- Topic 2 -->
+                <div class="topic-card" style="--topic-color: #5A7D9A; --topic-bg: rgba(90, 125, 154, 0.08);">
+                    <div class="topic-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="topic-title">Innovation and Digital Technologies in Civil Engineering</h3>
+                </div>
+
+                <!-- Topic 3 -->
+                <div class="topic-card" style="--topic-color: #5D8064; --topic-bg: rgba(93, 128, 100, 0.08);">
+                    <div class="topic-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="topic-title">Lifecycle Engineering and Sustainable Infrastructure Management</h3>
+                </div>
+
+                <!-- Topic 4 -->
+                <div class="topic-card" style="--topic-color: #B57F52; --topic-bg: rgba(181, 127, 82, 0.08);">
+                    <div class="topic-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="topic-title">Architectural Heritage Preservation and Retrofitting of Historical
+                        Structures</h3>
+                </div>
+
+                <!-- Topic 5 -->
+                <div class="topic-card" style="--topic-color: #58879C; --topic-bg: rgba(88, 135, 156, 0.08);">
+                    <div class="topic-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="topic-title">Water Resources, Climate Change, and Disaster Risk Management</h3>
+                </div>
+
+                <!-- Topic 6 -->
+                <div class="topic-card" style="--topic-color: #6A7B84; --topic-bg: rgba(106, 123, 132, 0.08);">
+                    <div class="topic-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3 class="topic-title">Urban Development, Transportation Systems, and Geotechnical Engineering</h3>
+                </div>
+
+                <!-- Topic 7 -->
+                <div class="topic-card" style="--topic-color: #79668E; --topic-bg: rgba(121, 102, 142, 0.08);">
+                    <div class="topic-icon">
+                        <i class="fas fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="topic-title">Engineering Law, Policy, and Governance for Sustainability</h3>
+                </div>
+
+                <!-- Topic 8 -->
+                <div class="topic-card" style="--topic-color: #8C7B71; --topic-bg: rgba(140, 123, 113, 0.08);">
+                    <div class="topic-icon">
+                        <i class="fas fa-trowel-bricks"></i>
+                    </div>
+                    <h3 class="topic-title">Construction Materials and Environmental Impact</h3>
+                </div>
             </div>
         </div>
     </main>

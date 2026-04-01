@@ -311,6 +311,99 @@ p {
     font-weight: 300;
 }
 
+/* ── Common Buttons ──────────────────────────────────────── */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-white);
+    color: var(--primary-dark);
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.hero-btn:hover {
+    background: var(--bg-main);
+    color: var(--primary);
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hero-btn:active {
+    transform: scale(0.96);
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--primary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    text-decoration: none;
+}
+
+.action-button:hover {
+    background: var(--primary-dark);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.action-button:active {
+    transform: scale(0.96);
+}
+
+.action-button i {
+    font-size: 1.25rem;
+}
+
+.register-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #1A1A1A;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+}
+
+.register-btn:hover {
+    background: #ffc840;
+    color: #111;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+.register-btn:active {
+    transform: scale(0.96);
+}
+
 /* ── Sponsors Carousel ───────────────────────────────────── */
 .sponsors-carousel {
     background: var(--bg-white);
