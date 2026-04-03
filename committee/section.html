@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* CSS Robustness & Isolation Overrides */
+        :root {
+            --primary: #00539F;
+            --primary-dark: #003B73;
+            --primary-light: #EBF3FA;
+            --accent: #FFB81C;
+            --text-main: #1A1A1A;
+            --text-muted: #666666;
+            --bg-white: #FFFFFF;
+            --border: #E2E8F0;
+            --radius-rough: 2px;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .isolated-content,
+        .isolated-content * {
+            box-sizing: border-box !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .isolated-content {
+            font-family: 'Google Sans Flex', sans-serif !important;
+            color: var(--text-main) !important;
+            line-height: 1.5 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            display: block !important;
+            clear: both !important;
+            background: var(--bg-white) !important;
+            text-align: left !important;
+        }
+
+        .section-header {
+            background: var(--primary) !important;
+            color: white !important;
+            padding: 12px 20px !important;
+            border-radius: var(--radius-rough) !important;
+            font-size: 1.15rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 24px !important;
+            display: block !important;
+            width: 100% !important;
+            clear: both !important;
+        }
+
+        .section-header:not(:first-child) {
+            margin-top: 40px !important;
+        }
+
+        /* Committee Grid Piece */
+        .committee-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+            gap: 16px !important;
+            width: 100% !important;
+            clear: both !important;
+        }
+
+        .member-card {
+            background: var(--bg-white) !important;
+            border: 1px solid var(--border) !important;
+            border-radius: var(--radius-rough) !important;
+            padding: 16px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            transition: all 0.2s ease !important;
+            box-shadow: var(--shadow-subtle) !important;
+        }
+
+        .member-name {
+            color: var(--primary) !important;
+            font-weight: 700 !important;
+            font-size: 1rem !important;
+            margin-bottom: 2px !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+        }
+
+        .member-position {
+            font-size: 0.7rem !important;
+            background: var(--accent) !important;
+            color: #1A1A1A !important;
+            padding: 2px 6px !important;
+            border-radius: var(--radius-rough) !important;
+            text-transform: uppercase !important;
+            font-weight: 800 !important;
+            letter-spacing: 0.5px !important;
+            margin-left: 8px !important;
+        }
+
+        .member-affiliation {
+            color: var(--text-muted) !important;
+            font-size: 0.85rem !important;
+            line-height: 1.4 !important;
+        }
+
+        .member-country {
+            font-weight: 600 !important;
+            color: var(--text-main) !important;
+            font-size: 0.8rem !important;
+            margin-top: 4px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        /* Local Search Filter */
+        .local-filter-wrapper {
+            margin: -10px 0 30px 0 !important;
+            display: flex !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
+
+        .local-filter-container {
+            position: relative !important;
+            width: 100% !important;
+            max-width: 400px !important;
+        }
+
+        .local-filter-container i {
+            position: absolute !important;
+            left: 14px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            color: var(--text-muted) !important;
+            font-size: 0.9rem !important;
+            pointer-events: none !important;
+        }
+
+        .local-filter-input {
+            width: 100% !important;
+            padding: 12px 14px 12px 40px !important;
+            border: 1px solid var(--border) !important;
+            border-radius: var(--radius-rough) !important;
+            font-family: inherit !important;
+            font-size: 0.95rem !important;
+            outline: none !important;
+            transition: all 0.2s ease !important;
+            background: var(--bg-white) !important;
+        }
+
+        .local-filter-input:focus {
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 0 3px rgba(0, 83, 159, 0.08) !important;
+        }
+
+        .member-card.hidden {
+            display: none !important;
+        }
+
+        /* Compatibility Helpers */
+        .isolated-content * {
+            max-width: 100% !important;
+        }
+
+        @media (max-width: 600px) {
+            .committee-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="isolated-content" id="committee-section">
+        <div class="local-filter-wrapper">
+            <div class="local-filter-container">
+                <svg style="position:absolute; left:12px; top:50%; transform:translateY(-50%); width:16px; height:16px; fill:var(--text-muted); pointer-events:none;"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+                <input type="text" class="local-filter-input" id="committee-filter"
+                    placeholder="Search by name, university or country...">
+            </div>
+        </div>
+
+        <!-- Local Organizing Committee -->
+        <div class="section-header">Local Organizing Committee</div>
+        <div class="committee-grid">
+            <div class="member-card">
+                <div class="member-name">Assoc. Prof. Dr. Mirjam Ndini<span class="member-position">HEAD OF
+                        DEPARTMENT</span></div>
+                <div class="member-affiliation">EPOKA University</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Dr. Marsed Leti <span class="member-position">CHAIR</span></div>
+                <div class="member-affiliation">EPOKA University</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Prof. Dr. Hüseyin Bilgin</div>
+                <div class="member-affiliation">EPOKA University</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Prof. Dr. Ahmet Öztaş</div>
+                <div class="member-affiliation">EPOKA University</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Dr. Armando Demaj</div>
+                <div class="member-affiliation">EPOKA University</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Dr. Julinda Keçi</div>
+                <div class="member-affiliation">EPOKA University</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Dr. Anila Xhahysa</div>
+                <div class="member-affiliation">EPOKA University</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">MSc Bredli Plaku <span class="member-position">Secretary</span></div>
+                <div class="member-affiliation">EPOKA University</div>
+                <div class="member-country">Albania</div>
+            </div>
+        </div>
+
+        <!-- International Scientific Committee -->
+        <div class="section-header">International Scientific Committee</div>
+        <div class="committee-grid">
+            <div class="member-card">
+                <div class="member-name">Adrian Bylyku</div>
+                <div class="member-affiliation">Albanian Geological Survey</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Anna Bruna Menghini</div>
+                <div class="member-affiliation">Università degli Studi "La Sapienza" di Roma</div>
+                <div class="member-country">Italy</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Dora Foti</div>
+                <div class="member-affiliation">Polytechnic University of Bari</div>
+                <div class="member-country">Italy</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Ehsan Harirchian</div>
+                <div class="member-affiliation">Bauhaus-Universität Weimar</div>
+                <div class="member-country">Germany</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Enea Mustafaraj</div>
+                <div class="member-affiliation">American University of Middle East</div>
+                <div class="member-country">Kuwait</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Enkelejda Gjinali</div>
+                <div class="member-affiliation">Polytechnic University of Tirana</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Hajri Haska</div>
+                <div class="member-affiliation">University Metropolitan Tirana</div>
+                <div class="member-country">Albania</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Mahnoosh Biglari</div>
+                <div class="member-affiliation">Razi University</div>
+                <div class="member-country">Iran</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Marco Corradi</div>
+                <div class="member-affiliation">Huddersfield University</div>
+                <div class="member-country">United Kingdom</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Michael Milligan</div>
+                <div class="member-affiliation">CEO of ABET</div>
+                <div class="member-country">United States</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Naida Ademovic</div>
+                <div class="member-affiliation">University of Sarajevo</div>
+                <div class="member-country">Bosnia and Herzegovina</div>
+            </div>
+            <div class="member-card">
+                <div class="member-name">Yavuz Yardım</div>
+                <div class="member-affiliation">University of Edinburgh</div>
+                <div class="member-country">United Kingdom</div>
+            </div>
+        </div>
+
+        <script>
+            (function () {
+                const filterInput = document.getElementById('committee-filter');
+                const cards = document.querySelectorAll('#committee-section .member-card');
+
+                if (!filterInput || cards.length === 0) return;
+
+                filterInput.addEventListener('input', function (e) {
+                    const query = e.target.value.toLowerCase().trim();
+
+                    cards.forEach(card => {
+                        const name = card.querySelector('.member-name').textContent.toLowerCase();
+                        const aff = card.querySelector('.member-affiliation').textContent.toLowerCase();
+                        const country = card.querySelector('.member-country').textContent.toLowerCase();
+
+                        if (name.includes(query) || aff.includes(query) || country.includes(query)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+
+                    // Hide section headers if no visible cards in those grids
+                    const grids = document.querySelectorAll('#committee-section .committee-grid');
+                    grids.forEach(grid => {
+                        const header = grid.previousElementSibling;
+                        const visibleCards = grid.querySelectorAll('.member-card:not(.hidden)');
+                        if (visibleCards.length === 0) {
+                            header.style.display = 'none';
+                            grid.style.display = 'none';
+                        } else {
+                            header.style.display = 'block';
+                            grid.style.display = 'grid';
+                        }
+                    });
+                });
+            })();
+        </script>
+    </div>
+
+</body>
+
+</html>

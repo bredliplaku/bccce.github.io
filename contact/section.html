@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* CSS Robustness & Isolation Overrides */
+        :root {
+            --primary: #00539F;
+            --primary-dark: #003B73;
+            --primary-light: #EBF3FA;
+            --accent: #FFB81C;
+            --text-main: #1A1A1A;
+            --text-muted: #666666;
+            --bg-white: #FFFFFF;
+            --border: #E2E8F0;
+            --radius-rough: 2px;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.2s ease-in-out;
+        }
+
+        .isolated-content,
+        .isolated-content * {
+            box-sizing: border-box !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .isolated-content {
+            font-family: 'Google Sans Flex', sans-serif !important;
+            color: var(--text-main) !important;
+            line-height: 1.5 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            display: block !important;
+            clear: both !important;
+            padding: 20px !important;
+            background: var(--bg-white) !important;
+            text-align: left !important;
+        }
+
+        .isolated-content h1,
+        .isolated-content h2,
+        .isolated-content h3 {
+            color: var(--primary-dark) !important;
+            font-weight: 700 !important;
+            line-height: 1.1 !important;
+            margin: 0 0 16px 0 !important;
+            display: block !important;
+            width: 100% !important;
+            clear: both !important;
+        }
+
+        .isolated-content p {
+            margin: 0 0 20px 0 !important;
+            text-align: justify !important;
+            hyphens: auto !important;
+            -webkit-hyphens: auto !important;
+            font-size: 1rem !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            display: block !important;
+            width: 100% !important;
+        }
+
+        /* Contact Section Grid Piece */
+        .contact-grid-flex {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 24px !important;
+            width: 100% !important;
+            clear: both !important;
+        }
+
+        .contact-card {
+            background: var(--bg-white) !important;
+            border-radius: var(--radius-rough) !important;
+            box-shadow: var(--shadow-subtle) !important;
+            padding: 24px !important;
+            border: 1px solid var(--border) !important;
+            border-left: 4px solid var(--primary) !important;
+            flex: 1 1 350px !important;
+            min-width: 0 !important;
+            display: block !important;
+        }
+
+        .address-block {
+            margin-bottom: 24px !important;
+            color: var(--text-main) !important;
+            line-height: 1.6 !important;
+            font-weight: 600 !important;
+        }
+
+        .contact-methods {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 12px 24px !important;
+            /* Vertical and horizontal gap */
+        }
+
+        .contact-item {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            margin-bottom: 8px !important;
+            color: var(--text-muted) !important;
+            font-size: 0.95rem !important;
+            min-width: fit-content !important;
+        }
+
+        .contact-item svg {
+            width: 18px !important;
+            height: 18px !important;
+            color: var(--primary) !important;
+            fill: currentColor !important;
+            flex-shrink: 0 !important;
+            margin-right: 8px !important;
+            /* Explicit safety margin */
+        }
+
+        .contact-item a {
+            color: var(--primary) !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline !important;
+        }
+
+        /* Map Integration */
+        .map-section {
+            flex: 1 1 300px !important;
+            min-width: 0 !important;
+            border: 1px solid var(--border) !important;
+            border-radius: var(--radius-rough) !important;
+            overflow: hidden !important;
+            height: 280px !important;
+            box-shadow: var(--shadow-subtle) !important;
+        }
+
+        .map-section iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+        }
+
+        /* Compatibility Helpers */
+        .isolated-content * {
+            max-width: 100% !important;
+        }
+
+        svg {
+            vertical-align: middle !important;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="isolated-content">
+        <p>All communication concerning the 5th BCCCE 2026 Conference should be addressed to the Secretariat at the
+            following address:</p>
+
+        <div class="contact-grid-flex">
+            <!-- Details Card -->
+            <div class="contact-card">
+                <div class="address-block">
+                    BCCCE 2026 Conference Secretariat,<br>
+                    Department of Civil Engineering,<br>
+                    Faculty of Architecture and Engineering.<br>
+                    EPOKA University<br>
+                    Rruga Tiranë-Rinas, Km. 12<br>
+                    1032 Vorë, Tirana<br>
+                    Albania
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" viewbox="0 0 24 24">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        <span>Tel: +355 42 232 086</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" viewbox="0 0 24 24">
+                            <path
+                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                        </svg>
+                        <span>Fax: +355 42 222 117</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" viewbox="0 0 24 24">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        <a href="mailto:bccce@epoka.edu.al">bccce@epoka.edu.al</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" viewbox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                        </svg>
+                        <a href="https://bccce.epoka.edu.al/2026/" target="_blank">http://bccce.epoka.edu.al</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11970.00872922565!2d19.69089961977539!3d41.406616299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13502c4d8e14227d%3A0x92c16879aa946786!2sEpoka+University!5e0!3m2!1sen!2s!4v1547214047907"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

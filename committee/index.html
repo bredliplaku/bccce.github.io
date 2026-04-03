@@ -16,60 +16,67 @@
 
     <!-- Page-specific styles -->
     <style>
-        .page-content {
-            padding: 60px 0 80px;
-            text-align: center;
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            text-align: left;
+            margin-bottom: 48px;
         }
 
-        .construction-icon {
-            font-size: 4rem;
-            color: var(--primary-light);
-            margin-bottom: 24px;
-        }
-
-        .construction-card {
+        .member-card {
             background: var(--bg-white);
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius-md);
+            padding: 24px;
             box-shadow: var(--shadow-md);
-            padding: 48px 40px;
-            border: 1px solid var(--border);
-            max-width: 600px;
-            margin: 0 auto;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .construction-card h2 {
-            font-size: 1.75rem;
+        .member-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-name {
             color: var(--primary-dark);
-            margin-bottom: 16px;
-        }
-
-        .construction-card p {
+            font-weight: 700;
             font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-        }
-        
-        .back-btn {
-            display: inline-flex;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
-            background: var(--primary);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            cursor: pointer;
-            text-decoration: none;
         }
 
-        .back-btn:hover {
-            background: var(--primary-dark);
-            color: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        .member-position {
+            font-size: 0.75rem;
+            background: var(--accent);
+            color: #1A1A1A;
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .member-affiliation {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .member-country {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .committee-section-title {
+            text-align: left;
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -97,11 +104,120 @@
     <!-- Page Content -->
     <main class="page-content">
         <div class="container animate-in-delay">
-            <div class="construction-card">
-                <i class="fas fa-tools construction-icon"></i>
-                <h2>Under Construction</h2>
-                <p>We're working hard to bring you this content. Please check back later for updates regarding the Conference Committee.</p>
-                <a href="../" class="back-btn"><i class="fas fa-arrow-left"></i> Return to Home</a>
+            <!-- Local Organizing Committee -->
+            <div class="committee-section-title">
+                <h2 class="section-heading">Local Organizing <span class="section-subheading">Committee</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="committee-grid">
+                <div class="member-card">
+                    <div class="member-name">Marsed Leti <span class="member-position">CHAIR</span></div>
+                    <div class="member-affiliation">EPOKA University</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Bredli Plaku <span class="member-position">Secretary</span></div>
+                    <div class="member-affiliation">EPOKA University</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Ahmet Öztaş</div>
+                    <div class="member-affiliation">EPOKA University</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Hüseyin Bilgin</div>
+                    <div class="member-affiliation">EPOKA University</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Mirjam Ndini</div>
+                    <div class="member-affiliation">EPOKA University</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Anila Xhahysa</div>
+                    <div class="member-affiliation">EPOKA University</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Armando Demaj</div>
+                    <div class="member-affiliation">EPOKA University</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Julinda Keçi</div>
+                    <div class="member-affiliation">EPOKA University</div>
+                    <div class="member-country">Albania</div>
+                </div>
+            </div>
+
+            <!-- International Scientific Committee -->
+            <div class="committee-section-title">
+                <h2 class="section-heading">International Scientific <span class="section-subheading">Committee</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="committee-grid">
+                <div class="member-card">
+                    <div class="member-name">Adrian Bylyku</div>
+                    <div class="member-affiliation">Albanian Geological Survey</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Anna Bruna Menghini</div>
+                    <div class="member-affiliation">Università degli Studi "La Sapienza" di Roma</div>
+                    <div class="member-country">Italy</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Dora Foti</div>
+                    <div class="member-affiliation">Polytechnic University of Bari</div>
+                    <div class="member-country">Italy</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Ehsan Harirchian</div>
+                    <div class="member-affiliation">Bauhaus-Universität Weimar</div>
+                    <div class="member-country">Germany</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Enea Mustafaraj</div>
+                    <div class="member-affiliation">American University of Middle East</div>
+                    <div class="member-country">Kuwait</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Enkelejda Gjinali</div>
+                    <div class="member-affiliation">Polytechnic University of Tirana</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Hajri Haska</div>
+                    <div class="member-affiliation">University Metropolitan Tirana</div>
+                    <div class="member-country">Albania</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Mahnoosh Biglari</div>
+                    <div class="member-affiliation">Razi University</div>
+                    <div class="member-country">Iran</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Marco Corradi</div>
+                    <div class="member-affiliation">Huddersfield University</div>
+                    <div class="member-country">United Kingdom</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Michael Milligan</div>
+                    <div class="member-affiliation">CEO of ABET</div>
+                    <div class="member-country">United States</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Naida Ademovic</div>
+                    <div class="member-affiliation">University of Sarajevo</div>
+                    <div class="member-country">Bosnia and Herzegovina</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Yavuz Yardım</div>
+                    <div class="member-affiliation">University of Edinburgh</div>
+                    <div class="member-country">United Kingdom</div>
+                </div>
             </div>
         </div>
     </main>

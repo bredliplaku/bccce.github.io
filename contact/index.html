@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#003B73">
+    <meta name="base-path" content="..">
+    <title>Contact Secretariat – 5th BCCCE 2026</title>
+    <meta name="description" content="Contact the Secretariat for the 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2026).">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">
+
+    <!-- Shared site-wide styles -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Page-specific styles -->
+    <style>
+        .page-content {
+            padding: 60px 0 80px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+            text-align: left;
+        }
+
+        .contact-info-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 40px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-info-card h2 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 12px;
+        }
+
+        .address-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            margin-bottom: 32px;
+        }
+
+        .contact-details-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-details-list li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .contact-details-list i {
+            width: 24px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .contact-details-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-details-list a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            height: 450px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .map-wrapper {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Shared Header -->
+    <div id="site-header"></div>
+
+    <!-- Page Hero -->
+    <header class="page-hero animate-in">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../"><i class="fas fa-home"></i> Home</a>
+                <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                <span>Contact Secretariat</span>
+            </nav>
+            <h1>Contact <span>Secretariat</span></h1>
+            <p>All communication concerning the 5th BCCCE 2026 Conference should be addressed to the Secretariat.</p>
+        </div>
+    </header>
+
+    <!-- Sponsors Carousel -->
+    <div id="site-sponsors" data-sponsors="false"></div>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <div class="container animate-in-delay">
+            <div class="contact-container">
+                <!-- Contact Details -->
+                <div class="contact-info-card">
+                    <h2>Mailing Address</h2>
+                    <div class="address-text">
+                        <strong>BCCCE 2026 Conference Secretariat</strong><br>
+                        Department of Civil Engineering,<br>
+                        Faculty of Architecture and Engineering.<br>
+                        EPOKA University<br>
+                        Rruga Tiranë-Rinas, Km. 12<br>
+                        1032 Vorë, Tirana, Albania
+                    </div>
+
+                    <ul class="contact-details-list">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: +355 42 232 086</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-print"></i>
+                            <span>Fax: +355 42 222 117</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:bccce@epoka.edu.al">bccce@epoka.edu.al</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe"></i>
+                            <a href="http://bccce.epoka.edu.al" target="_blank">bccce.epoka.edu.al</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Map -->
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11970.00872922565!2d19.69089961977539!3d41.406616299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13502c4d8e14227d%3A0x92c16879aa946786!2sEpoka+University!5e0!3m2!1sen!2s!4v1547214047907"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shared Footer -->
+    <div id="site-footer" data-partners="true"></div>
+
+    <!-- Shared site-wide JS -->
+    <script src="../scripts.js"></script>
+</body>
+
+</html>

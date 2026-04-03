@@ -105,6 +105,30 @@
                 </div>
                 <div id="google_translate_element"></div>
             </div>
+            <div class="top-search">
+                <a href="javascript:void(0)" class="search-trigger" id="search-trigger" title="Search Site">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="site-search-input" placeholder="Search conference pages, topics, or authors...">
+                    <button class="search-close" id="search-close">&times;</button>
+                </div>
+            </div>
+            <div class="search-results" id="site-search-results">
+                <!-- Populated via JS -->
+            </div>
+            <div class="search-suggestions">
+                <p>Try searching for: <a href="javascript:void(0)" class="suggest-link">Topics</a>, <a href="javascript:void(0)" class="suggest-link">Registration</a>, <a href="javascript:void(0)" class="suggest-link">Committee</a></p>
+            </div>
         </div>
     </div>
 
@@ -584,8 +608,104 @@
         });
     }
 
+    // ── Global Search Overlay Logic ─────────────────────────
+    function initGlobalSearch() {
+        const searchTrigger = document.getElementById('search-trigger');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchInput = document.getElementById('site-search-input');
+        const searchClose = document.getElementById('search-close');
+        const searchResults = document.getElementById('site-search-results');
+        const suggestLinks = document.querySelectorAll('.suggest-link');
+
+        if (!searchTrigger || !searchOverlay || !searchInput) return;
+
+        const siteIndex = [
+            { title: 'Home', path: `${BASE}/`, tags: 'index welcome website conference' },
+            { title: 'Topics & Tracks', path: `${BASE}/topics/`, tags: 'areas themes subjects technical' },
+            { title: 'Hosts & Partners', path: `${BASE}/partners/`, tags: 'institutions epoka iziis collaboration' },
+            { title: 'Keynote Speakers', path: `${BASE}/speakers/`, tags: 'guests plenary experts' },
+            { title: 'Conference Committee', path: `${BASE}/committee/`, tags: 'organising scientific members people' },
+            { title: 'Contact Information', path: `${BASE}/contact/`, tags: 'email address location map secretariat' },
+            { title: 'Call for Papers', path: `${BASE}/call/`, tags: 'submission authors guide manuscript publishing' },
+            { title: 'Registration & Fees', path: `${BASE}/register/`, tags: 'signup payment attendance categories' },
+            { title: 'Sponsorship Packages', path: `${BASE}/sponsors/`, tags: 'tiers partnership support platinum gold' }
+        ];
+
+        function toggleSearch(show) {
+            searchOverlay.classList.toggle('active', show);
+            document.body.style.overflow = show ? 'hidden' : '';
+            if (show) {
+                setTimeout(() => searchInput.focus(), 100);
+                renderResults('');
+            }
+        }
+
+        function renderResults(query) {
+            searchResults.innerHTML = '';
+            const normalizedQuery = query.toLowerCase().trim();
+            
+            if (normalizedQuery.length === 0) {
+                const recentHeader = document.createElement('div');
+                recentHeader.className = 'search-section-header';
+                recentHeader.textContent = 'Quick Access';
+                searchResults.appendChild(recentHeader);
+            }
+
+            const filtered = siteIndex.filter(item => 
+                item.title.toLowerCase().includes(normalizedQuery) || 
+                item.tags.toLowerCase().includes(normalizedQuery)
+            );
+
+            if (filtered.length === 0) {
+                searchResults.innerHTML = `<div class="search-no-results">No pages found matching "${query}"</div>`;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'search-result-item';
+                div.innerHTML = `
+                    <div class="result-icon"><i class="fa-solid fa-file-lines"></i></div>
+                    <div class="result-info">
+                        <div class="result-title">${item.title}</div>
+                        <div class="result-path">${item.path.replace(/\/$/, '') || 'Home'}</div>
+                    </div>
+                `;
+                div.onclick = () => window.location.href = item.path;
+                searchResults.appendChild(div);
+            });
+        }
+
+        searchTrigger.onclick = () => toggleSearch(true);
+        searchClose.onclick = () => toggleSearch(false);
+        
+        // Close on Esc
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchOverlay.classList.contains('active')) toggleSearch(false);
+        });
+
+        // Close on background click
+        searchOverlay.onclick = (e) => {
+            if (e.target === searchOverlay) toggleSearch(false);
+        };
+
+        searchInput.oninput = (e) => renderResults(e.target.value);
+
+        suggestLinks.forEach(link => {
+            link.onclick = () => {
+                const text = link.textContent;
+                searchInput.value = text;
+                renderResults(text);
+                searchInput.focus();
+            };
+        });
+    }
+
     // Run after potential header injection
-    setTimeout(initLanguageSwitcher, 100);
+    setTimeout(() => {
+        initLanguageSwitcher();
+        initGlobalSearch();
+    }, 100);
 
     // ── Google Translate Initialization ─────────────────────
     window.googleTranslateElementInit = function () {

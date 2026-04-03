@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* CSS Robustness & Isolation Overrides */
+        :root {
+            --primary: #00539F;
+            --primary-dark: #003B73;
+            --primary-light: #EBF3FA;
+            --accent: #FFB81C;
+            --text-main: #1A1A1A;
+            --text-muted: #666666;
+            --bg-white: #FFFFFF;
+            --border: #E2E8F0;
+            --radius-rough: 2px;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.2s ease-in-out;
+        }
+
+        .isolated-content,
+        .isolated-content * {
+            box-sizing: border-box !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .isolated-content {
+            font-family: 'Google Sans Flex', sans-serif !important;
+            color: var(--text-main) !important;
+            line-height: 1.5 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            display: block !important;
+            clear: both !important;
+            background: var(--bg-white) !important;
+            text-align: left !important;
+            overflow: hidden !important;
+        }
+
+        .isolated-content h1,
+        .isolated-content h2,
+        .isolated-content h3 {
+            color: var(--primary-dark) !important;
+            font-weight: 700 !important;
+            line-height: 1.1 !important;
+            margin: 0 0 16px 0 !important;
+            display: block !important;
+            width: 100% !important;
+            clear: both !important;
+        }
+
+        .isolated-content p {
+            margin: 0 0 16px 0 !important;
+            text-align: justify !important;
+            font-size: 0.95rem !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            display: block !important;
+            width: 100% !important;
+        }
+
+
+
+        /* Organiser's Message Section */
+        .message-section {
+            padding: 0 !important;
+            /* Remove padding to match hero width */
+            display: block !important;
+            width: 100% !important;
+            clear: both !important;
+        }
+
+        .message-card {
+            background: var(--bg-white) !important;
+            border-radius: var(--radius-rough) !important;
+            box-shadow: var(--shadow-subtle) !important;
+            padding: 32px !important;
+            border: 1px solid var(--border) !important;
+            width: 100% !important;
+            /* Full width as requested */
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            display: block !important;
+        }
+
+        .message-header {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            margin-bottom: 24px !important;
+            padding-bottom: 16px !important;
+            border-bottom: 2px solid var(--primary-light) !important;
+        }
+
+        .message-header svg {
+            width: 24px !important;
+            height: 24px !important;
+            color: var(--primary) !important;
+            fill: currentColor !important;
+        }
+
+        .message-header h2 {
+            font-size: 1.4rem !important;
+            margin: 0 !important;
+        }
+
+        .message-text {
+            color: var(--text-muted) !important;
+            line-height: 1.6 !important;
+        }
+
+        .message-text p {
+            margin-bottom: 1.25rem !important;
+        }
+
+        .message-text strong {
+            color: var(--text-main) !important;
+        }
+
+        .signature {
+            margin-top: 24px !important;
+            font-style: italic !important;
+            color: var(--primary-dark) !important;
+            font-weight: 600 !important;
+        }
+
+        /* Compatibility Helpers */
+        .isolated-content * {
+            max-width: 100% !important;
+        }
+
+        svg {
+            vertical-align: middle !important;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="isolated-content">
+        <!-- Organiser's Message Stack Piece -->
+        <section class="message-section">
+            <div class="message-card">
+
+                <div class="message-text">
+                    <p>Dear Colleague,</p>
+                    <p>The Department of Civil Engineering at EPOKA University is pleased to invite you to the
+                        <strong>5th International Balkans Conference on Challenges of Civil Engineering (BCCCE
+                            2026)</strong>, which will take place in Tirana, Albania, on 29&ndash;30 October 2026.</p>
+
+                    <p>The BCCCE conference series has become an established platform uniting researchers, academics,
+                        and professionals to discuss recent developments and challenges in civil engineering. The
+                        conference promotes scientific exchange, collaboration, and the dissemination of innovative
+                        research across various crucial areas of the discipline.</p>
+
+                    <p>We look forward to your participation in this excellent forum and warmly invite you to join us in
+                        Tirana, a vibrant and enjoyable city to visit.</p>
+
+                    <div class="signature">
+                        Sincerely,<br>
+                        The 5th BCCCE 2026 Organising Committee
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
