@@ -27,7 +27,7 @@
         }
 
         .isolated-content {
-            font-family: 'Google Sans Flex', sans-serif !important;
+            font-family: 'Google Sans Flex', 'Plus Jakarta Sans', sans-serif !important;
             color: var(--text-main) !important;
             line-height: 1.5 !important;
             width: 100% !important;
@@ -35,127 +35,339 @@
             margin: 0 auto !important;
             display: block !important;
             clear: both !important;
-            padding: 20px !important;
+            padding: 15px 20px !important;
             background: var(--bg-white) !important;
             text-align: left !important;
         }
 
-        .isolated-content h1,
-        .isolated-content h2,
-        .isolated-content h3 {
-            color: var(--primary-dark) !important;
+        /* Page Hero Styles (Centered Blue Bar) */
+        .page-hero-mini {
+            background: var(--primary) !important;
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: var(--radius-rough) !important;
+            font-size: 0.85rem !important;
             font-weight: 700 !important;
-            line-height: 1.1 !important;
-            margin: 0 0 16px 0 !important;
+            margin-bottom: 24px !important;
             display: block !important;
+            text-align: center !important;
+            text-transform: uppercase !important;
+            letter-spacing: 3px !important;
+            user-select: none !important;
             width: 100% !important;
-            clear: both !important;
+        }
+
+        .page-hero-mini h1 {
+            font-size: 0.85rem !important;
+            margin: 0 !important;
+            color: white !important;
+            text-align: center !important;
+            display: block !important;
         }
 
         .isolated-content p {
-            margin: 0 0 20px 0 !important;
-            text-align: justify !important;
-            hyphens: auto !important;
-            -webkit-hyphens: auto !important;
-            font-size: 1rem !important;
-            word-wrap: break-word !important;
-            overflow-wrap: break-word !important;
-            display: block !important;
-            width: 100% !important;
+            margin: 0 0 16px 0 !important;
+            text-align: left !important;
+            font-size: 0.85rem !important;
+            line-height: 1.6 !important;
+            color: var(--text-muted) !important;
         }
 
-        /* Contact Section Grid Piece */
-        .contact-grid-flex {
-            display: flex !important;
-            flex-wrap: wrap !important;
+        /* Contact Grid Layout (Forcing Single Column) */
+        .contact-grid {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
             gap: 24px !important;
             width: 100% !important;
             clear: both !important;
         }
 
-        .contact-card {
+        /* Detail List Group */
+        .details-column {
+            width: 100% !important;
+            max-width: none !important;
+        }
+
+        .contact-list-group {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 3px !important;
+            width: 100% !important;
+        }
+
+        .contact-item-card {
             background: var(--bg-white) !important;
-            border-radius: var(--radius-rough) !important;
-            box-shadow: var(--shadow-subtle) !important;
-            padding: 24px !important;
+            padding: 14px 18px 14px 22px !important;
             border: 1px solid var(--border) !important;
-            border-left: 4px solid var(--primary) !important;
-            flex: 1 1 350px !important;
-            min-width: 0 !important;
-            display: block !important;
-        }
-
-        .address-block {
-            margin-bottom: 24px !important;
-            color: var(--text-main) !important;
-            line-height: 1.6 !important;
-            font-weight: 600 !important;
-        }
-
-        .contact-methods {
-            list-style: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
             display: flex !important;
-            flex-wrap: wrap !important;
-            gap: 12px 24px !important;
-            /* Vertical and horizontal gap */
-        }
-
-        .contact-item {
-            display: inline-flex !important;
             align-items: center !important;
-            gap: 8px !important;
-            margin-bottom: 8px !important;
-            color: var(--text-muted) !important;
-            font-size: 0.95rem !important;
-            min-width: fit-content !important;
+            gap: 16px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            position: relative !important;
+            border-radius: 0 !important;
+            overflow: hidden !important;
         }
 
-        .contact-item svg {
+        .contact-item-card::before {
+            content: "" !important;
+            position: absolute !important;
+            left: 0 !important;
+            top: 12px !important;
+            bottom: 12px !important;
+            width: 4px !important;
+            background: var(--primary) !important;
+            border-radius: 0 4px 4px 0 !important;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .contact-item-card:first-child {
+            border-top-left-radius: 12px !important;
+            border-top-right-radius: 12px !important;
+        }
+
+        .contact-item-card:last-child {
+            border-bottom-left-radius: 12px !important;
+            border-bottom-right-radius: 12px !important;
+        }
+
+        .contact-item-card:hover {
+            z-index: 10 !important;
+            border-radius: 12px !important;
+            background: #FAFBFF !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .copy-btn {
+            margin-left: auto !important;
+            width: 32px !important;
+            height: 32px !important;
+            border: 1px solid var(--border) !important;
+            background: var(--bg-white) !important;
+            color: var(--text-muted) !important;
+            border-radius: 6px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            position: relative !important;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary) !important;
+            color: white !important;
+            border-color: var(--primary-dark) !important;
+        }
+
+        .copy-btn svg {
+            width: 16px !important;
+            height: 16px !important;
+            fill: currentColor !important;
+        }
+
+        .copy-btn.copied {
+            background: #4CAF50 !important;
+            color: white !important;
+            border-color: #388E3C !important;
+        }
+
+        .copy-btn.copied::after {
+            content: "Copied!" !important;
+            position: absolute !important;
+            top: -30px !important;
+            right: 0 !important;
+            background: #333 !important;
+            color: white !important;
+            padding: 4px 8px !important;
+            border-radius: 4px !important;
+            font-size: 0.7rem !important;
+            font-weight: 700 !important;
+            pointer-events: none !important;
+            white-space: nowrap !important;
+            opacity: 0 !important;
+            animation: fadeInOut 2s forwards !important;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            80% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Global Toast Banner */
+        .toast-container {
+            position: fixed !important;
+            bottom: 30px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            z-index: 9999 !important;
+            pointer-events: none !important;
+        }
+
+        .toast-banner {
+            background: #333 !important;
+            color: white !important;
+            padding: 12px 24px !important;
+            border-radius: 50px !important;
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            opacity: 0 !important;
+            transform: translateY(20px) !important;
+            transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28) !important;
+        }
+
+        .toast-banner.show {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .toast-banner svg {
             width: 18px !important;
             height: 18px !important;
-            color: var(--primary) !important;
-            fill: currentColor !important;
-            flex-shrink: 0 !important;
-            margin-right: 8px !important;
-            /* Explicit safety margin */
+            fill: #4CAF50 !important;
         }
 
-        .contact-item a {
+        .icon-wrapper {
+            width: 32px !important;
+            height: 32px !important;
+            background: var(--primary-light) !important;
+            color: var(--primary) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border-radius: 50% !important;
+            flex-shrink: 0 !important;
+        }
+
+        .icon-wrapper svg {
+            width: 16px !important;
+            height: 16px !important;
+            fill: currentColor !important;
+        }
+
+        .contact-detail {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2px !important;
+        }
+
+        .contact-label {
+            font-size: 0.65rem !important;
+            text-transform: uppercase !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.5px !important;
+            color: var(--text-muted) !important;
+            opacity: 0.7 !important;
+        }
+
+        .contact-value {
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            color: var(--text-main) !important;
+        }
+
+        .contact-value a {
             color: var(--primary) !important;
             text-decoration: none !important;
-            font-weight: 600 !important;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline !important;
         }
 
         /* Map Integration */
         .map-section {
-            flex: 1 1 300px !important;
-            min-width: 0 !important;
-            border: 1px solid var(--border) !important;
-            border-radius: var(--radius-rough) !important;
-            overflow: hidden !important;
-            height: 280px !important;
-            box-shadow: var(--shadow-subtle) !important;
+            margin-top: 10px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
+            width: 100% !important;
         }
 
-        .map-section iframe {
+        .map-address-header {
+            background: #FAFBFF !important;
+            border: 1px solid var(--border) !important;
+            border-radius: 12px !important;
+            padding: 14px 18px 14px 22px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            font-size: 0.85rem !important;
+            color: var(--text-main) !important;
+            width: 100% !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .map-address-header::before {
+            content: "" !important;
+            position: absolute !important;
+            left: 0 !important;
+            top: 12px !important;
+            bottom: 12px !important;
+            width: 4px !important;
+            background: var(--accent) !important;
+            border-radius: 0 4px 4px 0 !important;
+        }
+
+        .map-wrapper {
+            border: 1px solid var(--border) !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            height: 320px !important;
+            box-shadow: var(--shadow-subtle) !important;
+            width: 100% !important;
+        }
+
+        .map-wrapper iframe {
             width: 100% !important;
             height: 100% !important;
             border: none !important;
         }
 
-        /* Compatibility Helpers */
-        .isolated-content * {
-            max-width: 100% !important;
+        /* Footer Message styling */
+        .address-card {
+            background: #FAFBFF !important;
+            border: 1px solid var(--border) !important;
+            border-radius: 12px !important;
+            padding: 20px !important;
+            margin-bottom: 24px !important;
+            line-height: 1.6 !important;
+            font-size: 0.85rem !important;
+            color: var(--text-main) !important;
+            font-weight: 500 !important;
+            width: 100% !important;
+            max-width: none !important;
         }
 
+        /* SVG Overrides */
         svg {
             vertical-align: middle !important;
+        }
+
+        @media (max-width: 600px) {
+            .contact-item-card {
+                padding: 12px !important;
+                gap: 12px !important;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
@@ -165,63 +377,162 @@
 <body>
 
     <div class="isolated-content">
-        <p>All communication concerning the 5th BCCCE 2026 Conference should be addressed to the Secretariat at the
-            following address:</p>
+        <!-- Hero Header Piece -->
+        <header class="page-hero-mini">
+            <h1>Conference Secretariat</h1>
+        </header>
 
-        <div class="contact-grid-flex">
-            <!-- Details Card -->
-            <div class="contact-card">
-                <div class="address-block">
-                    BCCCE 2026 Conference Secretariat,<br>
-                    Department of Civil Engineering,<br>
-                    Faculty of Architecture and Engineering.<br>
-                    EPOKA University<br>
-                    Rruga Tiranë-Rinas, Km. 12<br>
-                    1032 Vorë, Tirana<br>
-                    Albania
+        <div class="contact-grid">
+            <!-- Details Column -->
+            <div class="details-column">
+                <div class="address-card">
+                    <strong>BCCCE 2026 Conference Secretariat,</strong><br>
+                    Department of Civil Engineering<br> Faculty of Architecture and Engineering<br>
+                    EPOKA University
                 </div>
 
-                <div class="contact-methods">
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" viewbox="0 0 24 24">
-                            <path
-                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                        </svg>
-                        <span>Tel: +355 42 232 086</span>
+                <div class="contact-list-group">
+                    <div class="contact-item-card">
+                        <div class="icon-wrapper"><svg viewbox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg></div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Telephone</span>
+                            <span class="contact-value">+355 42 232 086</span>
+                        </div>
+                        <button class="copy-btn" data-copy="+35542232086" title="Copy Phone">
+                            <svg viewbox="0 0 24 24">
+                                <path
+                                    d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                            </svg>
+                        </button>
                     </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" viewbox="0 0 24 24">
-                            <path
-                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
-                        </svg>
-                        <span>Fax: +355 42 222 117</span>
+                    <div class="contact-item-card">
+                        <div class="icon-wrapper"><svg viewbox="0 0 24 24">
+                                <path
+                                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                            </svg></div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Fax Number</span>
+                            <span class="contact-value">+355 42 222 117</span>
+                        </div>
+                        <button class="copy-btn" data-copy="+35542222117" title="Copy Fax">
+                            <svg viewbox="0 0 24 24">
+                                <path
+                                    d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                            </svg>
+                        </button>
                     </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" viewbox="0 0 24 24">
-                            <path
-                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                        </svg>
-                        <a href="mailto:bccce@epoka.edu.al">bccce@epoka.edu.al</a>
+                    <div class="contact-item-card">
+                        <div class="icon-wrapper"><svg viewbox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg></div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Email Support</span>
+                            <span class="contact-value"><a
+                                    href="mailto:bccce@epoka.edu.al">bccce@epoka.edu.al</a></span>
+                        </div>
+                        <button class="copy-btn" data-copy="bccce@epoka.edu.al" title="Copy Email">
+                            <svg viewbox="0 0 24 24">
+                                <path
+                                    d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                            </svg>
+                        </button>
                     </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" viewbox="0 0 24 24">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                        </svg>
-                        <a href="https://bccce.epoka.edu.al/2026/" target="_blank">http://bccce.epoka.edu.al</a>
+                    <div class="contact-item-card">
+                        <div class="icon-wrapper"><svg viewbox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                            </svg></div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Official Website</span>
+                            <span class="contact-value"><a href="https://bccce.epoka.edu.al/2026/"
+                                    target="_blank">bccce.epoka.edu.al</a></span>
+                        </div>
+                        <button class="copy-btn" data-copy="https://bccce.epoka.edu.al/2026/" title="Copy URL">
+                            <svg viewbox="0 0 24 24">
+                                <path
+                                    d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Map Section -->
+            <!-- Map Column -->
             <div class="map-section">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11970.00872922565!2d19.69089961977539!3d41.406616299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13502c4d8e14227d%3A0x92c16879aa946786!2sEpoka+University!5e0!3m2!1sen!2s!4v1547214047907"
-                    allowfullscreen></iframe>
+                <div class="map-address-header">
+                    <div class="icon-wrapper" style="background: #FFF8E1; color: #F57C00;">
+                        <svg viewbox="0 0 24 24">
+                            <path
+                                d="M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2M12,4A5,5 0 0,1 17,9C17,12.42 12,18.1 12,18.1C12,18.1 7,12.42 7,9A5,5 0 0,1 12,4M12,6A3,3 0 0,0 9,9A3,3 0 0,0 12,12A3,3 0 0,0 15,9A3,3 0 0,0 12,6Z" />
+                        </svg>
+                    </div>
+                    <div style="flex: 1;">
+                        <span class="contact-label">Address:</span><br>
+                        <span class="contact-value">Rruga Tiranë-Rinas, Km. 12, 1032 Vorë, Tirana, Albania</span>
+                    </div>
+                    <button class="copy-btn"
+                        data-copy="EPOKA University, Rruga Tiranë-Rinas, Km. 12, 1032 Vorë, Tirana, Albania"
+                        title="Copy Address">
+                        <svg viewbox="0 0 24 24">
+                            <path
+                                d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11970.00872922565!2d19.69089961977539!3d41.406616299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13502c4d8e14227d%3A0x92c16879aa946786!2sEpoka+University!5e0!3m2!1sen!2s!4v1547214047907"
+                        allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>
 
+
+    <div class="toast-container">
+        <div id="copy-toast" class="toast-banner">
+            <svg viewbox="0 0 24 24">
+                <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
+            </svg>
+            <span>Text copied to clipboard!</span>
+        </div>
+    </div>
+
+    <script>
+        const toast = document.getElementById('copy-toast');
+        let toastTimeout;
+
+        function showToast(message) {
+            if (message) toast.querySelector('span').textContent = message;
+            toast.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const text = btn.getAttribute('data-copy');
+                // Find the label in the parent container
+                const labelElement = btn.parentElement.querySelector('.contact-label');
+                const label = labelElement ? labelElement.textContent.replace(':', '') : 'Text';
+
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.classList.add('copied');
+                    showToast(`${label} copied to clipboard!`);
+
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
