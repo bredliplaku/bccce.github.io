@@ -41,14 +41,21 @@
         .section-header {
             background: var(--primary) !important;
             color: white !important;
-            padding: 12px 20px !important;
+            padding: 10px 20px !important;
             border-radius: var(--radius-rough) !important;
-            font-size: 1.15rem !important;
+            font-size: 0.85rem !important;
             font-weight: 700 !important;
-            margin-bottom: 24px !important;
+            margin-bottom: 12px !important;
             display: block !important;
             width: 100% !important;
             clear: both !important;
+            text-align: center !important;
+            text-transform: uppercase !important;
+            letter-spacing: 3px !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
         }
 
         .section-header:not(:first-child) {
@@ -58,36 +65,75 @@
         /* Committee Grid Piece */
         .committee-grid {
             display: grid !important;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
-            gap: 16px !important;
+            grid-template-columns: 1fr !important;
+            gap: 3px !important;
             width: 100% !important;
+            justify-items: stretch !important;
             clear: both !important;
+            background: transparent !important;
         }
 
         .member-card {
             background: var(--bg-white) !important;
             border: 1px solid var(--border) !important;
-            border-radius: var(--radius-rough) !important;
-            padding: 16px !important;
+            padding: 12px 14px !important;
+            display: flex !important;
+            flex-direction: row !important;
+            /* Side-by-side if photo exists */
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 14px !important;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+            border-radius: 0 !important;
+        }
+
+        .member-info-container {
+            flex: 1 !important;
             display: flex !important;
             flex-direction: column !important;
-            justify-content: center !important;
-            transition: all 0.2s ease !important;
-            box-shadow: var(--shadow-subtle) !important;
+            min-width: 0 !important;
+        }
+
+        .member-card:first-child {
+            border-top-left-radius: 8px !important;
+            border-top-right-radius: 8px !important;
+        }
+
+        .member-card:last-child {
+            border-bottom-left-radius: 8px !important;
+            border-bottom-right-radius: 8px !important;
+        }
+
+        /* Material Pop-out on Hover */
+        .member-card:hover {
+            border-radius: 8px !important;
+            z-index: 5 !important;
+            background: #FAFBFF !important;
+            cursor: default;
         }
 
         .member-name {
             color: var(--primary) !important;
             font-weight: 700 !important;
-            font-size: 1rem !important;
+            font-size: 0.95rem !important;
             margin-bottom: 2px !important;
             display: flex !important;
             justify-content: space-between !important;
             align-items: center !important;
+            padding-right: 0 !important;
+            /* Touch the right edge */
+        }
+
+        .has-link .member-details-row {
+            padding-right: 24px !important;
+            /* Increased to prevent overlap */
         }
 
         .member-position {
-            font-size: 0.7rem !important;
+            font-size: 0.6rem !important;
             background: var(--accent) !important;
             color: #1A1A1A !important;
             padding: 2px 6px !important;
@@ -95,27 +141,93 @@
             text-transform: uppercase !important;
             font-weight: 800 !important;
             letter-spacing: 0.5px !important;
-            margin-left: 8px !important;
+            margin-left: 10px !important;
+            flex-shrink: 0 !important;
+        }
+
+        /* Profile Photo Styles */
+        .member-photo-wrapper {
+            width: 44px !important;
+            height: 44px !important;
+            border-radius: 50% !important;
+            overflow: hidden !important;
+            flex-shrink: 0 !important;
+            border: 1px solid var(--border) !important;
+            background: var(--primary-light) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .member-photo {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            image-rendering: auto !important;
+            image-rendering: -webkit-optimize-contrast !important;
+        }
+
+        .member-details-row {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: baseline !important;
+            flex-wrap: wrap !important;
+            gap: 8px !important;
+            width: 100% !important;
+            margin-top: 4px !important;
         }
 
         .member-affiliation {
             color: var(--text-muted) !important;
-            font-size: 0.85rem !important;
+            font-size: 0.8rem !important;
             line-height: 1.4 !important;
+            flex: 1 1 auto !important;
+            min-width: 200px !important;
         }
 
         .member-country {
             font-weight: 600 !important;
             color: var(--text-main) !important;
-            font-size: 0.8rem !important;
-            margin-top: 4px !important;
+            font-size: 0.75rem !important;
             text-transform: uppercase !important;
             letter-spacing: 0.5px !important;
+            flex: 0 1 auto !important;
+            white-space: nowrap !important;
+        }
+
+        /* External Link Icon */
+        .member-link {
+            position: absolute !important;
+            bottom: 10px !important;
+            right: 10px !important;
+            background: var(--primary-light) !important;
+            color: var(--primary) !important;
+            width: 22px !important;
+            height: 22px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border-radius: 50% !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease !important;
+            opacity: 0.61 !important;
+        }
+
+        .member-link:hover {
+            background: var(--primary) !important;
+            color: white !important;
+            opacity: 1 !important;
+        }
+
+        .member-link svg {
+            width: 12px !important;
+            height: 12px !important;
+            fill: currentColor !important;
         }
 
         /* Local Search Filter */
         .local-filter-wrapper {
-            margin: -10px 0 30px 0 !important;
+            margin: 20px 0 20px 0 !important;
             display: flex !important;
             justify-content: center !important;
             width: 100% !important;
@@ -163,6 +275,60 @@
             max-width: 100% !important;
         }
 
+        /* Loading & Error States */
+        #committee-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            color: var(--text-muted);
+            width: 100%;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--primary-light);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 12px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #committee-error {
+            text-align: center;
+            padding: 50px;
+            color: #d93025;
+            font-weight: 700;
+            background: #fdf2f2;
+            border-radius: var(--radius-rough);
+            border: 1px solid #fecaca;
+        }
+
+        #international-section {
+            margin-top: 20px !important;
+        }
+
+        #committee-content,
+        #local-section,
+        #international-section {
+            width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+        }
+
         @media (max-width: 600px) {
             .committee-grid {
                 grid-template-columns: 1fr !important;
@@ -188,153 +354,191 @@
             </div>
         </div>
 
-        <!-- Local Organizing Committee -->
-        <div class="section-header">Local Organizing Committee</div>
-        <div class="committee-grid">
-            <div class="member-card">
-                <div class="member-name">Assoc. Prof. Dr. Mirjam Ndini<span class="member-position">HEAD OF
-                        DEPARTMENT</span></div>
-                <div class="member-affiliation">EPOKA University</div>
-                <div class="member-country">Albania</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Dr. Marsed Leti <span class="member-position">CHAIR</span></div>
-                <div class="member-affiliation">EPOKA University</div>
-                <div class="member-country">Albania</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Prof. Dr. Hüseyin Bilgin</div>
-                <div class="member-affiliation">EPOKA University</div>
-                <div class="member-country">Albania</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Prof. Dr. Ahmet Öztaş</div>
-                <div class="member-affiliation">EPOKA University</div>
-                <div class="member-country">Albania</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Dr. Armando Demaj</div>
-                <div class="member-affiliation">EPOKA University</div>
-                <div class="member-country">Albania</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Dr. Julinda Keçi</div>
-                <div class="member-affiliation">EPOKA University</div>
-                <div class="member-country">Albania</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Dr. Anila Xhahysa</div>
-                <div class="member-affiliation">EPOKA University</div>
-                <div class="member-country">Albania</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">MSc Bredli Plaku <span class="member-position">Secretary</span></div>
-                <div class="member-affiliation">EPOKA University</div>
-                <div class="member-country">Albania</div>
-            </div>
+        <!-- State Indicators -->
+        <div id="committee-loading">
+            <div class="spinner"></div>
         </div>
 
-        <!-- International Scientific Committee -->
-        <div class="section-header">International Scientific Committee</div>
-        <div class="committee-grid">
-            <div class="member-card">
-                <div class="member-name">Adrian Bylyku</div>
-                <div class="member-affiliation">Albanian Geological Survey</div>
-                <div class="member-country">Albania</div>
+        <div id="committee-error" style="display: none;">
+            Connection failed, refresh page please.
+        </div>
+
+        <div id="committee-content" style="display: none;">
+            <!-- Local Organizing Committee -->
+            <div id="local-section" style="display: none;">
+                <div class="section-header">Local Organizing Committee</div>
+                <div class="committee-grid" id="local-grid"></div>
             </div>
-            <div class="member-card">
-                <div class="member-name">Anna Bruna Menghini</div>
-                <div class="member-affiliation">Università degli Studi "La Sapienza" di Roma</div>
-                <div class="member-country">Italy</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Dora Foti</div>
-                <div class="member-affiliation">Polytechnic University of Bari</div>
-                <div class="member-country">Italy</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Ehsan Harirchian</div>
-                <div class="member-affiliation">Bauhaus-Universität Weimar</div>
-                <div class="member-country">Germany</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Enea Mustafaraj</div>
-                <div class="member-affiliation">American University of Middle East</div>
-                <div class="member-country">Kuwait</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Enkelejda Gjinali</div>
-                <div class="member-affiliation">Polytechnic University of Tirana</div>
-                <div class="member-country">Albania</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Hajri Haska</div>
-                <div class="member-affiliation">University Metropolitan Tirana</div>
-                <div class="member-country">Albania</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Mahnoosh Biglari</div>
-                <div class="member-affiliation">Razi University</div>
-                <div class="member-country">Iran</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Marco Corradi</div>
-                <div class="member-affiliation">Huddersfield University</div>
-                <div class="member-country">United Kingdom</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Michael Milligan</div>
-                <div class="member-affiliation">CEO of ABET</div>
-                <div class="member-country">United States</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Naida Ademovic</div>
-                <div class="member-affiliation">University of Sarajevo</div>
-                <div class="member-country">Bosnia and Herzegovina</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">Yavuz Yardım</div>
-                <div class="member-affiliation">University of Edinburgh</div>
-                <div class="member-country">United Kingdom</div>
+
+            <!-- International Scientific Committee -->
+            <div id="international-section" style="display: none;">
+                <div class="section-header">International Scientific Committee</div>
+                <div class="committee-grid" id="international-grid"></div>
             </div>
         </div>
 
         <script>
             (function () {
+                const API_URL = 'https://script.google.com/macros/s/AKfycbzLUksT8MjfuA9MXmV5oo0mQDb0JTcvKnsiFR5IkbpekBA4UYt4ApPNfD17galV5wMuPA/exec';
+
+                const loading = document.getElementById('committee-loading');
+                const error = document.getElementById('committee-error');
+                const content = document.getElementById('committee-content');
+                const localGrid = document.getElementById('local-grid');
+                const internationalGrid = document.getElementById('international-grid');
+                const localSection = document.getElementById('local-section');
+                const internationalSection = document.getElementById('international-section');
                 const filterInput = document.getElementById('committee-filter');
-                const cards = document.querySelectorAll('#committee-section .member-card');
 
-                if (!filterInput || cards.length === 0) return;
+                const CACHE_KEY = 'committee_data_cache';
 
+                async function fetchData() {
+                    // 1. Try to load from cache first
+                    const cachedData = localStorage.getItem(CACHE_KEY);
+                    if (cachedData) {
+                        try {
+                            const data = JSON.parse(cachedData);
+                            if (Array.isArray(data) && data.length > 0) {
+                                renderCommittee(data);
+                                loading.style.display = 'none';
+                                content.style.display = 'block';
+                            }
+                        } catch (e) {
+                            console.warn('Failed to parse cached data', e);
+                        }
+                    }
+
+                    // 2. Fetch fresh data in the background
+                    try {
+                        const response = await fetch(API_URL);
+                        if (!response.ok) throw new Error('API request failed');
+                        const data = await response.json();
+
+                        if (!Array.isArray(data)) throw new Error('Invalid data format');
+
+                        // 3. Update UI and Cache
+                        renderCommittee(data);
+                        localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+
+                        loading.style.display = 'none';
+                        content.style.display = 'block';
+                        error.style.display = 'none';
+                    } catch (err) {
+                        console.error('Committee sync error:', err);
+                        // Only show error if we have no cached data to display
+                        if (!localStorage.getItem(CACHE_KEY)) {
+                            loading.style.display = 'none';
+                            error.style.display = 'block';
+                        }
+                    }
+                }
+
+                function renderCommittee(data) {
+                    localGrid.innerHTML = '';
+                    internationalGrid.innerHTML = '';
+
+                    const localItems = [];
+                    const internationalItems = [];
+
+                    data.forEach(item => {
+                        const committeeType = (item.Committee || '').toLowerCase();
+                        if (committeeType.includes('local')) {
+                            localItems.push(item);
+                        } else {
+                            internationalItems.push(item);
+                        }
+                    });
+
+                    // Local items stay in Sheet order
+                    // International items sorted alphabetically by Full Name
+                    internationalItems.sort((a, b) => {
+                        const nameA = (a['Full Name'] || '').toLowerCase();
+                        const nameB = (b['Full Name'] || '').toLowerCase();
+                        return nameA.localeCompare(nameB);
+                    });
+
+                    localItems.forEach(item => localGrid.appendChild(createCard(item)));
+                    internationalItems.forEach(item => internationalGrid.appendChild(createCard(item)));
+
+                    localSection.style.display = localItems.length > 0 ? 'block' : 'none';
+                    internationalSection.style.display = internationalItems.length > 0 ? 'block' : 'none';
+                }
+
+                function createCard(item) {
+                    const card = document.createElement('div');
+                    card.className = 'member-card';
+
+                    const acadTitle = (item['Title'] || item['Academic Title'] || '').trim();
+                    const titleSpacing = acadTitle ? ' ' : '';
+                    const fullName = item['Full Name'] || '';
+                    const position = item['Position'] ? `<span class="member-position">${item['Position']}</span>` : '';
+                    const institution = item['Institution'] || '';
+                    const country = item['Country'] || '';
+                    const link = (item['Link'] || '').trim();
+                    const photoUrl = (item['Profile Photo'] || item['Profile Photo with link'] || '').trim();
+
+                    let cardHTML = '';
+
+                    if (photoUrl) {
+                        cardHTML += `
+                            <div class="member-photo-wrapper">
+                                <img src="${photoUrl}" class="member-photo" alt="${fullName}" onerror="this.parentElement.style.display='none'">
+                            </div>
+                        `;
+                    }
+
+                    cardHTML += `
+                        <div class="member-info-container">
+                            <div class="member-name">${acadTitle}${titleSpacing}${fullName}${position}</div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">${institution}</div>
+                                <div class="member-country">${country}</div>
+                            </div>
+                        </div>
+                    `;
+
+                    if (link) {
+                        card.classList.add('has-link');
+                        cardHTML += `
+                            <a href="${link}" target="_blank" class="member-link" title="View Profile">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                </svg>
+                            </a>
+                        `;
+                    }
+
+                    card.innerHTML = cardHTML;
+                    return card;
+                }
+
+                // Updated Search Filter
                 filterInput.addEventListener('input', function (e) {
                     const query = e.target.value.toLowerCase().trim();
+                    const allCards = document.querySelectorAll('.member-card');
 
-                    cards.forEach(card => {
-                        const name = card.querySelector('.member-name').textContent.toLowerCase();
-                        const aff = card.querySelector('.member-affiliation').textContent.toLowerCase();
-                        const country = card.querySelector('.member-country').textContent.toLowerCase();
-
-                        if (name.includes(query) || aff.includes(query) || country.includes(query)) {
+                    allCards.forEach(card => {
+                        const searchText = card.innerText.toLowerCase();
+                        if (searchText.includes(query)) {
                             card.classList.remove('hidden');
                         } else {
                             card.classList.add('hidden');
                         }
                     });
 
-                    // Hide section headers if no visible cards in those grids
-                    const grids = document.querySelectorAll('#committee-section .committee-grid');
-                    grids.forEach(grid => {
-                        const header = grid.previousElementSibling;
+                    // Hide headers if section is empty after filtering
+                    [
+                        { section: localSection, grid: localGrid },
+                        { section: internationalSection, grid: internationalGrid }
+                    ].forEach(({ section, grid }) => {
                         const visibleCards = grid.querySelectorAll('.member-card:not(.hidden)');
-                        if (visibleCards.length === 0) {
-                            header.style.display = 'none';
-                            grid.style.display = 'none';
-                        } else {
-                            header.style.display = 'block';
-                            grid.style.display = 'grid';
+                        if (grid.children.length > 0) {
+                            section.style.display = visibleCards.length > 0 ? 'block' : 'none';
                         }
                     });
                 });
+
+                fetchData();
             })();
         </script>
     </div>
