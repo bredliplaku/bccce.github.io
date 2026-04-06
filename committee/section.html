@@ -76,6 +76,7 @@
         .member-card {
             background: var(--bg-white) !important;
             border: 1px solid var(--border) !important;
+            border-left: 4px solid var(--primary) !important;
             padding: 12px 14px !important;
             display: flex !important;
             flex-direction: row !important;
@@ -98,19 +99,21 @@
         }
 
         .member-card:first-child {
-            border-top-left-radius: 8px !important;
+            border-top-left-radius: 0 !important;
             border-top-right-radius: 8px !important;
         }
 
         .member-card:last-child {
-            border-bottom-left-radius: 8px !important;
+            border-bottom-left-radius: 0 !important;
             border-bottom-right-radius: 8px !important;
         }
 
         /* Material Pop-out on Hover */
         .member-card:hover {
             border-radius: 8px !important;
+            border-left-color: var(--primary-dark) !important;
             z-index: 10 !important;
+            transform: scale(1.01) !important;
             background: #FAFBFF !important;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
             cursor: default;
@@ -355,32 +358,210 @@
             </div>
         </div>
 
-        <!-- State Indicators -->
-        <div id="committee-loading">
-            <div class="spinner"></div>
-        </div>
-
-        <div id="committee-error" style="display: none;">
-            Connection failed, refresh page please.
-        </div>
-
-        <div id="committee-content" style="display: none;">
+        <div id="committee-content">
             <!-- Local Organizing Committee -->
-            <div id="local-section" style="display: none;">
+            <div id="local-section">
                 <div class="section-header">Local Organizing Committee</div>
-                <div class="committee-grid" id="local-grid"></div>
+                <div class="committee-grid" id="local-grid">
+                    <!-- Local Committee Members -->
+                    <div class="member-card has-link">
+                        <div class="member-photo-wrapper">
+                            <img src="https://eis.epoka.edu.al/uploads/profilepic/img_2565_1554731564.jpg"
+                                class="member-photo" alt="Mirjam Ndini"
+                                onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="member-info-container">
+                            <div class="member-name">Assoc. Prof. Dr. Mirjam Ndini<span class="member-position">Head of
+                                    Department</span></div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">Department of Civil Engineering</div>
+                                <div class="member-country">EPOKA University</div>
+                            </div>
+                        </div>
+                        <a href="https://eis.epoka.edu.al/cv/fullcv/93" target="_blank" class="member-link"
+                            title="View Profile">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="member-card has-link">
+                        <div class="member-photo-wrapper">
+                            <img src="https://lh5.googleusercontent.com/BN_uFy6wu7INKzE_-G674jLFaliy-1Z8Keg8yGhMTVEMoUq4SzSfcWyLFoRsGjzaTZKcOi3cxcWmY1j-HFkdiLFXbqudGKPbXIZurnDh1xyNqaVIoDt4gqLsyfgJUfCHsQ=w740"
+                                class="member-photo" alt="Marsed Leti"
+                                onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="member-info-container">
+                            <div class="member-name">Dr. Marsed Leti<span class="member-position">Chair</span></div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">Department of Civil Engineering</div>
+                                <div class="member-country">EPOKA University</div>
+                            </div>
+                        </div>
+                        <a href="https://www.marsedleti.com/" target="_blank" class="member-link" title="View Profile">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="member-card has-link">
+                        <div class="member-photo-wrapper">
+                            <img src="https://eis.epoka.edu.al/uploads/profilepic/img_2475_1649756979.jpg"
+                                class="member-photo" alt="Hüseyin Bilgin"
+                                onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="member-info-container">
+                            <div class="member-name">Prof. Dr. Hüseyin Bilgin</div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">Department of Civil Engineering</div>
+                                <div class="member-country">EPOKA University</div>
+                            </div>
+                        </div>
+                        <a href="http://www.huseyinbilgin.com/" target="_blank" class="member-link"
+                            title="View Profile">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="member-card has-link">
+                        <div class="member-photo-wrapper">
+                            <img src="https://eis.epoka.edu.al/uploads/profilepic/img_2287_1631778873.jpg"
+                                class="member-photo" alt="Ahmet Öztaş"
+                                onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="member-info-container">
+                            <div class="member-name">Prof. Dr. Ahmet Öztaş</div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">Department of Civil Engineering</div>
+                                <div class="member-country">EPOKA University</div>
+                            </div>
+                        </div>
+                        <a href="https://eis.epoka.edu.al/cv/fullcv/157" target="_blank" class="member-link"
+                            title="View Profile">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="member-card has-link">
+                        <div class="member-photo-wrapper">
+                            <img src="https://eis.epoka.edu.al/uploads/profilepic/img_1011_1648460685.jpg"
+                                class="member-photo" alt="Armando Demaj"
+                                onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="member-info-container">
+                            <div class="member-name">Dr. Armando Demaj</div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">Department of Civil Engineering</div>
+                                <div class="member-country">EPOKA University</div>
+                            </div>
+                        </div>
+                        <a href="https://eis.epoka.edu.al/cv/fullcv/19" target="_blank" class="member-link"
+                            title="View Profile">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="member-card has-link">
+                        <div class="member-photo-wrapper">
+                            <img src="https://eis.epoka.edu.al/uploads/profilepic/img_2507_1554730433.jpg"
+                                class="member-photo" alt="Julinda Keçi"
+                                onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="member-info-container">
+                            <div class="member-name">Dr. Julinda Keçi</div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">Department of Civil Engineering</div>
+                                <div class="member-country">EPOKA University</div>
+                            </div>
+                        </div>
+                        <a href="https://eis.epoka.edu.al/cv/fullcv/95" target="_blank" class="member-link"
+                            title="View Profile">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="member-card has-link">
+                        <div class="member-photo-wrapper">
+                            <img src="https://eis.epoka.edu.al/uploads/profilepic/staffimg-67c7fea1867ac748.jpg"
+                                class="member-photo" alt="Anila Xhahysa"
+                                onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="member-info-container">
+                            <div class="member-name">Dr. Anila Xhahysa</div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">Department of Civil Engineering</div>
+                                <div class="member-country">EPOKA University</div>
+                            </div>
+                        </div>
+                        <a href="https://eis.epoka.edu.al/cv/fullcv/719" target="_blank" class="member-link"
+                            title="View Profile">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="member-card has-link">
+                        <div class="member-photo-wrapper">
+                            <img src="https://eis.epoka.edu.al/uploads/profilepic/staffimg-68af1cb910a1712760.jpg"
+                                class="member-photo" alt="Bredli Plaku"
+                                onerror="this.parentElement.style.display='none'">
+                        </div>
+                        <div class="member-info-container">
+                            <div class="member-name">M.Sc. Bredli Plaku<span class="member-position">Secretary</span>
+                            </div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">Department of Civil Engineering</div>
+                                <div class="member-country">EPOKA University</div>
+                            </div>
+                        </div>
+                        <a href="https://bredliplaku.com/" target="_blank" class="member-link" title="View Profile">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- International Scientific Committee -->
-            <div id="international-section" style="display: none;">
+            <div id="international-section">
                 <div class="section-header">International Scientific Committee</div>
+
+                <!-- State Indicators (Loading/Error shown inside International section) -->
+                <div id="committee-loading">
+                    <div class="spinner"></div>
+                </div>
+
+                <div id="committee-error" style="display: none;">
+                    Connection failed, refresh page please.
+                </div>
+
                 <div class="committee-grid" id="international-grid"></div>
             </div>
         </div>
 
         <script>
             (function () {
-                const API_URL = 'https://script.google.com/macros/s/AKfycbzLUksT8MjfuA9MXmV5oo0mQDb0JTcvKnsiFR5IkbpekBA4UYt4ApPNfD17galV5wMuPA/exec';
+                const BRAIN_URL = 'https://script.google.com/macros/s/AKfycbwFV22Ay6_06-MMIAPS_WIOx79dxnUvosJzNrnuw8PKzqKkWvs9XJ1RdyYtPLjo0QqC/exec';
 
                 const loading = document.getElementById('committee-loading');
                 const error = document.getElementById('committee-error');
@@ -411,7 +592,7 @@
 
                     // 2. Fetch fresh data in the background
                     try {
-                        const response = await fetch(API_URL);
+                        const response = await fetch(BRAIN_URL);
                         if (!response.ok) throw new Error('API request failed');
                         const data = await response.json();
 
@@ -435,22 +616,14 @@
                 }
 
                 function renderCommittee(data) {
-                    localGrid.innerHTML = '';
                     internationalGrid.innerHTML = '';
 
-                    const localItems = [];
-                    const internationalItems = [];
-
-                    data.forEach(item => {
-                        const committeeType = (item.Committee || '').toLowerCase();
-                        if (committeeType.includes('local')) {
-                            localItems.push(item);
-                        } else {
-                            internationalItems.push(item);
-                        }
+                    // Filter out rows where "Full Name" is missing or empty
+                    const internationalItems = data.filter(item => {
+                        const name = (item['Full Name'] || '').toString().trim();
+                        return name !== '';
                     });
 
-                    // Local items stay in Sheet order
                     // International items sorted alphabetically by Full Name
                     internationalItems.sort((a, b) => {
                         const nameA = (a['Full Name'] || '').toLowerCase();
@@ -458,10 +631,8 @@
                         return nameA.localeCompare(nameB);
                     });
 
-                    localItems.forEach(item => localGrid.appendChild(createCard(item)));
                     internationalItems.forEach(item => internationalGrid.appendChild(createCard(item)));
 
-                    localSection.style.display = localItems.length > 0 ? 'block' : 'none';
                     internationalSection.style.display = internationalItems.length > 0 ? 'block' : 'none';
                 }
 
