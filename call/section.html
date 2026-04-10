@@ -81,9 +81,51 @@
             box-sizing: border-box !important;
         }
 
+        /* Action buttons */
+        .top-action {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 12px !important;
+            margin: 16px 0 24px 0 !important;
+            width: 100% !important;
+        }
+
+        .action-button {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 10px !important;
+            background: var(--primary) !important;
+            color: white !important;
+            padding: 12px 24px !important;
+            border-radius: var(--radius-rough) !important;
+            font-weight: 600 !important;
+            font-size: 1rem !important;
+            box-shadow: var(--shadow-subtle) !important;
+            transition: all 0.2s ease-in-out !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+            border: 1px solid var(--primary-dark) !important;
+        }
+
+        .action-button:hover {
+            background: var(--primary-dark) !important;
+            border-radius: 20px !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .action-button svg {
+            width: 18px !important;
+            height: 18px !important;
+            fill: currentColor !important;
+            display: inline-block !important;
+        }
+
         .call-card {
             background: var(--bg-white) !important;
             padding: 24px 22px !important;
+            border-radius: 0 !important;
             border: 1px solid var(--border) !important;
             display: flex !important;
             flex-direction: column !important;
@@ -91,23 +133,35 @@
             justify-content: center !important;
             gap: 16px !important;
             box-sizing: border-box !important;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
             position: relative !important;
-            border-radius: 12px !important;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
             text-align: center !important;
             width: 100% !important;
             max-width: 100% !important;
             min-width: 0 !important;
+            z-index: 1 !important;
+        }
+
+        .call-card:first-child {
+            border-top-left-radius: 8px !important;
+            border-top-right-radius: 8px !important;
+        }
+
+        .call-card:last-child {
+            border-bottom-left-radius: 8px !important;
+            border-bottom-right-radius: 8px !important;
         }
 
         .call-card:hover {
-            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.08) !important;
+            z-index: 10 !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
             background: #FAFBFF !important;
         }
 
         .icon-wrapper {
-            width: 56px !important;
-            height: 56px !important;
+            width: 44px !important;
+            height: 44px !important;
             background: var(--primary-light) !important;
             color: var(--primary) !important;
             display: flex !important;
@@ -119,8 +173,8 @@
         }
 
         .icon-wrapper svg {
-            width: 28px !important;
-            height: 28px !important;
+            width: 22px !important;
+            height: 22px !important;
             fill: currentColor !important;
         }
 
@@ -155,21 +209,91 @@
     <div class="isolated-content">
         <!-- Hero Header Piece -->
         <header class="page-hero-mini" id="call-hero">
-            <h1>Author's Guide</h1>
+            <h1>Paper Guidelines</h1>
         </header>
 
-        <div class="call-list-group">
-            <div class="call-card">
-                <div class="icon-wrapper">
-                    <svg viewbox="0 0 24 24">
-                        <path
-                            d="M22.7 19l-9.1-16c-.4-.7-1.1-1-1.9-1s-1.5.3-1.9 1L.7 19c-.4.7-.4 1.5 0 2.2.4.7 1.1 1 1.9 1h18.2c.8 0 1.5-.3 1.9-1 .4-.7.4-1.5 0-2.2zM12 18c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm1-4c0 .6-.4 1-1 1s-1-.4-1-1V9c0-.6.4-1 1-1s1 .4 1 1v5z" />
+        <p
+            style="font-size: 0.95rem; color: var(--text-muted); text-align: center; margin: 0 auto 24px auto; max-width: 850px; line-height: 1.6;">
+            We warmly welcome you to the official guidelines for conference submissions. We invite you to review the
+            information below, which outlines our formatting practices and academic expectations to help you smoothly
+            prepare your manuscript.
+        </p>
+
+        <div class="call-list-group" style="user-select: none !important; -webkit-user-select: none !important;">
+            <div class="call-card" style="align-items: flex-start !important; text-align: left !important;">
+                <div class="icon-wrapper" style="align-self: center !important;">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
                     </svg>
                 </div>
-                <p>Comprehensive submission guidelines and manuscript templates are currently under preparation.
-                    Detailed
-                    instructions for contributors will be made available shortly. Please monitor this section for future
-                    updates.</p>
+                <h2 style="align-self: center !important; text-align: center !important;"><span
+                        style="font-weight: 400 !important;">1.</span> Paper Template</h2>
+                <p
+                    style="margin-bottom: 4px; width: 100%; text-align: justify !important; hyphens: auto !important; -webkit-hyphens: auto !important; line-height: 1.4 !important;">
+                    Download the template for the preparation of your submission in MS Word
+                    format. Detailed guidelines for authors are included directly within the template.</p>
+                <a href="#" class="action-button" style="align-self: center !important; margin-top: 4px !important;">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                    </svg>
+                    Download Template
+                </a>
+            </div>
+
+            <div class="call-card" style="align-items: flex-start !important; text-align: left !important;">
+                <div class="icon-wrapper" style="align-self: center !important;">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                    </svg>
+                </div>
+                <h2 style="align-self: center !important; text-align: center !important;"><span
+                        style="font-weight: 400 !important;">2.</span> Guidelines</h2>
+                <ul
+                    style="padding-left: 20px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; margin: 0; width: 100%; text-align: justify !important; hyphens: auto !important; -webkit-hyphens: auto !important;">
+                    <li style="margin-bottom: 4px;">We kindly request that all submitted materials be written in
+                        English.</li>
+                    <li style="margin-bottom: 4px;">To preserve the novelty of the proceedings, the content should be
+                        original. Works previously published or presented at an international scientific meeting cannot
+                        be considered.</li>
+                    <li style="margin-bottom: 4px;">Please provide the primary submitting author's full name and e-mail
+                        address, as these details are essential for our ongoing correspondence with you.</li>
+                    <li style="margin-bottom: 4px;">We ask that you indicate the most appropriate subtopic(s) to assist
+                        our peer-review allocation.</li>
+                    <li>For organizational purposes, we would appreciate it if the file could be named according to our
+                        convention prior to upload.</li>
+                </ul>
+            </div>
+
+            <div class="call-card" style="align-items: flex-start !important; text-align: left !important;">
+                <div class="icon-wrapper" style="align-self: center !important;">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+                    </svg>
+                </div>
+                <h2 style="align-self: center !important; text-align: center !important;"><span
+                        style="font-weight: 400 !important;">3.</span> Submit to Portal</h2>
+                <ul
+                    style="padding-left: 20px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; margin: 0; width: 100%; margin-bottom: 4px; text-align: justify !important; hyphens: auto !important; -webkit-hyphens: auto !important;">
+                    <li style="margin-bottom: 4px;">When you are ready, kindly complete the required fields via the
+                        online submission portal. Providing a password will secure your submission, and a username will
+                        be assigned to allow you to easily modify your materials later.</li>
+                    <li style="margin-bottom: 4px;">Please note that we are only able to process submissions received
+                        through our dedicated online portal.</li>
+                    <li style="margin-bottom: 4px;">It is our pleasure to share that all submissions will be
+                        peer-reviewed, and accepted works will be formally published in the Book of Proceedings (with
+                        an ISBN).</li>
+                    <li>We kindly remind authors that inclusion in the book of proceedings is reserved for manuscripts
+                        that are successfully presented at the conference.</li>
+                </ul>
+                <a href="https://bccce.epoka.edu.al/online-submissions/" class="action-button"
+                    style="align-self: center !important; margin-top: 8px !important;">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                    </svg>
+                    Submit Your Paper
+                </a>
             </div>
         </div>
     </div>
