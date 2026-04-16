@@ -9,14 +9,11 @@
             --primary: #00539F;
             --primary-dark: #003B73;
             --primary-light: #EBF3FA;
-            --accent: #FFB81C;
             --text-main: #1A1A1A;
             --text-muted: #666666;
             --bg-white: #FFFFFF;
             --border: #E2E8F0;
             --radius-rough: 2px;
-            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
-            --transition: all 0.2s ease-in-out;
         }
 
         .isolated-content,
@@ -27,138 +24,284 @@
         }
 
         .isolated-content {
-            font-family: 'Google Sans Flex', 'Plus Jakarta Sans', sans-serif !important;
+            font-family: 'Google Sans Flex', sans-serif !important;
             color: var(--text-main) !important;
-            line-height: 1.5 !important;
+            line-height: 1.6 !important;
             width: 100% !important;
             max-width: 100% !important;
             margin: 0 auto !important;
             display: block !important;
             clear: both !important;
-            padding: 15px 20px !important;
             background: var(--bg-white) !important;
             text-align: left !important;
         }
 
-        /* Page Hero Styles (Centered Blue Bar) */
-        .page-hero-mini {
+        .section-header {
             background: var(--primary) !important;
             color: white !important;
             padding: 10px 20px !important;
             border-radius: var(--radius-rough) !important;
             font-size: 0.85rem !important;
             font-weight: 700 !important;
-            margin-bottom: 24px !important;
+            margin-bottom: 20px !important;
             display: block !important;
+            width: 100% !important;
+            clear: both !important;
             text-align: center !important;
             text-transform: uppercase !important;
             letter-spacing: 3px !important;
             user-select: none !important;
-            width: 100% !important;
         }
 
-        .page-hero-mini h1 {
-            font-size: 0.85rem !important;
-            margin: 0 !important;
-            color: white !important;
-            text-align: center !important;
-            display: block !important;
+        .section-intro {
+            font-size: 0.95rem !important;
+            color: var(--text-muted) !important;
+            line-height: 1.6 !important;
+            margin-bottom: 20px !important;
+            padding: 0 !important;
+            margin-top: 20px;
+            text-align: justify !important;
+            -webkit-hyphens: auto !important;
+            -ms-hyphens: auto !important;
+            hyphens: auto !important;
         }
 
-        /* Detail List Group */
-        .speaker-list-group {
-            display: grid !important;
-            grid-template-columns: 1fr !important;
-            gap: 3px !important;
+        .speakers-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 20px !important;
             width: 100% !important;
-            padding: 0 4px !important;
+            clear: both !important;
         }
 
         .speaker-card {
             background: var(--bg-white) !important;
-            padding: 24px 18px !important;
             border: 1px solid var(--border) !important;
+            border-left: 4px solid var(--primary) !important;
+            padding: 24px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 20px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            border-radius: var(--radius-rough) !important;
+            cursor: default;
+        }
+
+        .speaker-card-top {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+            gap: 24px !important;
+            width: 100% !important;
+        }
+
+        .speaker-info-container {
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            min-width: 0 !important;
+        }
+
+        .speaker-name {
+            color: var(--primary) !important;
+            font-weight: 700 !important;
+            font-size: 1rem !important;
+            margin-bottom: 4px !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            align-items: baseline !important;
+        }
+
+        .speaker-title {
+            font-weight: 400 !important;
+            color: var(--text-main) !important;
+            margin-right: 5px !important;
+        }
+
+        .speaker-subtitle {
+            font-size: 0.75rem !important;
+            color: var(--text-main) !important;
+            font-weight: 600 !important;
+            margin-bottom: 12px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            line-height: 1.6 !important;
+        }
+
+        .speaker-sidebar {
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
-            justify-content: center !important;
             gap: 16px !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            position: relative !important;
-            border-radius: 12px !important;
-            text-align: center !important;
+            flex-shrink: 0 !important;
+            width: 120px !important;
         }
 
-        .speaker-card:hover {
-            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.08) !important;
-            background: #FAFBFF !important;
-        }
-
-        .icon-wrapper {
-            width: 56px !important;
-            height: 56px !important;
+        .speaker-photo-wrapper {
+            width: 120px !important;
+            height: 120px !important;
+            border-radius: var(--radius-rough) !important;
+            overflow: hidden !important;
+            flex-shrink: 0 !important;
             background: var(--primary-light) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border: 1px solid var(--border) !important;
+        }
+
+        .speaker-photo {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+
+        .speaker-description {
+            color: var(--text-muted) !important;
+            font-size: 0.8rem !important;
+            line-height: 1.6 !important;
+            margin-bottom: 0 !important;
+            text-align: justify !important;
+            -webkit-hyphens: auto !important;
+            -ms-hyphens: auto !important;
+            hyphens: auto !important;
+        }
+
+        .social-links {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: flex-start !important;
+            gap: 12px !important;
+        }
+
+        .social-link {
             color: var(--primary) !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            border-radius: 50% !important;
-            margin-bottom: 8px !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease, transform 0.2s ease !important;
         }
 
-        .icon-wrapper svg {
-            width: 28px !important;
-            height: 28px !important;
-            fill: currentColor !important;
-        }
-
-        .speaker-card h2 {
-            font-size: 1.1rem !important;
+        .social-link:hover {
             color: var(--primary-dark) !important;
-            font-weight: 700 !important;
-            margin-bottom: 8px !important;
+            transform: scale(1.05);
         }
 
-        .speaker-card p {
-            font-size: 0.85rem !important;
-            color: var(--text-muted) !important;
-            max-width: 400px !important;
-            line-height: 1.6 !important;
+        .social-link i {
+            font-size: 20px !important;
         }
 
-        /* SVG Overrides */
-        svg {
-            vertical-align: middle !important;
+        @media (max-width: 600px) {
+            .speaker-card {
+                padding: 20px 16px !important;
+                gap: 16px !important;
+            }
+
+            .speaker-card-top {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 16px !important;
+            }
+
+            .speaker-name {
+                justify-content: center !important;
+            }
+
+            .social-links {
+                justify-content: center !important;
+                width: 100% !important;
+            }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+    <div class="isolated-content" id="speakers-section">
+        <p class="section-intro">
+        </p>
 
-    <div class="isolated-content">
-        <!-- Hero Header Piece -->
-        <header class="page-hero-mini" id="speakers-hero">
-            <h1>Speaker Lineup Pending</h1>
-        </header>
+        <div class="speakers-grid">
 
-        <div class="speaker-list-group">
+            <!-- ========================================== -->
+            <!-- SPEAKER PROFILE BLOCK - COPY PASTE TO ADD MORE -->
+            <!-- ========================================== -->
             <div class="speaker-card">
-                <div class="icon-wrapper">
-                    <svg viewbox="0 0 24 24">
-                        <path
-                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    </svg>
+                <div class="speaker-card-top">
+                    <div class="speaker-sidebar">
+                        <div class="speaker-photo-wrapper">
+                            <!-- Replace the src below with the speaker's photo URL -->
+                            <img src="https://i1.rgstatic.net/ii/profile.image/11431281160432302-1684744956782_Q512/Radmila-Salic-Makreska.jpg"
+                                alt="Prof. Dr. Radmila Salic Makreska" class="speaker-photo">
+                        </div>
+                    </div>
+                    <div class="speaker-info-container">
+                        <div class="speaker-name">
+                            <span class="speaker-title">Prof. Dr.</span> Radmila Salic Makreska
+                        </div>
+
+                        <!-- Position and Department -->
+                        <div class="speaker-subtitle">Professor and Deputy Director for International Cooperation &
+                            Development, <br> Institute of Earthquake Engineering and Engineering Seismology,
+                            North
+                            Macedonia</div>
+
+                        <div class="social-links">
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/radmila-salic-makreska-0a751320b/" class="social-link"
+                                title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <!-- ResearchGate -->
+                            <a href="https://www.researchgate.net/profile/Radmila-Salic-Makreska" class="social-link"
+                                title="ResearchGate" target="_blank">
+                                <i class="fab fa-researchgate"></i>
+                            </a>
+                            <!-- Google Scholar -->
+                            <a href="https://scholar.google.com/citations?user=XSEU9g4AAAAJ" class="social-link"
+                                title="Google Scholar" target="_blank">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            <!-- Generic Website -->
+                            <a href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/radmila-salic+makreska/5d6799f0-be9b-4e17-965c-23499b390432?view=html"
+                                class="social-link" title="Website" target="_blank">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <p>We are currently confirming our lineup of distinguished keynote speakers. Please check back soon for
-                    the official schedule and profiles.</p>
+
+                <div class="speaker-description">
+                    Prof. Dr. Radmila Salic Makreska is a Professor and the Deputy Director for International
+                    Cooperation & Development at the Institute of Earthquake Engineering and Engineering Seismology
+                    (UKIM-IZIIS) in Skopje. Her professional activities encompass leading and contributing to
+                    projects for international organisations such as the UNDP, WHO, World Bank, EBRD, and JICA.
+                    Notably, she is a co-author of the Seismic Zoning Maps developed for the National Annex to
+                    Eurocode 8.
+
+                    Throughout her career, Prof. Dr. Salic Makreska has engaged in numerous training programmes and
+                    study visits across Europe and Asia. She serves on multiple national crisis and disaster
+                    management bodies, as well as professional and scientific associations. Since 2023, she has
+                    served as an Executive Committee member of the European Facilities for Earthquake Hazard and
+                    Risk (EFEHR).
+
+                    Her extensive academic record features over 60 scientific papers presented at national and
+                    international conferences, more than 120 professional reports, 16 peer-reviewed journal
+                    publications, and a forthcoming book published by Springer Nature. In recognition of her notable
+                    achievements in civil engineering practice, she has been a multi-time award recipient from the
+                    Macedonian Association of Structural Engineers.
+                </div>
             </div>
+            <!-- ========================================== -->
+
         </div>
     </div>
-
 </body>
 
 </html>
