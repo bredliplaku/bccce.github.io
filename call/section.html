@@ -11,7 +11,7 @@
             --primary-light: #EBF3FA;
             --accent: #FFB81C;
             --text-main: #1A1A1A;
-            --text-muted: #666666;
+            --text-muted: #555555;
             --bg-white: #FFFFFF;
             --border: #E2E8F0;
             --radius-rough: 2px;
@@ -49,17 +49,13 @@
             border-radius: var(--radius-rough) !important;
             font-size: 0.85rem !important;
             font-weight: 700 !important;
-            margin: 0 0 24px 0 !important;
+            margin: 0 0 20px 0 !important;
             display: block !important;
             text-align: center !important;
             text-transform: uppercase !important;
             letter-spacing: 2px !important;
             user-select: none !important;
-            overflow-wrap: break-word !important;
             width: 100% !important;
-            max-width: 100% !important;
-            min-width: 0 !important;
-            box-sizing: border-box !important;
         }
 
         .page-hero-mini h1 {
@@ -70,129 +66,134 @@
             display: block !important;
         }
 
+        .intro-text {
+            font-size: 0.95rem !important;
+            color: var(--text-muted) !important;
+            margin: 0 auto 20px auto !important;
+            line-height: 1.6 !important;
+            text-align: justify !important;
+            hyphens: auto !important;
+            -webkit-hyphens: auto !important;
+        }
+
         .call-list-group {
-            display: grid !important;
-            grid-template-columns: 1fr !important;
-            gap: 3px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
             margin: 0 !important;
             width: 100% !important;
-            max-width: 100% !important;
-            min-width: 0 !important;
-            box-sizing: border-box !important;
-        }
-
-        /* Action buttons */
-        .top-action {
-            display: flex !important;
-            flex-wrap: wrap !important;
-            justify-content: center !important;
-            gap: 12px !important;
-            margin: 16px 0 24px 0 !important;
-            width: 100% !important;
-        }
-
-        .action-button {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            gap: 10px !important;
-            background: var(--primary) !important;
-            color: white !important;
-            padding: 12px 24px !important;
-            border-radius: var(--radius-rough) !important;
-            font-weight: 600 !important;
-            font-size: 1rem !important;
-            box-shadow: var(--shadow-subtle) !important;
-            transition: all 0.2s ease-in-out !important;
-            cursor: pointer !important;
-            text-decoration: none !important;
-            border: 1px solid var(--primary-dark) !important;
-        }
-
-        .action-button:hover {
-            background: var(--primary-dark) !important;
-            border-radius: 20px !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-        }
-
-        .action-button svg {
-            width: 18px !important;
-            height: 18px !important;
-            fill: currentColor !important;
-            display: inline-block !important;
         }
 
         .call-card {
             background: var(--bg-white) !important;
-            padding: 24px 22px !important;
-            border-radius: 0 !important;
+            padding: 20px !important;
+            border-radius: var(--radius-rough) !important;
             border: 1px solid var(--border) !important;
             display: flex !important;
             flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            gap: 16px !important;
-            box-sizing: border-box !important;
-            position: relative !important;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            text-align: center !important;
+            align-items: flex-start !important;
+            gap: 12px !important;
+            transition: all 0.2s ease-in-out !important;
             width: 100% !important;
-            max-width: 100% !important;
-            min-width: 0 !important;
-            z-index: 1 !important;
-        }
-
-        .call-card:first-child {
-            border-top-left-radius: 8px !important;
-            border-top-right-radius: 8px !important;
-        }
-
-        .call-card:last-child {
-            border-bottom-left-radius: 8px !important;
-            border-bottom-right-radius: 8px !important;
+            position: relative !important;
+            cursor: default !important;
         }
 
         .call-card:hover {
-            z-index: 10 !important;
-            border-radius: 12px !important;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+            border-color: var(--primary) !important;
+            box-shadow: 0 4px 12px rgba(0, 83, 159, 0.05) !important;
             background: #FAFBFF !important;
         }
 
+        .card-header {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            width: 100% !important;
+        }
+
         .icon-wrapper {
-            width: 44px !important;
-            height: 44px !important;
+            width: 38px !important;
+            height: 38px !important;
             background: var(--primary-light) !important;
             color: var(--primary) !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            border-radius: 50% !important;
-            margin-bottom: 8px !important;
+            border-radius: var(--radius-rough) !important;
             flex-shrink: 0 !important;
         }
 
         .icon-wrapper svg {
-            width: 22px !important;
-            height: 22px !important;
+            width: 20px !important;
+            height: 20px !important;
             fill: currentColor !important;
         }
 
         .call-card h2 {
-            font-size: 1.1rem !important;
+            font-size: 1.05rem !important;
             color: var(--primary-dark) !important;
             font-weight: 700 !important;
-            margin-bottom: 8px !important;
+            margin: 0 !important;
+            line-height: 1.3 !important;
+        }
+
+        .call-card p,
+        .call-card ul {
+            font-size: 0.9rem !important;
+            color: var(--text-muted) !important;
+            margin: 0 !important;
+            line-height: 1.5 !important;
             width: 100% !important;
         }
 
         .call-card p {
-            font-size: 0.85rem !important;
-            color: var(--text-muted) !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            line-height: 1.6 !important;
-            box-sizing: border-box !important;
+            text-align: justify !important;
+            hyphens: auto !important;
+            -webkit-hyphens: auto !important;
+        }
+
+        .call-card ul {
+            padding-left: 20px !important;
+            text-align: left !important;
+        }
+
+        .call-card li {
+            margin-bottom: 6px !important;
+        }
+
+        .call-card li:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .action-button-compact {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            background: var(--primary) !important;
+            color: white !important;
+            padding: 10px 18px !important;
+            border-radius: var(--radius-rough) !important;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            transition: all 0.2s ease-in-out !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+            border: 1px solid var(--primary-dark) !important;
+            margin-top: 4px !important;
+            align-self: flex-start !important;
+            box-shadow: var(--shadow-subtle) !important;
+        }
+
+        .action-button-compact:hover {
+            background: var(--primary-dark) !important;
+        }
+
+        .action-button-compact svg {
+            width: 18px !important;
+            height: 18px !important;
+            fill: currentColor !important;
         }
 
         /* SVG Overrides */
@@ -212,27 +213,25 @@
             <h1>Paper Guidelines</h1>
         </header>
 
-        <p
-            style="font-size: 0.95rem; color: var(--text-muted); text-align: center; margin: 0 auto 24px auto; max-width: 850px; line-height: 1.6;">
+        <p class="intro-text">
             We warmly welcome you to the official guidelines for conference submissions. We invite you to review the
             information below, which outlines our formatting practices and academic expectations to help you smoothly
             prepare your manuscript.
         </p>
 
-        <div class="call-list-group" style="user-select: none !important; -webkit-user-select: none !important;">
-            <div class="call-card" style="align-items: flex-start !important; text-align: left !important;">
-                <div class="icon-wrapper" style="align-self: center !important;">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-                    </svg>
+        <div class="call-list-group">
+            <div class="call-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                        </svg>
+                    </div>
+                    <h2>1. Paper Template</h2>
                 </div>
-                <h2 style="align-self: center !important; text-align: center !important;"><span
-                        style="font-weight: 400 !important;">1.</span> Paper Template</h2>
-                <p
-                    style="margin-bottom: 4px; width: 100%; text-align: justify !important; hyphens: auto !important; -webkit-hyphens: auto !important; line-height: 1.4 !important;">
-                    Please download our MS Word template which contains detailed formatting guidelines.</p>
+                <p>Please download our MS Word template which contains detailed formatting guidelines.</p>
                 <a href="https://bccce.epoka.edu.al/2026/docs/Paper-BCCCE2026_Surname1_Surname2.doc"
-                    class="action-button" style="align-self: center !important; margin-top: 4px !important;">
+                    class="action-button-compact">
                     <svg viewBox="0 0 24 24">
                         <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
                     </svg>
@@ -240,48 +239,42 @@
                 </a>
             </div>
 
-            <div class="call-card" style="align-items: flex-start !important; text-align: left !important;">
-                <div class="icon-wrapper" style="align-self: center !important;">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
-                    </svg>
+            <div class="call-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                        </svg>
+                    </div>
+                    <h2>2. Guidelines</h2>
                 </div>
-                <h2 style="align-self: center !important; text-align: center !important;"><span
-                        style="font-weight: 400 !important;">2.</span> Guidelines</h2>
-                <ul
-                    style="padding-left: 20px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; margin: 0; width: 100%; text-align: justify !important; hyphens: auto !important; -webkit-hyphens: auto !important;">
-                    <li style="margin-bottom: 4px;">Works must be written in English.</li>
-                    <li style="margin-bottom: 4px;">Content must be original and not previously published or presented.
-                    </li>
-                    <li style="margin-bottom: 4px;">Provide accurate contact details for the primary author.</li>
-                    <li style="margin-bottom: 4px;">Indicate the relevant subtopic(s) for accurate peer-review
-                        allocation.</li>
+                <ul>
+                    <li>Works must be written in English.</li>
+                    <li>Content must be original and not previously published or presented.</li>
+                    <li>Provide accurate contact details for the primary author.</li>
+                    <li>Indicate the relevant subtopic(s) for accurate peer-review allocation.</li>
                     <li>Name your file according to the convention prior to upload.</li>
                 </ul>
             </div>
 
-            <div class="call-card" style="align-items: flex-start !important; text-align: left !important;">
-                <div class="icon-wrapper" style="align-self: center !important;">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
-                    </svg>
+            <div class="call-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+                        </svg>
+                    </div>
+                    <h2>3. Submit to Portal</h2>
                 </div>
-                <h2 style="align-self: center !important; text-align: center !important;"><span
-                        style="font-weight: 400 !important;">3.</span> Submit to Portal</h2>
-                <ul
-                    style="padding-left: 20px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; margin: 0; width: 100%; margin-bottom: 4px; text-align: justify !important; hyphens: auto !important; -webkit-hyphens: auto !important;">
-                    <li style="margin-bottom: 4px;">Submissions are exclusively processed via our secure online portal.
-                    </li>
-                    <li style="margin-bottom: 4px;">You will receive an account to track and modify your submission.
-                    </li>
-                    <li style="margin-bottom: 4px;">Submissions will be peer-reviewed and featured in our ISBN Book of
-                        Proceedings.</li>
+                <ul>
+                    <li>Submissions are exclusively processed via our secure online portal.</li>
+                    <li>You will receive an account to track and modify your submission.</li>
+                    <li>Submissions will be peer-reviewed and featured in our ISBN Book of Proceedings.</li>
                     <li>Publication requires successful presentation at the conference.</li>
                 </ul>
-                <a href="https://bccce.epoka.edu.al/online-submissions/" class="action-button"
-                    style="align-self: center !important; margin-top: 8px !important;">
+                <a href="https://bccce.epoka.edu.al/online-submissions/" class="action-button-compact">
                     <svg viewBox="0 0 24 24">
                         <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
                     </svg>

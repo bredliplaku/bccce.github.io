@@ -11,12 +11,13 @@
             --primary-light: #EBF3FA;
             --accent: #FFB81C;
             --text-main: #1A1A1A;
-            --text-muted: #666666;
+            --text-muted: #555555;
             --bg-white: #FFFFFF;
             --border: #E2E8F0;
             --radius-rough: 2px;
             --shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.05);
             /* Tier Colors */
+            --tier-type2: #4DD0E1;
             --tier-type1: #29B6F6;
             --tier-silver: #9E9E9E;
             --tier-gold: #FFB300;
@@ -39,7 +40,7 @@
             margin: 0 auto !important;
             display: block !important;
             clear: both !important;
-            padding: 15px 20px !important;
+            padding: 15px 0 !important;
             background: var(--bg-white) !important;
             text-align: left !important;
         }
@@ -69,6 +70,138 @@
             display: block !important;
         }
 
+        /* Why Sponsor Carousel */
+        .why-sponsor-section {
+            margin-bottom: 20px !important;
+            width: 100% !important;
+        }
+
+        .why-sponsor-title {
+            font-size: 1.1rem !important;
+            color: var(--primary-dark) !important;
+            font-weight: 700 !important;
+            margin-bottom: 16px !important;
+            text-align: center !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1.5px !important;
+        }
+
+        .carousel-container {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            gap: 16px !important;
+            padding-bottom: 5px !important;
+            margin: 0 !important;
+            -webkit-overflow-scrolling: touch !important;
+            scrollbar-width: none !important;
+            /* Firefox */
+            -ms-overflow-style: none !important;
+            /* IE 10+ */
+            scroll-behavior: smooth !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none !important;
+            /* Chrome/Safari/Opera */
+        }
+
+        .carousel-card {
+            flex: 0 0 100% !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            scroll-snap-align: center !important;
+            background: var(--bg-white) !important;
+            border: 1px solid var(--border) !important;
+            padding: 20px !important;
+            border-radius: var(--radius-rough) !important;
+            box-shadow: var(--shadow-subtle) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
+            box-sizing: border-box !important;
+            overflow: hidden !important;
+        }
+
+        .carousel-card:hover {
+            border-color: var(--primary-light) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        .carousel-card h3 {
+            font-size: 0.9rem !important;
+            color: var(--primary) !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            text-transform: uppercase !important;
+            font-weight: 700 !important;
+            line-height: 1.3 !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            white-space: normal !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .carousel-card p {
+            font-size: 0.85rem !important;
+            color: var(--text-muted) !important;
+            text-align: justify !important;
+            line-height: 1.5 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            hyphens: auto !important;
+            -webkit-hyphens: auto !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            white-space: normal !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Navigation Buttons under Carousel */
+        .carousel-nav-container {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 16px !important;
+            margin: 10px auto 12px auto !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .carousel-btn {
+            background: var(--primary-light) !important;
+            border: 1px solid var(--primary) !important;
+            color: var(--primary) !important;
+            width: 26px !important;
+            height: 26px !important;
+            border-radius: 50% !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.2s ease-in-out !important;
+            box-shadow: var(--shadow-subtle) !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary) !important;
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(0, 83, 159, 0.2) !important;
+        }
+
+        .carousel-btn svg {
+            width: 16px !important;
+            height: 16px !important;
+            fill: currentColor !important;
+        }
+
         /* Tier Section Styles */
         .tier-section {
             margin-bottom: 40px !important;
@@ -84,12 +217,14 @@
             color: var(--tier-color) !important;
             text-transform: uppercase !important;
             letter-spacing: 2px !important;
-            margin-bottom: 12px !important;
+            margin: 0 auto 12px auto !important;
             text-align: center !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
             gap: 10px !important;
+            width: 100% !important;
+            max-width: 100% !important;
         }
 
         .tier-label::before,
@@ -101,9 +236,7 @@
             opacity: 0.2 !important;
         }
 
-        /* Benefit List-Group */
-        .benefit-grid,
-        .speaker-list-group {
+        .benefit-grid {
             display: grid !important;
             grid-template-columns: 1fr !important;
             gap: 3px !important;
@@ -113,11 +246,12 @@
 
         .benefit-card {
             background: var(--bg-white) !important;
-            padding: 14px 18px 14px 22px !important;
+            padding: 18px 22px !important;
             border: 1px solid var(--border) !important;
             display: flex !important;
-            align-items: center !important;
-            gap: 16px !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 12px !important;
             width: 100% !important;
             box-sizing: border-box !important;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -156,9 +290,16 @@
             cursor: default;
         }
 
+        .benefit-header {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            width: 100% !important;
+        }
+
         .benefit-icon {
-            width: 28px !important;
-            height: 28px !important;
+            width: 32px !important;
+            height: 32px !important;
             background: var(--tier-bg, #F5F7FA) !important;
             color: var(--tier-color) !important;
             display: flex !important;
@@ -169,59 +310,38 @@
         }
 
         .benefit-icon svg {
-            width: 16px !important;
-            height: 16px !important;
-            fill: currentColor !important;
-        }
-
-        .benefit-text {
-            font-size: 0.85rem !important;
-            color: var(--text-main) !important;
-            font-weight: 500 !important;
-            line-height: 1.3 !important;
-        }
-
-        /* Bottom Action Piece */
-        .ready-card {
-            background: #FAFBFF !important;
-            border: 1px solid var(--border) !important;
-            border-radius: 12px !important;
-            padding: 24px !important;
-            text-align: center !important;
-            margin-top: 40px !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .ready-card p {
-            font-size: 0.9rem !important;
-            color: var(--text-muted) !important;
-            margin-bottom: 16px !important;
-        }
-
-        .print-btn {
-            background: var(--primary) !important;
-            color: white !important;
-            padding: 10px 24px !important;
-            border-radius: var(--radius-rough) !important;
-            font-weight: 600 !important;
-            border: 1px solid var(--primary-dark) !important;
-            cursor: pointer !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 8px !important;
-            transition: all 0.3s ease !important;
-        }
-
-        .print-btn:hover {
-            background: var(--primary-dark) !important;
-            border-radius: 12px !important;
-        }
-
-        .print-btn svg {
             width: 18px !important;
             height: 18px !important;
             fill: currentColor !important;
+        }
+
+        .benefit-title {
+            font-size: 0.95rem !important;
+            color: var(--tier-title-color, var(--text-main)) !important;
+            font-weight: 700 !important;
+            line-height: 1.3 !important;
+        }
+
+        .benefit-card ul {
+            padding-left: 44px !important;
+            margin: 0 !important;
+            font-size: 0.85rem !important;
+            color: var(--text-muted) !important;
+            line-height: 1.5 !important;
+        }
+
+        .benefit-card li {
+            margin-bottom: 6px !important;
+            text-align: justify !important;
+            hyphens: auto !important;
+            -webkit-hyphens: auto !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            white-space: normal !important;
+        }
+
+        .benefit-card li:last-child {
+            margin-bottom: 0 !important;
         }
 
         /* SVG Overrides */
@@ -239,165 +359,310 @@
 
         <!-- Hero Header Piece -->
         <header class="page-hero-mini">
-            <h1>Sponsorship Opportunities</h1>
+            <h1>Why Sponsor? Why Exhibit?</h1>
         </header>
 
-        <!-- Tier Layout (Smallest to Largest) -->
-        <div class="tier-stack">
-
-            <!-- Type 1: €1,000 -->
-            <div class="tier-section" style="--tier-color: var(--tier-type1); --tier-bg: #E1F5FE;">
-                <div class="tier-label">Type 1 Sponsor • €1,000</div>
-                <div class="benefit-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text">Website logo with link</div>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text">Official programme & proceedings logo</div>
-                    </div>
+        <!-- Why Sponsor Carousel section -->
+        <div class="why-sponsor-section">
+            <div class="carousel-container" id="whyCarousel">
+                <div class="carousel-card">
+                    <h3>National and International Audience</h3>
+                    <p>BCCCE attracts delegates from across Albania and also from more than 20 countries around the
+                        world. Here is your opportunity to see and be seen by a truly national audience, and to also
+                        present your company to a motivated international audience.</p>
+                </div>
+                <div class="carousel-card">
+                    <h3>Educated and Experienced Attendees</h3>
+                    <p>BCCCE delegates are university educated. Many have undertaken post-graduate studies and possess
+                        post-graduate degrees. Delegates are experienced professionals, working in their respective
+                        fields for many years, many for their effective careers.</p>
+                </div>
+                <div class="carousel-card">
+                    <h3>Designers, Specifiers and Decision Makers</h3>
+                    <p>BCCCE delegates are engineers who design and specify for a wide range of civil works in Albania
+                        and around Balkan countries. They also manage those who design, specify and purchase for a wide
+                        variety of projects, applications, clients and enterprises.</p>
+                </div>
+                <div class="carousel-card">
+                    <h3>High Profile Targeted Promotion Opportunity</h3>
+                    <p>BCCCE is the premiere gathering of civil engineering profession in Albania, with delegates
+                        attending from around the world. Put your firm in front of those who make the decisions that can
+                        benefit your business. By sponsoring the 2026 BCCCE in Tirana, you will have exclusive access to
+                        this demographic. Also, by sponsoring our conference, you align yourself with this major event,
+                        showcasing your firm to our provincial, national and international delegates.</p>
                 </div>
             </div>
+            <div class="carousel-nav-container">
+                <button class="carousel-btn" id="prevSlide" aria-label="Previous slide">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+                    </svg>
+                </button>
+                <button class="carousel-btn" id="nextSlide" aria-label="Next slide">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
 
-            <!-- Silver: €1,500 -->
-            <div class="tier-section" style="--tier-color: var(--tier-silver); --tier-bg: #F5F5F5;">
-                <div class="tier-label">Silver Sponsor • €1,500</div>
-                <div class="benefit-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text">Website logo with link</div>
+        <div class="tier-stack">
+
+            <!-- Platinum: €5,000 -->
+            <div class="tier-section"
+                style="--tier-color: var(--tier-platinum); --tier-bg: #E8EAF6; --tier-title-color: #1A237E;">
+                <div class="tier-label" style="font-size: 0.9rem !important; color: #1A237E !important;">
+                    <span>✨ Platinum Level • 5,000 € ✨</span>
+                </div>
+                <div class="benefit-grid"
+                    style="box-shadow: 0 10px 30px rgba(26, 35, 126, 0.1) !important; border-radius: 12px !important; overflow: hidden !important;">
+
+                    <div class="benefit-card"
+                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important;">
+                        <div class="benefit-header">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                                </svg>
+                            </div>
+                            <div class="benefit-title">Promotional documents</div>
+                        </div>
+                        <ul>
+                            <li>Logo on the outside back cover of preliminary conference program</li>
+                            <li>Logo on the conference website with a link to the company
+                                website</li>
+                        </ul>
                     </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text">Programme & Proceedings logo</div>
+
+                    <div class="benefit-card"
+                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important;">
+                        <div class="benefit-header">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+                                </svg>
+                            </div>
+                            <div class="benefit-title">Conference</div>
+                        </div>
+                        <ul>
+                            <li>Logo on the outside back cover of the official conference program</li>
+                            <li>Logo on the outside back cover of the conference proceedings</li>
+                            <li>Logo on the conference kit given to the conference attendees</li>
+                            <li>Logo on the main conference sign</li>
+                        </ul>
                     </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text">Main signage & Room sponsor</div>
+
+                    <div class="benefit-card"
+                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important;">
+                        <div class="benefit-header">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                                </svg>
+                            </div>
+                            <div class="benefit-title">Activities</div>
+                        </div>
+                        <ul>
+                            <li>Official sponsor of the conference banquet</li>
+                            <li>Official sponsor of technical presentation</li>
+                        </ul>
                     </div>
+
+                    <div class="benefit-card"
+                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important;">
+                        <div class="benefit-header">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                            </div>
+                            <div class="benefit-title">Other advantages</div>
+                        </div>
+                        <ul>
+                            <li>Exhibit booth</li>
+                            <li>One complete registration for the conference including technical presentations and
+                                social activities</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
             <!-- Gold: €3,000 -->
             <div class="tier-section" style="--tier-color: var(--tier-gold); --tier-bg: #FFF8E1;">
-                <div class="tier-label">Gold Sponsor • €3,000</div>
+                <div class="tier-label">Gold Level • 3,000 €</div>
                 <div class="benefit-grid">
+
                     <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text">Website logo with link</div>
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                                </svg></div>
+                            <div class="benefit-title">Promotional documents</div>
+                        </div>
+                        <ul>
+                            <li>Logo on the outside back cover of preliminary conference program</li>
+                            <li>Logo on the conference website with a link to the company
+                                site</li>
+                            <li>Logo on the outside back cover of the official conference program</li>
+                        </ul>
                     </div>
+
                     <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text">Logo on official programme & proceedings</div>
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+                                </svg></div>
+                            <div class="benefit-title">Conference</div>
+                        </div>
+                        <ul>
+                            <li>Logo on the outside back cover of the conference proceedings</li>
+                            <li>Logo on the main conference sign</li>
+                            <li>Official sponsor of the networking and welcome reception</li>
+                        </ul>
                     </div>
+
                     <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text">Main signage & Session sponsor</div>
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                                </svg></div>
+                            <div class="benefit-title">Activities</div>
+                        </div>
+                        <ul>
+                            <li>Official sponsor of technical presentation</li>
+                        </ul>
                     </div>
+
                     <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text"><strong>1</strong> Full registration</div>
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg></div>
+                            <div class="benefit-title">Other advantages</div>
+                        </div>
+                        <ul>
+                            <li>One complete registration for the conference including technical presentations and
+                                social activities</li>
+                        </ul>
                     </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text">Official sponsor of networking reception</div>
-                    </div>
+
                 </div>
             </div>
 
-            <!-- Platinum: €5,000 -->
-            <div class="tier-section" style="--tier-color: var(--tier-platinum); --tier-bg: #E8EAF6;">
-                <div class="tier-label" style="font-size: 0.9rem !important; color: #1A237E !important;">
-                    <span>✨ Platinum Sponsor • €5,000 ✨</span>
-                </div>
-                <div class="benefit-grid"
-                    style="box-shadow: 0 10px 30px rgba(26, 35, 126, 0.1) !important; background: #ffffff !important; border-radius: 12px !important; overflow: hidden !important;">
-                    <div class="benefit-card"
-                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important; ">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text" style="font-weight: 700 !important; color: #1A237E !important;">
-                            Website logo with link</div>
-                    </div>
-                    <div class="benefit-card"
-                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important; ">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text" style="font-weight: 700 !important; color: #1A237E !important;">Logo
-                            on official programme & proceedings</div>
-                    </div>
-                    <div class="benefit-card"
-                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important; ">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text" style="font-weight: 700 !important; color: #1A237E !important;">Logo
-                            on main conference signage & kit</div>
-                    </div>
-                    <div class="benefit-card"
-                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important; ">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text" style="font-weight: 700 !important; color: #1A237E !important;">
-                            Technical session & Room sponsor</div>
-                    </div>
-                    <div class="benefit-card"
-                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important; ">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text" style="font-weight: 700 !important; color: #1A237E !important;">
-                            <strong>1</strong> Full registration (incl. Banquet)
+            <!-- Silver: €1,500 -->
+            <div class="tier-section" style="--tier-color: var(--tier-silver); --tier-bg: #F5F5F5;">
+                <div class="tier-label">Silver Level • 1,500 €</div>
+                <div class="benefit-grid">
+
+                    <div class="benefit-card">
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                                </svg></div>
+                            <div class="benefit-title">Promotional documents</div>
                         </div>
+                        <ul>
+                            <li>Logo on the conference website with a link to the company
+                                website</li>
+                            <li>Logo on the outside back cover of the official conference program</li>
+                        </ul>
                     </div>
-                    <div class="benefit-card"
-                        style="background: linear-gradient(to right, #ffffff, #f8f9ff) !important; ">
-                        <div class="benefit-icon"><svg viewbox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg></div>
-                        <div class="benefit-text" style="font-weight: 700 !important; color: #1A237E !important;">
-                            Official Banquet & Exhibit booth</div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+                                </svg></div>
+                            <div class="benefit-title">Conference</div>
+                        </div>
+                        <ul>
+                            <li>Logo on the outside back cover of the conference proceedings</li>
+                            <li>Logo on the main conference sign</li>
+                        </ul>
                     </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg></div>
+                            <div class="benefit-title">Other advantages</div>
+                        </div>
+                        <ul>
+                            <li>Official sponsor of a technical presentation conference room</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Type 1: €1,000 -->
+            <div class="tier-section" style="--tier-color: var(--tier-type1); --tier-bg: #E1F5FE;">
+                <div class="tier-label">Type 1 Sponsor • 1,000 €</div>
+                <div class="benefit-grid">
+
+                    <div class="benefit-card">
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                                </svg></div>
+                            <div class="benefit-title">Promotional documents</div>
+                        </div>
+                        <ul>
+                            <li>Logo on the conference website with a link to the company
+                                site</li>
+                        </ul>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+                                </svg></div>
+                            <div class="benefit-title">Conference</div>
+                        </div>
+                        <ul>
+                            <li>Logo on the outside back cover of the official conference program</li>
+                            <li>Logo on the outside back cover of the conference proceedings</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Type 2: €500 -->
+            <div class="tier-section" style="--tier-color: var(--tier-type2); --tier-bg: #E0F7FA;">
+                <div class="tier-label">Type 2 Sponsor • 500 €</div>
+                <div class="benefit-grid">
+
+                    <div class="benefit-card">
+                        <div class="benefit-header">
+                            <div class="benefit-icon"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                                </svg></div>
+                            <div class="benefit-title">Promotional documents</div>
+                        </div>
+                        <ul>
+                            <li>Sponsor’s logo featured on the home page of the BCCCE 2026 Conference website:
+                                www.bccce.epoka.edu.al with link to sponsor’s website.</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
@@ -405,6 +670,69 @@
 
     </div>
 
+    <!-- Interactive Carousel Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.getElementById('whyCarousel');
+            const prevBtn = document.getElementById('prevSlide');
+            const nextBtn = document.getElementById('nextSlide');
+            let slideInterval;
+            const skipDelay = 5000;
+
+            if (!carousel || !prevBtn || !nextBtn) return;
+
+            function getSlideWidth() {
+                // Add the 16px gap to get full slide step width
+                return carousel.firstElementChild.offsetWidth + 16;
+            }
+
+            function slideNext() {
+                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                // If we're at or very near the end, loop back
+                if (carousel.scrollLeft >= maxScroll - 10) {
+                    carousel.scrollTo({ left: 0 });
+                } else {
+                    carousel.scrollBy({ left: getSlideWidth() });
+                }
+            }
+
+            function slidePrev() {
+                // If we're at or near the start, jump to the end
+                if (carousel.scrollLeft <= 10) {
+                    carousel.scrollTo({ left: carousel.scrollWidth });
+                } else {
+                    carousel.scrollBy({ left: -getSlideWidth() });
+                }
+            }
+
+            function startAutoSlide() {
+                stopAutoSlide();
+                slideInterval = setInterval(slideNext, skipDelay);
+            }
+
+            function stopAutoSlide() {
+                if (slideInterval) clearInterval(slideInterval);
+            }
+
+            // Click Handlers
+            nextBtn.addEventListener('click', function () {
+                slideNext();
+                startAutoSlide(); // Reset auto timer
+            });
+
+            prevBtn.addEventListener('click', function () {
+                slidePrev();
+                startAutoSlide(); // Reset auto timer
+            });
+
+            // Pause on hover
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Initiate
+            startAutoSlide();
+        });
+    </script>
 </body>
 
 </html>
