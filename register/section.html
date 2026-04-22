@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* CSS Robustness & Isolation Overrides */
+        :root {
+            --primary: #00539F;
+            --primary-dark: #003B73;
+            --primary-light: #EBF3FA;
+            --accent: #FFB81C;
+            --text-main: #1A1A1A;
+            --text-muted: #555555;
+            --bg-white: #FFFFFF;
+            --border: #E2E8F0;
+            --radius-rough: 2px;
+            --shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .isolated-content,
+        .isolated-content * {
+            box-sizing: border-box !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .isolated-content {
+            font-family: 'Google Sans Flex', 'Plus Jakarta Sans', sans-serif !important;
+            color: var(--text-main) !important;
+            line-height: 1.5 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            display: block !important;
+            clear: both !important;
+            padding: 15px 0 !important;
+            background: var(--bg-white) !important;
+            text-align: left !important;
+        }
+
+        /* Page Hero Styles (Centered Blue Bar) */
+        .page-hero-mini {
+            background: var(--primary) !important;
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: var(--radius-rough) !important;
+            font-size: 0.85rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 24px !important;
+            display: block !important;
+            text-align: center !important;
+            text-transform: uppercase !important;
+            letter-spacing: 3px !important;
+            user-select: none !important;
+            width: 100% !important;
+        }
+
+        .page-hero-mini h1 {
+            font-size: 0.85rem !important;
+            margin: 0 !important;
+            color: white !important;
+            text-align: center !important;
+            display: block !important;
+        }
+
+        .isolated-content p {
+            margin-bottom: 16px !important;
+            color: var(--text-muted) !important;
+            text-align: justify !important;
+            width: 100% !important;
+            clear: both !important;
+            display: block !important;
+        }
+
+        /* Headings */
+        .isolated-content .section-heading {
+            font-size: 1.25rem !important;
+            color: var(--primary-dark) !important;
+            font-weight: 700 !important;
+            margin: 32px 0 16px 0 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            width: 100% !important;
+            clear: both !important;
+        }
+
+        .isolated-content .section-heading::after {
+            content: "" !important;
+            height: 1px !important;
+            background: var(--primary-light) !important;
+            flex: 1 !important;
+        }
+
+        /* Tables */
+        .isolated-content .table-responsive {
+            width: 100% !important;
+            overflow-x: auto !important;
+            margin-bottom: 24px !important;
+        }
+
+        .isolated-content table {
+            width: 100% !important;
+            border-collapse: collapse !important;
+            background: var(--bg-white) !important;
+            border: 1px solid var(--border) !important;
+            border-radius: var(--radius-rough) !important;
+        }
+
+        .isolated-content th,
+        .isolated-content td {
+            padding: 12px 16px !important;
+            text-align: left !important;
+            vertical-align: middle !important;
+            border-bottom: 1px solid var(--border) !important;
+            color: var(--text-main) !important;
+            font-size: 0.95rem !important;
+        }
+
+        .isolated-content th {
+            background: var(--primary-dark) !important;
+            color: white !important;
+            font-weight: 700 !important;
+        }
+
+        .isolated-content th.highlight {
+            background: var(--primary) !important;
+        }
+
+        .isolated-content th span {
+            display: block !important;
+            font-weight: 400 !important;
+            font-size: 0.82rem !important;
+            margin-top: 4px !important;
+            opacity: 0.85 !important;
+        }
+
+        .isolated-content tr:last-child td {
+            border-bottom: none !important;
+        }
+
+        .isolated-content tr:hover td {
+            background: var(--primary-light) !important;
+        }
+
+        .isolated-content .price-chip {
+            display: inline-block !important;
+            background: var(--primary-light) !important;
+            color: var(--primary-dark) !important;
+            border-radius: 20px !important;
+            padding: 3px 14px !important;
+            font-size: 0.95rem !important;
+            font-weight: 700 !important;
+            white-space: nowrap !important;
+        }
+
+        /* Notes */
+        .isolated-content .notes-container {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+            margin-bottom: 32px !important;
+        }
+
+        .isolated-content .note {
+            font-size: 0.9rem !important;
+            color: var(--text-muted) !important;
+            padding: 12px 16px !important;
+            border-left: 3px solid var(--primary-light) !important;
+            background: #FAFBFF !important;
+            border-radius: 0 var(--radius-rough) var(--radius-rough) 0 !important;
+        }
+
+        .isolated-content .note strong {
+            color: var(--primary-dark) !important;
+        }
+
+        .isolated-content .note-warning {
+            border-left-color: var(--accent) !important;
+            background: #FFFBF0 !important;
+        }
+
+        .isolated-content .note-red {
+            border-left-color: #d32f2f !important;
+            background: #FFF5F5 !important;
+        }
+
+        .isolated-content .note-red strong {
+            color: #d32f2f !important;
+        }
+
+        /* Coverage Carousel */
+        .isolated-content .carousel-container {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            gap: 16px !important;
+            padding-bottom: 5px !important;
+            margin: 0 0 20px 0 !important;
+            -webkit-overflow-scrolling: touch !important;
+            scrollbar-width: none !important;
+            -ms-overflow-style: none !important;
+            scroll-behavior: smooth !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            clear: both !important;
+        }
+
+        .isolated-content .carousel-container::-webkit-scrollbar {
+            display: none !important;
+        }
+
+        .isolated-content .carousel-card {
+            flex: 0 0 100% !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            scroll-snap-align: center !important;
+            background: var(--primary-light) !important;
+            padding: 20px !important;
+            border-radius: var(--radius-rough) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
+            box-sizing: border-box !important;
+            overflow: hidden !important;
+        }
+
+        .isolated-content .carousel-card h4 {
+            font-size: 0.95rem !important;
+            color: var(--primary-dark) !important;
+            margin-bottom: 12px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+
+        .isolated-content .carousel-card ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .isolated-content .carousel-card ul li {
+            font-size: 0.9rem !important;
+            color: var(--text-main) !important;
+            padding: 4px 0 !important;
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 8px !important;
+        }
+
+        .isolated-content .carousel-card ul li::before {
+            content: '✓' !important;
+            color: var(--primary) !important;
+            font-weight: 700 !important;
+            flex-shrink: 0 !important;
+            margin-top: 1px !important;
+        }
+
+        .isolated-content .carousel-nav-container {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 16px !important;
+            margin: 10px auto 32px auto !important;
+            width: 100% !important;
+            text-align: center !important;
+            clear: both !important;
+        }
+
+        .isolated-content .carousel-btn {
+            background: var(--primary-light) !important;
+            border: 1px solid var(--primary) !important;
+            color: var(--primary) !important;
+            width: 26px !important;
+            height: 26px !important;
+            border-radius: 50% !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.2s ease-in-out !important;
+            box-shadow: var(--shadow-subtle) !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .isolated-content .carousel-btn:hover {
+            background: var(--primary) !important;
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(0, 83, 159, 0.2) !important;
+        }
+
+        .isolated-content .carousel-btn svg {
+            width: 16px !important;
+            height: 16px !important;
+            fill: currentColor !important;
+        }
+
+        /* Payment Table specific */
+        .isolated-content .payment-table td:first-child {
+            font-weight: 700 !important;
+            color: var(--primary-dark) !important;
+            width: 35% !important;
+            min-width: 180px !important;
+        }
+
+        .isolated-content .payment-table td {
+            vertical-align: middle !important;
+        }
+
+        .isolated-content .payment-table td:last-child {
+            font-family: monospace !important;
+        }
+
+        .isolated-content .payment-table td:last-child span {
+            display: inline-block !important;
+            vertical-align: middle !important;
+        }
+
+        .isolated-content .copy-btn {
+            float: right !important;
+            vertical-align: middle !important;
+            background: none !important;
+            border: none !important;
+            color: var(--primary) !important;
+            cursor: pointer !important;
+            padding: 4px 6px !important;
+            border-radius: 4px !important;
+            transition: all 0.2s ease !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .isolated-content .copy-btn:hover {
+            background: var(--primary-light) !important;
+            color: var(--primary-dark) !important;
+        }
+
+        .isolated-content svg {
+            vertical-align: middle !important;
+        }
+
+        /* Toast */
+        .copy-toast {
+            position: fixed !important;
+            bottom: 24px !important;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(100px) !important;
+            background: var(--primary-dark) !important;
+            color: white !important;
+            padding: 10px 24px !important;
+            border-radius: 30px !important;
+            font-size: 0.9rem !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+            opacity: 0 !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            z-index: 9999 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            pointer-events: none !important;
+        }
+
+        .copy-toast.show {
+            transform: translateX(-50%) translateY(0) !important;
+            opacity: 1 !important;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="isolated-content">
+
+        <!-- Hero Header Piece -->
+        <header class="page-hero-mini">
+            <h1>Conference Registration</h1>
+        </header>
+
+        <p>The intended participants will be registered when they have submitted their abstracts, papers,
+            panels, workshops, or media productions. All fees are in <strong>EUR (€)</strong>.</p>
+
+        <h2 class="section-heading">Registration Fees</h2>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Participation Category</th>
+                        <th>Early Bird<span>(Early)</span></th>
+                        <th class="highlight">Late (onsite)<span>(Standard)</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>National &amp; International</td>
+                        <td><span class="price-chip">70.0 €</span></td>
+                        <td><span class="price-chip">100.0 €</span></td>
+                    </tr>
+                    <tr>
+                        <td>Partners and Students <sup>*</sup></td>
+                        <td><span class="price-chip">50.0 €</span></td>
+                        <td><span class="price-chip">70.0 €</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- <div class="notes-container">
+            <div class="note">
+                <sup>*</sup> Students shall provide a certificate confirming they are in a <strong>Master or PhD
+                    programme</strong> (in the academic year of 2025/2026) in order to be eligible for the reduced fee.
+            </div>
+            <div class="note note-warning">
+                <strong>NOTE:</strong> Registration fee is valid for <strong>one paper only</strong>. If you wish to
+                submit another paper, another registration should be made.
+            </div>
+            <div class="note note-red">
+                <strong>NOTE:</strong> Participants shall make the registration no later than <strong>30 September
+                    2026</strong>.
+            </div>
+        </div>
+
+        <h2 class="section-heading">What Is Covered by the Fee?</h2>
+
+        <div class="carousel-container" id="coverageCarousel">
+            <div class="carousel-card">
+                <h4>
+                    <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                        <path
+                            d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                    </svg>
+                    Regular Participant &amp; Supporting Organisation
+                </h4>
+                <ul>
+                    <li>Admission to all technical sessions</li>
+                    <li>BCCCE workshops and seminars</li>
+                    <li>5th BCCCE 2026 Proceedings</li>
+                    <li>Coffee-breaks during the Conference</li>
+                    <li>Lunches during the Conference</li>
+                    <li>Welcome Cocktail</li>
+                </ul>
+            </div>
+            <div class="carousel-card">
+                <h4>
+                    <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                        <path
+                            d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
+                    </svg>
+                    Student
+                </h4>
+                <ul>
+                    <li>Admission to all technical sessions</li>
+                    <li>BCCCE workshops and seminars</li>
+                    <li>5th BCCCE 2026 Proceedings</li>
+                    <li>Coffee-breaks during the Conference</li>
+                    <li>Lunches during the Conference</li>
+                    <li>Welcome Cocktail</li>
+                </ul>
+            </div>
+            <div class="carousel-card">
+                <h4>
+                    <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                        <path
+                            d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                    Accompanying Person
+                </h4>
+                <ul>
+                    <li>Welcome Cocktail</li>
+                    <li>Lunches during the Conferences</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="carousel-nav-container">
+            <button class="carousel-btn" id="prevCoverageSlide" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+                </svg>
+            </button>
+            <button class="carousel-btn" id="nextCoverageSlide" aria-label="Next slide">
+                <svg viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                </svg>
+            </button>
+        </div>
+
+        <h2 class="section-heading">Payment</h2>
+
+        <p>The conference payment currency is <strong>EUR (€)</strong>. Please use the following account information:
+        </p>
+
+        <div class="table-responsive">
+            <table class="payment-table">
+                <tr>
+                    <td>Beneficiary's Name</td>
+                    <td>
+                        <span>Turgut Ozal Education Sh.a.</span>
+                        <button class="copy-btn" onclick="copyTableText(this)" title="Copy">
+                            <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+                                <path
+                                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Beneficiary's Address</td>
+                    <td>
+                        <span>Rruga Pavarësia, Autostrada Tiranë-Durrës, Km. 1, Kashar, Tirana, Albania</span>
+                        <button class="copy-btn" onclick="copyTableText(this)" title="Copy">
+                            <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+                                <path
+                                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Beneficiary's IBAN (EUR)</td>
+                    <td>
+                        <span>AL50208110080000020099635306</span>
+                        <button class="copy-btn" onclick="copyTableText(this)" title="Copy">
+                            <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+                                <path
+                                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Beneficiary's Bank</td>
+                    <td>
+                        <span>Intesa Sanpaolo Bank Albania Sh.a.</span>
+                        <button class="copy-btn" onclick="copyTableText(this)" title="Copy">
+                            <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+                                <path
+                                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Beneficiary's Bank Address</td>
+                    <td>
+                        <span>Rruga Ismail Qemali, Nr. 27, Tirana, 1001, Albania</span>
+                        <button class="copy-btn" onclick="copyTableText(this)" title="Copy">
+                            <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+                                <path
+                                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Beneficiary's Bank SWIFT Code</td>
+                    <td>
+                        <span>USALALTR</span>
+                        <button class="copy-btn" onclick="copyTableText(this)" title="Copy">
+                            <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+                                <path
+                                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="note">
+            Please note that the payment is related to: <strong>"Conference fee for 5-BCCCE2026"</strong>
+        </div> -->
+
+        <!-- Toast Notification -->
+        <div id="copyToast" class="copy-toast">
+            <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+            </svg>
+            Copied to clipboard!
+        </div>
+
+    </div>
+
+    <script>
+        function copyTableText(button) {
+            const textToCopy = button.previousElementSibling.textContent.trim();
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalSvg = button.innerHTML;
+                // Show checkmark in button
+                button.innerHTML = '<svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+                button.style.color = '#2e7d32';
+
+                // Show Toast
+                const toast = document.getElementById('copyToast');
+                if (toast) {
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 2500);
+                }
+
+                setTimeout(() => {
+                    button.innerHTML = originalSvg;
+                    button.style.color = ''; // Revert to default
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.getElementById('coverageCarousel');
+            const prevBtn = document.getElementById('prevCoverageSlide');
+            const nextBtn = document.getElementById('nextCoverageSlide');
+            let slideInterval;
+            const skipDelay = 5000;
+
+            if (!carousel || !prevBtn || !nextBtn) return;
+
+            function getSlideWidth() {
+                return carousel.firstElementChild.offsetWidth + 16;
+            }
+
+            function slideNext() {
+                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                if (carousel.scrollLeft >= maxScroll - 10) {
+                    carousel.scrollTo({ left: 0 });
+                } else {
+                    carousel.scrollBy({ left: getSlideWidth() });
+                }
+            }
+
+            function slidePrev() {
+                if (carousel.scrollLeft <= 10) {
+                    carousel.scrollTo({ left: carousel.scrollWidth });
+                } else {
+                    carousel.scrollBy({ left: -getSlideWidth() });
+                }
+            }
+
+            function startAutoSlide() {
+                stopAutoSlide();
+                slideInterval = setInterval(slideNext, skipDelay);
+            }
+
+            function stopAutoSlide() {
+                if (slideInterval) clearInterval(slideInterval);
+            }
+
+            nextBtn.addEventListener('click', function () {
+                slideNext();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', function () {
+                slidePrev();
+                startAutoSlide();
+            });
+
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            startAutoSlide();
+        });
+    </script>
+</body>
+
+</html>
