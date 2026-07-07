@@ -449,6 +449,14 @@
             const contentDiv = document.getElementById('committee-content');
             const filterInput = document.getElementById('committee-filter');
 
+            function normalizeText(str) {
+                return str
+                    .toLowerCase()
+                    .replace(/ı/g, 'i')
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '');
+            }
+
             async function fetchData() {
                 const cached = localStorage.getItem(CACHE_KEY);
                 if (cached) {
@@ -565,11 +573,11 @@
 
             // Real-time Search Filter
             filterInput.addEventListener('input', function (e) {
-                const query = e.target.value.toLowerCase().trim();
+                const query = normalizeText(e.target.value.trim());
                 const allCards = document.querySelectorAll('.member-card');
 
                 allCards.forEach(card => {
-                    const text = card.textContent.toLowerCase();
+                    const text = normalizeText(card.textContent);
                     if (text.includes(query)) {
                         card.style.display = 'flex';
                     } else {

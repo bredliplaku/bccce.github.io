@@ -166,23 +166,29 @@
             margin-bottom: 0 !important;
         }
 
+        .button-row {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 10px !important;
+            margin-top: 4px !important;
+            width: 100% !important;
+        }
+
         .action-button-compact {
             display: inline-flex !important;
             align-items: center !important;
             justify-content: center !important;
-            gap: 8px !important;
+            gap: 6px !important;
             background: var(--primary) !important;
             color: white !important;
-            padding: 10px 18px !important;
+            padding: 8px 14px !important;
             border-radius: var(--radius-rough) !important;
             font-weight: 600 !important;
-            font-size: 0.9rem !important;
+            font-size: 0.82rem !important;
             transition: all 0.2s ease-in-out !important;
             cursor: pointer !important;
             text-decoration: none !important;
             border: 1px solid var(--primary-dark) !important;
-            margin-top: 4px !important;
-            align-self: flex-start !important;
             box-shadow: var(--shadow-subtle) !important;
         }
 
@@ -190,10 +196,24 @@
             background: var(--primary-dark) !important;
         }
 
+        .action-button-compact.secondary {
+            background: var(--bg-white) !important;
+            color: var(--primary) !important;
+            border: 1.5px solid var(--primary) !important;
+            box-shadow: none !important;
+        }
+
+        .action-button-compact.secondary:hover {
+            background: var(--primary-light) !important;
+            color: var(--primary-dark) !important;
+            border-color: var(--primary-dark) !important;
+        }
+
         .action-button-compact svg {
-            width: 18px !important;
-            height: 18px !important;
+            width: 16px !important;
+            height: 16px !important;
             fill: currentColor !important;
+            flex-shrink: 0 !important;
         }
 
         /* SVG Overrides */
@@ -229,14 +249,23 @@
                     </div>
                     <h2>1. Paper Template</h2>
                 </div>
-                <p>Please download our MS Word template which contains detailed formatting guidelines.</p>
-                <a href="https://bccce.epoka.edu.al/2027/docs/Paper-BCCCE2027_Surname1_Surname2.doc"
-                    class="action-button-compact">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-                    </svg>
-                    Download Template
-                </a>
+                <p>Please download our MS Word or LaTeX template which contains detailed formatting guidelines.</p>
+                <div class="button-row">
+                    <a href="https://bccce.epoka.edu.al/2027/docs/BCCCE2027_Paper_Template.docx"
+                        class="action-button-compact">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                        </svg>
+                        Word Template
+                    </a>
+                    <a href="https://bccce.epoka.edu.al/2027/docs/BCCCE2027_Paper_Template.tex"
+                        class="action-button-compact secondary">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                        </svg>
+                        LaTeX Template
+                    </a>
+                </div>
             </div>
 
             <div class="call-card">
@@ -254,7 +283,9 @@
                     <li>Content must be original and not previously published or presented.</li>
                     <li>Provide accurate contact details for the primary author.</li>
                     <li>Indicate the relevant subtopic(s) for accurate peer-review allocation.</li>
-                    <li>Name your file according to the convention prior to upload.</li>
+                    <li>Name your file using the format "BCCCE2027_Surname_Firstname" prior to upload.</li>
+                    <li>If submitting in LaTeX, package all source files (.tex, figures, .bib, etc.) into a single .zip
+                        archive before upload.</li>
                 </ul>
             </div>
 
@@ -274,12 +305,14 @@
                     <li>Submissions will be peer-reviewed and featured in our ISBN Book of Proceedings.</li>
                     <li>Publication requires successful presentation at the conference.</li>
                 </ul>
-                <a href="https://bccce.epoka.edu.al/online-submissions/" class="action-button-compact">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
-                    </svg>
-                    Submit Your Paper
-                </a>
+                <div class="button-row">
+                    <a href="https://bccce.epoka.edu.al/online-submissions/" class="action-button-compact">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                        </svg>
+                        Submit Your Paper
+                    </a>
+                </div>
             </div>
         </div>
     </div>

@@ -36,6 +36,40 @@
             gap: 24px;
         }
 
+        .local-filter-wrapper {
+            margin: 20px 0 40px 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .local-filter-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .local-filter-input {
+            width: 100%;
+            padding: 14px 16px 14px 44px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .local-filter-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 83, 159, 0.1);
+        }
+
+        .topic-card.hidden {
+            display: none !important;
+        }
+
         .topic-card {
             background: var(--bg-white);
             border-radius: var(--radius-md);
@@ -137,7 +171,19 @@
             <p class="intro-text">
                 The technical program for BCCCE 2027 is architected to confront the multi-dimensional complexities of the modern built environment. Our selected technical tracks represent a rigorous fusion of traditional structural mastery and the disruptive digital frontiers of civil engineering. We invite global experts to present original work that scales from the atomic level of construction materials to the macro-dynamics of urban seismic resilience.
             </p>
-            
+
+            <div class="local-filter-wrapper">
+                <div class="local-filter-container">
+                    <svg style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:18px; height:18px; fill:var(--text-muted); pointer-events:none;"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    </svg>
+                    <input type="text" class="local-filter-input" id="topics-filter"
+                        placeholder="Search keywords...">
+                </div>
+            </div>
+
             <div class="topics-grid">
                 <!-- Topic 1 -->
                 <div class="topic-card" style="--topic-color: #A05B5B; --topic-bg: rgba(160, 91, 91, 0.08);">
@@ -212,6 +258,38 @@
 
     <!-- Shared site-wide JS -->
     <script src="../scripts.js"></script>
+
+    <!-- Search Filter -->
+    <script>
+        (function () {
+            const filterInput = document.getElementById('topics-filter');
+            const cards = document.querySelectorAll('.topic-card');
+
+            if (!filterInput || cards.length === 0) return;
+
+            function normalizeText(str) {
+                return str
+                    .toLowerCase()
+                    .replace(/ı/g, 'i')
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '');
+            }
+
+            filterInput.addEventListener('input', function (e) {
+                const query = normalizeText(e.target.value.trim());
+
+                cards.forEach(card => {
+                    const title = normalizeText(card.querySelector('.topic-title').textContent);
+
+                    if (title.includes(query)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>

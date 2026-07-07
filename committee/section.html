@@ -536,6 +536,14 @@
 
                 const CACHE_KEY = 'committee_data_cache';
 
+                function normalizeText(str) {
+                    return str
+                        .toLowerCase()
+                        .replace(/ı/g, 'i')
+                        .normalize('NFD')
+                        .replace(/[\u0300-\u036f]/g, '');
+                }
+
                 async function fetchData() {
                     // 1. Try to load from cache first
                     const cachedData = localStorage.getItem(CACHE_KEY);
@@ -648,11 +656,11 @@
 
                 // Updated Search Filter
                 filterInput.addEventListener('input', function (e) {
-                    const query = e.target.value.toLowerCase().trim();
+                    const query = normalizeText(e.target.value.trim());
                     const allCards = document.querySelectorAll('.member-card');
 
                     allCards.forEach(card => {
-                        const searchText = card.innerText.toLowerCase();
+                        const searchText = normalizeText(card.innerText);
                         if (searchText.includes(query)) {
                             card.classList.remove('hidden');
                         } else {
