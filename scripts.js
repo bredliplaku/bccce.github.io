@@ -1,5 +1,5 @@
 /* ============================================================
-   SHARED.JS — 5th BCCCE 2026 Conference Website
+   SHARED.JS — 5th BCCCE 2027 Conference Website
    Injects shared HTML (top-bar, navbar, sponsors carousel,
    partners section, footer) and runs shared JS logic
    (mobile menu, scroll navbar, carousels, active nav, dates).
@@ -136,7 +136,7 @@
     <nav class="navbar">
         <div class="container" style="display: flex; flex-wrap: wrap;">
             <a href="${BASE}/" class="logo">
-                <img src="${BASE}/miscellaneous/logo.png" alt="BCCCE 2026" style="height: 40px; width: auto;">
+                <img src="${BASE}/miscellaneous/logo.png" alt="BCCCE 2027" style="height: 40px; width: auto;">
                 <div class="logo-text">
                     <span>5th International Conference</span>
                 </div>
@@ -435,7 +435,7 @@
                 let dateStr = label.textContent.trim();
                 let summary = title.textContent.trim();
 
-                // Handle ranges like "29–30 October 2026"
+                // Handle ranges like "13–15 May 2027"
                 const rangeMatch = dateStr.match(/^(\d+)[\-–](\d+)\s+(.+)$/);
                 let startDateStr = dateStr;
                 let endDateStr = dateStr;
@@ -457,8 +457,8 @@
                     events.push({
                         start,
                         end,
-                        summary: "BCCCE 2026: " + summary,
-                        description: "Important date for 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2026). Visit https://bccce.epoka.edu.al for details."
+                        summary: "BCCCE 2027: " + summary,
+                        description: "Important date for 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2027). Visit https://bccce.epoka.edu.al for details."
                     });
                 }
             }
@@ -497,7 +497,7 @@
 
         const link = document.createElement('a');
         link.href = url;
-        link.setAttribute('download', 'BCCCE_2026_Dates.ics');
+        link.setAttribute('download', 'BCCCE_2027_Dates.ics');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
