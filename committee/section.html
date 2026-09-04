@@ -41,17 +41,17 @@
         .section-header {
             background: var(--primary) !important;
             color: white !important;
-            padding: 10px 20px !important;
+            padding: 8px 16px !important;
             border-radius: var(--radius-rough) !important;
-            font-size: 0.85rem !important;
+            font-size: 0.8rem !important;
             font-weight: 700 !important;
-            margin-bottom: 12px !important;
+            margin-bottom: 8px !important;
             display: block !important;
             width: 100% !important;
             clear: both !important;
             text-align: center !important;
             text-transform: uppercase !important;
-            letter-spacing: 3px !important;
+            letter-spacing: 2.5px !important;
             user-select: none !important;
             -webkit-user-select: none !important;
             -moz-user-select: none !important;
@@ -59,7 +59,7 @@
         }
 
         .section-header:not(:first-child) {
-            margin-top: 40px !important;
+            margin-top: 24px !important;
         }
 
         /* Committee Grid Piece */
@@ -77,13 +77,13 @@
             background: var(--bg-white) !important;
             border: 1px solid var(--border) !important;
             border-left: 4px solid var(--primary) !important;
-            padding: 12px 14px !important;
+            padding: 8px 14px !important;
             display: flex !important;
             flex-direction: row !important;
             /* Side-by-side if photo exists */
             align-items: center !important;
             justify-content: flex-start !important;
-            gap: 14px !important;
+            gap: 12px !important;
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
             width: 100% !important;
             box-sizing: border-box !important;
@@ -98,42 +98,41 @@
             min-width: 0 !important;
         }
 
+        .has-link .member-info-container {
+            padding-right: 28px !important;
+        }
+
         .member-card:first-child {
             border-top-left-radius: 0 !important;
-            border-top-right-radius: 8px !important;
+            border-top-right-radius: 6px !important;
         }
 
         .member-card:last-child {
             border-bottom-left-radius: 0 !important;
-            border-bottom-right-radius: 8px !important;
+            border-bottom-right-radius: 6px !important;
         }
 
         /* Material Pop-out on Hover */
         .member-card:hover {
-            border-radius: 8px !important;
+            border-radius: 6px !important;
             border-left-color: var(--primary-dark) !important;
             z-index: 10 !important;
-            transform: scale(1.01) !important;
+            transform: scale(1.008) !important;
             background: #FAFBFF !important;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
             cursor: default;
         }
 
         .member-name {
             color: var(--primary) !important;
             font-weight: 700 !important;
-            font-size: 0.95rem !important;
-            margin-bottom: 2px !important;
+            font-size: 0.92rem !important;
+            line-height: 1.3 !important;
+            margin-bottom: 1px !important;
             display: flex !important;
             justify-content: space-between !important;
             align-items: center !important;
             padding-right: 0 !important;
-            /* Touch the right edge */
-        }
-
-        .has-link .member-details-row {
-            padding-right: 24px !important;
-            /* Increased to prevent overlap */
         }
 
         .member-position {
@@ -151,8 +150,8 @@
 
         /* Profile Photo Styles */
         .member-photo-wrapper {
-            width: 44px !important;
-            height: 44px !important;
+            width: 38px !important;
+            height: 38px !important;
             border-radius: 50% !important;
             overflow: hidden !important;
             flex-shrink: 0 !important;
@@ -172,38 +171,44 @@
         }
 
         .member-details-row {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: baseline !important;
-            flex-wrap: wrap !important;
-            gap: 8px !important;
-            width: 100% !important;
-            margin-top: 4px !important;
+            display: block !important;
+            margin-top: 2px !important;
+            line-height: 1.35 !important;
         }
 
         .member-affiliation {
             color: var(--text-muted) !important;
-            font-size: 0.8rem !important;
-            line-height: 1.4 !important;
-            flex: 1 1 auto !important;
-            min-width: 200px !important;
+            font-size: 0.78rem !important;
+            display: inline !important;
         }
 
         .member-country {
             font-weight: 600 !important;
             color: var(--text-main) !important;
-            font-size: 0.75rem !important;
+            font-size: 0.74rem !important;
             text-transform: uppercase !important;
             letter-spacing: 0.5px !important;
-            flex: 0 1 auto !important;
+            display: inline !important;
             white-space: nowrap !important;
+        }
+
+        .member-country::before {
+            content: " · ";
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 4px;
+        }
+
+        .member-country:empty::before {
+            display: none !important;
         }
 
         /* External Link Icon */
         .member-link {
             position: absolute !important;
-            bottom: 10px !important;
-            right: 10px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            right: 12px !important;
             background: var(--primary-light) !important;
             color: var(--primary) !important;
             width: 22px !important;
@@ -214,13 +219,14 @@
             border-radius: 50% !important;
             text-decoration: none !important;
             transition: all 0.2s ease !important;
-            opacity: 0.61 !important;
+            opacity: 0.65 !important;
         }
 
         .member-link:hover {
             background: var(--primary) !important;
             color: white !important;
             opacity: 1 !important;
+            transform: translateY(-50%) scale(1.08) !important;
         }
 
         .member-link svg {
@@ -231,7 +237,7 @@
 
         /* Local Search Filter */
         .local-filter-wrapper {
-            margin: 20px 0 20px 0 !important;
+            margin: 12px 0 16px 0 !important;
             display: flex !important;
             justify-content: center !important;
             width: 100% !important;
@@ -255,11 +261,11 @@
 
         .local-filter-input {
             width: 100% !important;
-            padding: 12px 14px 12px 40px !important;
+            padding: 9px 14px 9px 38px !important;
             border: 1px solid var(--border) !important;
             border-radius: var(--radius-rough) !important;
             font-family: inherit !important;
-            font-size: 0.95rem !important;
+            font-size: 0.9rem !important;
             outline: none !important;
             transition: all 0.2s ease !important;
             background: var(--bg-white) !important;
@@ -359,9 +365,9 @@
         </div>
 
         <div id="committee-content">
-            <!-- Local Organizing Committee -->
+            <!-- Local Organising Committee -->
             <div id="local-section">
-                <div class="section-header">Local Organizing Committee</div>
+                <div class="section-header">Local Organising Committee</div>
                 <div class="committee-grid" id="local-grid">
                     <!-- Local Committee Members -->
                     <div class="member-card has-link">
@@ -392,6 +398,24 @@
                         </div>
                         <a href="https://orcid.org/0000-0002-9965-3487" target="_blank" class="member-link"
                             title="View Profile">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="member-card has-link">
+                        <div class="member-info-container">
+                            <div class="member-name">Dr. Anila Xhahysa<span class="member-position">Co-Chair</span>
+                            </div>
+                            <div class="member-details-row">
+                                <div class="member-affiliation">Department of Civil Engineering</div>
+                                <div class="member-country">EPOKA University</div>
+                            </div>
+                        </div>
+                        <a href="https://scholar.google.com/citations?user=98jo_9cAAAAJ" target="_blank"
+                            class="member-link" title="View Profile">
                             <svg viewBox="0 0 24 24">
                                 <path
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
@@ -460,23 +484,6 @@
                         </div>
                         <a href="https://orcid.org/0000-0003-4273-0979" target="_blank" class="member-link"
                             title="View Profile">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="member-card has-link">
-                        <div class="member-info-container">
-                            <div class="member-name">Dr. Anila Xhahysa</div>
-                            <div class="member-details-row">
-                                <div class="member-affiliation">Department of Civil Engineering</div>
-                                <div class="member-country">EPOKA University</div>
-                            </div>
-                        </div>
-                        <a href="https://scholar.google.com/citations?user=98jo_9cAAAAJ" target="_blank"
-                            class="member-link" title="View Profile">
                             <svg viewBox="0 0 24 24">
                                 <path
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
