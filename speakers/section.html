@@ -169,6 +169,10 @@
             hyphens: auto !important;
         }
 
+        .speaker-description p + p {
+            margin-top: 10px !important;
+        }
+
         .social-links {
             display: flex !important;
             flex-wrap: wrap !important;
@@ -229,71 +233,14 @@
 
         <div class="speakers-grid">
 
-            <!-- ========================================== -->
-            <!-- SPEAKER PROFILE BLOCK - COPY PASTE TO ADD MORE -->
-            <!-- ========================================== -->
-            <div class="speaker-card">
-                <div class="speaker-card-top">
-                    <div class="speaker-sidebar">
-                        <div class="speaker-photo-wrapper">
-                            <!-- Replace the src below with the speaker's photo URL -->
-                            <img src="https://raw.githubusercontent.com/bredliplaku/bccce.github.io/refs/heads/main/speakers/profile/Radmila_Salic_Makreska.jpg"
-                                alt="Prof. Dr. Radmila Salic Makreska" class="speaker-photo">
-                        </div>
-                    </div>
-                    <div class="speaker-info-container">
-                        <div class="speaker-name">
-                            <span class="speaker-title">Prof. Dr.</span> Radmila Salic Makreska
-                        </div>
-
-                        <!-- Position and Department -->
-                        <div class="speaker-subtitle">Professor and Deputy Director for International Cooperation &
-                            Development, <br> Institute of Earthquake Engineering and Engineering Seismology,
-                            North
-                            Macedonia</div>
-
-                        <div class="social-links">
-                            <a href="https://orcid.org/0000-0003-3571-1139" class="social-link" title="ORCID"
-                                target="_blank">
-                                <i class="fab fa-orcid"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/radmila-salic-makreska-0a751320b/" class="social-link"
-                                title="LinkedIn" target="_blank">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://www.iziis.ukim.edu.mk/en/" class="social-link"
-                                title="Institute of Earthquake Engineering and Engineering Seismology" target="_blank">
-                                <i class="fas fa-globe"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="speaker-description">
-                    Prof. Dr. Radmila Salic Makreska is a Professor and the Deputy Director for International
-                    Cooperation & Development at the Institute of Earthquake Engineering and Engineering Seismology
-                    (UKIM-IZIIS) in Skopje. Her professional activities encompass leading and contributing to
-                    projects for international organisations such as the UNDP, WHO, World Bank, EBRD, and JICA.
-                    Notably, she is a co-author of the Seismic Zoning Maps developed for the National Annex to
-                    Eurocode 8.
-
-                    Throughout her career, Prof. Dr. Salic Makreska has engaged in numerous training programmes and
-                    study visits across Europe and Asia. She serves on multiple national crisis and disaster
-                    management bodies, as well as professional and scientific associations. Since 2023, she has
-                    served as an Executive Committee member of the European Facilities for Earthquake Hazard and
-                    Risk (EFEHR).
-
-                    Her extensive academic record features over 60 scientific papers presented at national and
-                    international conferences, more than 120 professional reports, 16 peer-reviewed journal
-                    publications, and a forthcoming book published by Springer Nature. In recognition of her notable
-                    achievements in civil engineering practice, she has been a multi-time award recipient from the
-                    Macedonian Association of Structural Engineers.
-                </div>
-            </div>
-            <!-- ========================================== -->
+            <!-- Speakers are listed alphabetically by surname. -->
 
             <!-- ========================================== -->
             <!-- SPEAKER PROFILE BLOCK - COPY PASTE TO ADD MORE -->
+            <!-- Icon key: fab fa-orcid = ORCID, fab fa-linkedin = LinkedIn,
+                 fas fa-building-columns = institution, fas fa-helmet-safety = department,
+                 fas fa-graduation-cap = study programme, fas fa-recycle = COST Action,
+                 fas fa-earth-americas = international research network, fas fa-globe = any other website -->
             <!-- ========================================== -->
             <div class="speaker-card">
                 <div class="speaker-card-top">
@@ -315,53 +262,120 @@
 
                         <div class="social-links">
                             <a href="https://orcid.org/0000-0003-4246-8157" class="social-link" title="ORCID"
-                                target="_blank">
+                                aria-label="ORCID" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-orcid"></i>
                             </a>
                             <a href="https://www.uminho.pt/" class="social-link" title="University of Minho"
-                                target="_blank">
-                                <i class="fas fa-globe"></i>
+                                aria-label="University of Minho" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-building-columns"></i>
                             </a>
                             <a href="https://www.civil.uminho.pt/" class="social-link"
-                                title="Department of Civil Engineering" target="_blank">
-                                <i class="fas fa-globe"></i>
+                                title="Department of Civil Engineering, University of Minho"
+                                aria-label="Department of Civil Engineering, University of Minho" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fas fa-helmet-safety"></i>
                             </a>
                             <a href="http://civil.uminho.pt/idisbe" class="social-link"
-                                title="International Doctoral Programme in Sustainable Built Environment"
-                                target="_blank">
-                                <i class="fas fa-globe"></i>
+                                title="International Doctoral Programme in Sustainable Built Environment (iDiSBE)"
+                                aria-label="International Doctoral Programme in Sustainable Built Environment (iDiSBE)"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-graduation-cap"></i>
                             </a>
-                            <a href="https://www.cyted.org/ECOEICO" class="social-link"
-                                title="COST Action CircularB: Building a Sustainable Future" target="_blank">
-                                <i class="fas fa-globe"></i>
+                            <a href="https://www.cost.eu/actions/CA21103/" class="social-link"
+                                title="COST Action CircularB (CA21103)" aria-label="COST Action CircularB (CA21103)"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-recycle"></i>
                             </a>
-                            <a href="https://www.cyted.org/ECOEICO" class="social-link" title="CYTED Network ECoEICo:"
-                                target="_blank">
-                                <i class="fas fa-globe"></i>
+                            <a href="https://www.cyted.org/ECOEICO" class="social-link" title="CYTED Network ECoEICo"
+                                aria-label="CYTED Network ECoEICo" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-earth-americas"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="speaker-description">
-                    Prof. Dr. Luís Bragança is a Professor at the University of Minho, Portugal, where he serves as
-                    Director of the International Doctoral Programme in Sustainable Built Environment (iDiSBE), the
-                    Master's Programme in Sustainable Construction and Rehabilitation, and the Laboratory of Energy and
-                    Sustainable Construction. He is Chair of COST Action CircularB (CA21103) and President of iiSBE
-                    Portugal. From 2011 to 2021, he served as President of the International Initiative for a
-                    Sustainable Built Environment (iiSBE).
+                    <p>Prof. Dr. Luís Bragança is a Professor at the University of Minho, Portugal, where he serves as
+                        Director of the International Doctoral Programme in Sustainable Built Environment (iDiSBE),
+                        the Master's Programme in Sustainable Construction and Rehabilitation, and the Laboratory of
+                        Energy and Sustainable Construction. He is Chair of COST Action CircularB (CA21103) and
+                        President of iiSBE Portugal. From 2011 to 2021, he served as President of the International
+                        Initiative for a Sustainable Built Environment (iiSBE).</p>
 
-                    His scientific and professional activities focus on the sustainability of the built environment,
-                    sustainable construction, the circular economy, life-cycle assessment, sustainable building
-                    rehabilitation, building physics, and construction technology. Throughout his career, he has
-                    coordinated and participated in 33 competitively funded national and international research
-                    projects, 11 as leader or co-leader. He is the author or co-author of more than 500 publications,
-                    including over 400 scientific journal articles, and three registered patents. He has also supervised
-                    or co-supervised 14 doctoral theses.
+                    <p>His scientific and professional activities focus on the sustainability of the built
+                        environment, sustainable construction, the circular economy, life-cycle assessment, sustainable
+                        building rehabilitation, building physics, and construction technology. Throughout his career,
+                        he has coordinated and participated in 33 competitively funded national and international
+                        research projects, 11 as leader or co-leader. He is the author or co-author of more than 500
+                        publications, including over 400 scientific journal articles, and three registered patents. He
+                        has also supervised or co-supervised 14 doctoral theses.</p>
                 </div>
             </div>
             <!-- ========================================== -->
 
+            <!-- ========================================== -->
+            <!-- SPEAKER PROFILE BLOCK - COPY PASTE TO ADD MORE -->
+            <!-- ========================================== -->
+            <div class="speaker-card">
+                <div class="speaker-card-top">
+                    <div class="speaker-sidebar">
+                        <div class="speaker-photo-wrapper">
+                            <!-- Replace the src below with the speaker's photo URL -->
+                            <img src="https://raw.githubusercontent.com/bredliplaku/bccce.github.io/refs/heads/main/speakers/profile/Radmila_Salic_Makreska.jpg"
+                                alt="Prof. Dr. Radmila Salic Makreska" class="speaker-photo">
+                        </div>
+                    </div>
+                    <div class="speaker-info-container">
+                        <div class="speaker-name">
+                            <span class="speaker-title">Prof. Dr.</span> Radmila Salic Makreska
+                        </div>
+
+                        <!-- Position and Department -->
+                        <div class="speaker-subtitle">Professor and Deputy Director for International Cooperation &amp;
+                            Development, <br> Institute of Earthquake Engineering and Engineering Seismology,
+                            North Macedonia</div>
+
+                        <div class="social-links">
+                            <a href="https://orcid.org/0000-0003-3571-1139" class="social-link" title="ORCID"
+                                aria-label="ORCID" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-orcid"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/radmila-salic-makreska-0a751320b/" class="social-link"
+                                title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.iziis.ukim.edu.mk/en/" class="social-link"
+                                title="Institute of Earthquake Engineering and Engineering Seismology (UKIM-IZIIS)"
+                                aria-label="Institute of Earthquake Engineering and Engineering Seismology (UKIM-IZIIS)"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-building-columns"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-description">
+                    <p>Prof. Dr. Radmila Salic Makreska is a Professor and the Deputy Director for International
+                        Cooperation &amp; Development at the Institute of Earthquake Engineering and Engineering
+                        Seismology (UKIM-IZIIS) in Skopje. Her professional activities encompass leading and
+                        contributing to projects for international organisations such as the UNDP, WHO, World Bank,
+                        EBRD, and JICA. Notably, she is a co-author of the Seismic Zoning Maps developed for the
+                        National Annex to Eurocode 8.</p>
+
+                    <p>Throughout her career, Prof. Dr. Salic Makreska has engaged in numerous training programmes and
+                        study visits across Europe and Asia. She serves on multiple national crisis and disaster
+                        management bodies, as well as professional and scientific associations. Since 2023, she has
+                        served as an Executive Committee member of the European Facilities for Earthquake Hazard and
+                        Risk (EFEHR).</p>
+
+                    <p>Her extensive academic record features over 60 scientific papers presented at national and
+                        international conferences, more than 120 professional reports, 16 peer-reviewed journal
+                        publications, and a forthcoming book published by Springer Nature. In recognition of her
+                        notable achievements in civil engineering practice, she has been a multi-time award recipient
+                        from the Macedonian Association of Structural Engineers.</p>
+                </div>
+            </div>
+            <!-- ========================================== -->
 
         </div>
     </div>

@@ -7,8 +7,10 @@
     <meta name="theme-color" content="#003B73">
     <meta name="base-path" content="..">
     <title>Keynote Speakers – 5th BCCCE 2027</title>
-    <meta name="description" content="Keynote Speakers for the 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2027).">
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Keynote Speakers for the 5th International Balkans Conference on Challenges of Civil Engineering (BCCCE 2027).">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">
 
     <!-- Shared site-wide styles -->
@@ -17,59 +19,147 @@
     <!-- Page-specific styles -->
     <style>
         .page-content {
-            padding: 60px 0 80px;
-            text-align: center;
+            padding: 80px 0;
         }
 
-        .construction-icon {
-            font-size: 4rem;
-            color: var(--primary-light);
-            margin-bottom: 24px;
-        }
-
-        .construction-card {
-            background: var(--bg-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            padding: 48px 40px;
-            border: 1px solid var(--border);
-            max-width: 600px;
+        .speakers-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 960px;
             margin: 0 auto;
         }
 
-        .construction-card h2 {
-            font-size: 1.75rem;
+        .speaker-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--primary-dark);
+        }
+
+        .speaker-card-top {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .speaker-photo-wrapper {
+            width: 140px;
+            height: 140px;
+            flex-shrink: 0;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--primary-light);
+            border: 1px solid var(--border);
+        }
+
+        .speaker-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .speaker-info-container {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .speaker-name {
             color: var(--primary-dark);
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .speaker-title {
+            color: var(--text-main);
+            font-weight: 400;
+        }
+
+        .speaker-subtitle {
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: 600;
+            line-height: 1.6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 16px;
         }
 
-        .construction-card p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
             gap: 10px;
-            background: var(--primary);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            cursor: pointer;
-            text-decoration: none;
         }
 
-        .back-btn:hover {
-            background: var(--primary-dark);
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .social-link:hover,
+        .social-link:focus-visible {
+            background: var(--primary);
             color: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .speaker-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .speaker-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-content {
+                padding: 60px 0;
+            }
+
+            .speaker-card {
+                padding: 24px 20px;
+                gap: 20px;
+            }
+
+            .speaker-card-top {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .speaker-photo-wrapper {
+                width: 120px;
+                height: 120px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -87,7 +177,8 @@
                 <span>Keynote Speakers</span>
             </nav>
             <h1>Keynote <span>Speakers</span></h1>
-            <p>This section is currently being updated.</p>
+            <p>Meet the distinguished experts delivering keynote lectures at BCCCE 2027. More speakers will be
+                announced soon.</p>
         </div>
     </header>
 
@@ -97,11 +188,141 @@
     <!-- Page Content -->
     <main class="page-content">
         <div class="container animate-in-delay">
-            <div class="construction-card">
-                <i class="fas fa-tools construction-icon"></i>
-                <h2>Under Construction</h2>
-                <p>We're working hard to bring you this content. Please check back later for updates regarding the Keynote Speakers.</p>
-                <a href="../" class="back-btn"><i class="fas fa-arrow-left"></i> Return to Home</a>
+            <div class="speakers-grid">
+
+                <!-- Speakers are listed alphabetically by surname. -->
+
+                <!-- ========================================== -->
+                <!-- SPEAKER PROFILE BLOCK - COPY PASTE TO ADD MORE -->
+                <!-- Icon key: fab fa-orcid = ORCID, fab fa-linkedin = LinkedIn,
+                     fas fa-building-columns = institution, fas fa-helmet-safety = department,
+                     fas fa-graduation-cap = study programme, fas fa-recycle = COST Action,
+                     fas fa-earth-americas = international research network, fas fa-globe = any other website -->
+                <!-- ========================================== -->
+                <article class="speaker-card">
+                    <div class="speaker-card-top">
+                        <div class="speaker-photo-wrapper">
+                            <img src="profile/Luis_Braganca.jpg" alt="Prof. Dr. Luís Bragança" class="speaker-photo">
+                        </div>
+                        <div class="speaker-info-container">
+                            <h2 class="speaker-name"><span class="speaker-title">Prof. Dr.</span> Luís Bragança</h2>
+                            <div class="speaker-subtitle">Professor, Department of Civil Engineering, <br> School of
+                                Engineering, University of Minho, Portugal</div>
+
+                            <div class="social-links">
+                                <a href="https://orcid.org/0000-0003-4246-8157" class="social-link" title="ORCID"
+                                    aria-label="ORCID" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-orcid"></i>
+                                </a>
+                                <a href="https://www.uminho.pt/" class="social-link" title="University of Minho"
+                                    aria-label="University of Minho" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-building-columns"></i>
+                                </a>
+                                <a href="https://www.civil.uminho.pt/" class="social-link"
+                                    title="Department of Civil Engineering, University of Minho"
+                                    aria-label="Department of Civil Engineering, University of Minho" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-helmet-safety"></i>
+                                </a>
+                                <a href="http://civil.uminho.pt/idisbe" class="social-link"
+                                    title="International Doctoral Programme in Sustainable Built Environment (iDiSBE)"
+                                    aria-label="International Doctoral Programme in Sustainable Built Environment (iDiSBE)"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </a>
+                                <a href="https://www.cost.eu/actions/CA21103/" class="social-link"
+                                    title="COST Action CircularB (CA21103)" aria-label="COST Action CircularB (CA21103)"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-recycle"></i>
+                                </a>
+                                <a href="https://www.cyted.org/ECOEICO" class="social-link"
+                                    title="CYTED Network ECoEICo" aria-label="CYTED Network ECoEICo" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-earth-americas"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="speaker-description">
+                        <p>Prof. Dr. Luís Bragança is a Professor at the University of Minho, Portugal, where he serves
+                            as Director of the International Doctoral Programme in Sustainable Built Environment
+                            (iDiSBE), the Master's Programme in Sustainable Construction and Rehabilitation, and the
+                            Laboratory of Energy and Sustainable Construction. He is Chair of COST Action CircularB
+                            (CA21103) and President of iiSBE Portugal. From 2011 to 2021, he served as President of the
+                            International Initiative for a Sustainable Built Environment (iiSBE).</p>
+
+                        <p>His scientific and professional activities focus on the sustainability of the built
+                            environment, sustainable construction, the circular economy, life-cycle assessment,
+                            sustainable building rehabilitation, building physics, and construction technology.
+                            Throughout his career, he has coordinated and participated in 33 competitively funded
+                            national and international research projects, 11 as leader or co-leader. He is the author
+                            or co-author of more than 500 publications, including over 400 scientific journal
+                            articles, and three registered patents. He has also supervised or co-supervised 14 doctoral
+                            theses.</p>
+                    </div>
+                </article>
+                <!-- ========================================== -->
+
+                <!-- ========================================== -->
+                <!-- SPEAKER PROFILE BLOCK - COPY PASTE TO ADD MORE -->
+                <!-- ========================================== -->
+                <article class="speaker-card">
+                    <div class="speaker-card-top">
+                        <div class="speaker-photo-wrapper">
+                            <img src="profile/Radmila_Salic_Makreska.jpg" alt="Prof. Dr. Radmila Salic Makreska"
+                                class="speaker-photo">
+                        </div>
+                        <div class="speaker-info-container">
+                            <h2 class="speaker-name"><span class="speaker-title">Prof. Dr.</span> Radmila Salic
+                                Makreska</h2>
+                            <div class="speaker-subtitle">Professor and Deputy Director for International Cooperation
+                                &amp; Development, <br> Institute of Earthquake Engineering and Engineering
+                                Seismology, North Macedonia</div>
+
+                            <div class="social-links">
+                                <a href="https://orcid.org/0000-0003-3571-1139" class="social-link" title="ORCID"
+                                    aria-label="ORCID" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-orcid"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/radmila-salic-makreska-0a751320b/"
+                                    class="social-link" title="LinkedIn" aria-label="LinkedIn" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://www.iziis.ukim.edu.mk/en/" class="social-link"
+                                    title="Institute of Earthquake Engineering and Engineering Seismology (UKIM-IZIIS)"
+                                    aria-label="Institute of Earthquake Engineering and Engineering Seismology (UKIM-IZIIS)"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-building-columns"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="speaker-description">
+                        <p>Prof. Dr. Radmila Salic Makreska is a Professor and the Deputy Director for International
+                            Cooperation &amp; Development at the Institute of Earthquake Engineering and Engineering
+                            Seismology (UKIM-IZIIS) in Skopje. Her professional activities encompass leading and
+                            contributing to projects for international organisations such as the UNDP, WHO, World
+                            Bank, EBRD, and JICA. Notably, she is a co-author of the Seismic Zoning Maps developed for
+                            the National Annex to Eurocode 8.</p>
+
+                        <p>Throughout her career, Prof. Dr. Salic Makreska has engaged in numerous training programmes
+                            and study visits across Europe and Asia. She serves on multiple national crisis and
+                            disaster management bodies, as well as professional and scientific associations. Since
+                            2023, she has served as an Executive Committee member of the European Facilities for
+                            Earthquake Hazard and Risk (EFEHR).</p>
+
+                        <p>Her extensive academic record features over 60 scientific papers presented at national and
+                            international conferences, more than 120 professional reports, 16 peer-reviewed journal
+                            publications, and a forthcoming book published by Springer Nature. In recognition of her
+                            notable achievements in civil engineering practice, she has been a multi-time award
+                            recipient from the Macedonian Association of Structural Engineers.</p>
+                    </div>
+                </article>
+                <!-- ========================================== -->
+
             </div>
         </div>
     </main>
